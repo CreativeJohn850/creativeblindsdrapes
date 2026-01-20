@@ -808,7 +808,7 @@ section.bg-light {
         position: fixed;
         top: 0;
         right: -100%;
-        width: fit-content;
+        width: 48%;
         height: auto;
         background-color: var(--white);
         flex-direction: column;
@@ -918,7 +918,7 @@ section.bg-light {
     }
     
     .nav-menu {
-        width: fit-content;
+        width: 48%;
         height: auto;
     }
 }

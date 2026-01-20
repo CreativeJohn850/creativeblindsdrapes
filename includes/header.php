@@ -39,6 +39,9 @@ $current_page = basename($_SERVER['PHP_SELF']);
 
     <!-- Main Stylesheet -->
     <link rel="stylesheet" href="css/style.css">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="assets/images/logo/cd-icon-h.png">
 </head>
 
 <body>
