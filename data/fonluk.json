@@ -1,0 +1,574 @@
+[
+  {
+    "name": "37310",
+    "weight_us": "23.3 oz/yd²",
+    "composition": "100% PES",
+    "width_us": "118.1in±1.2",
+    "band": "NO",
+    "pattern": "vertical"
+  },
+  {
+    "name": "37315",
+    "weight_us": "23.3 oz/yd²",
+    "composition": "100% PES",
+    "width_us": "118.1in±1.2",
+    "band": "NO",
+    "pattern": "vertical"
+  },
+  {
+    "name": "37318",
+    "weight_us": "23.3 oz/yd²",
+    "composition": "100% PES",
+    "width_us": "118.1in±1.2",
+    "band": "NO",
+    "pattern": "all"
+  },
+  {
+    "name": "AMALFI",
+    "weight_us": "21.53 oz/yd²",
+    "composition": "100% PES",
+    "width_us": "118.1in±122.0",
+    "band": "NO",
+    "pattern": "horizontal"
+  },
+  {
+    "name": "AMANDA",
+    "weight_us": "21.53 oz/yd²",
+    "composition": "100% PES",
+    "width_us": "118.1in±1.2",
+    "band": "NO",
+    "pattern": "vertical"
+  },
+  {
+    "name": "AMOUR",
+    "weight_us": "23.0 oz/yd²",
+    "composition": "100% PES",
+    "width_us": "116.1in±1.2",
+    "band": "NO",
+    "pattern": "all",
+    "face": "Double Face"
+  },
+  {
+    "name": "AMSTERDAM",
+    "weight_us": "22.12 oz/yd²",
+    "composition": "100% PES",
+    "width_us": "118.1in±1.2",
+    "band": "NO",
+    "pattern": "all",
+    "face": "Double Face"
+  },
+  {
+    "name": "ASTAR_DIMOUT",
+    "weight_us": "19.17 oz/yd²",
+    "composition": "100% PES",
+    "width_us": "118.1in±1.2",
+    "band": "NO",
+    "pattern": "all"
+  },
+  {
+    "name": "BELEZZA",
+    "weight_us": "21.24 oz/yd²",
+    "composition": "100% PES",
+    "width_us": "118.1in±1.2",
+    "band": "NO",
+    "pattern": "all"
+  },
+  {
+    "name": "BELINDA",
+    "weight_us": "26.54 oz/yd²",
+    "composition": "88% PES, 7% VIS, 5% COT",
+    "width_us": "118.1in±1.2",
+    "band": "NO",
+    "pattern": "vertical"
+  },
+  {
+    "name": "BELLA",
+    "weight_us": "23.68 oz/yd²",
+    "composition": "100% PES",
+    "width_us": "118.1in±1.2",
+    "band": "NO",
+    "pattern": "all"
+  },
+  {
+    "name": "BIANCHERIA",
+    "weight_us": "22.41 oz/yd²",
+    "composition": "100% PES",
+    "width_us": "118.1in±1.2",
+    "band": "NO",
+    "pattern": "all"
+  },
+  {
+    "name": "BLACKOUT_SATIN",
+    "weight_us": "23.0 oz/yd²",
+    "composition": "100% PES",
+    "width_us": "126.0in±1.2",
+    "band": "NO",
+    "pattern": "all"
+  },
+  {
+    "name": "BORLA",
+    "weight_us": "25.07 oz/yd²",
+    "composition": "4% LIN 96% PES",
+    "width_us": "118.1in±1.2",
+    "band": "NO",
+    "pattern": "horizontal"
+  },
+  {
+    "name": "CANADA",
+    "weight_us": "20.06 oz/yd²",
+    "composition": "100% PES",
+    "width_us": "118.1in±1.2",
+    "band": "NO",
+    "pattern": "all"
+  },
+  {
+    "name": "CHENILLE",
+    "weight_us": "25.95 oz/yd²",
+    "composition": "100% PES",
+    "width_us": "126.0in±1.2",
+    "band": "NO",
+    "pattern": "vertical"
+  },
+  {
+    "name": "DAMASCO",
+    "weight_us": "20.79 oz/yd²",
+    "composition": "100% PES",
+    "width_us": "118.1in±1.2",
+    "band": "NO",
+    "pattern": "vertical"
+  },
+  {
+    "name": "DECO_PANEL",
+    "weight_us": "21.53 oz/yd²",
+    "composition": "100% PES",
+    "width_us": "118.1in±118.1",
+    "band": "NO",
+    "pattern": "horizontal"
+  },
+  {
+    "name": "DIAMOND",
+    "weight_us": "17.7 oz/yd²",
+    "composition": "100% PES",
+    "width_us": "116.1in±1.2",
+    "band": "NO",
+    "pattern": "all"
+  },
+  {
+    "name": "EDERA",
+    "weight_us": "20.65 oz/yd²",
+    "composition": "100% PES",
+    "width_us": "118.1in±1.2",
+    "band": "NO",
+    "pattern": "all"
+  },
+  {
+    "name": "ELEGANTE",
+    "weight_us": "20.79 oz/yd²",
+    "composition": "100% PES",
+    "width_us": "118.1in±1.2",
+    "band": "NO",
+    "pattern": "all"
+  },
+  {
+    "name": "ESCAMOSO_PANEL",
+    "weight_us": "21.53 oz/yd²",
+    "composition": "100% PES",
+    "width_us": "118.1in±118.1",
+    "band": "NO",
+    "pattern": "horizontal"
+  },
+  {
+    "name": "ESPECIAL",
+    "weight_us": "25.07 oz/yd²",
+    "composition": "7% LIN 93% PES",
+    "width_us": "118.1in±1.2",
+    "band": "NO",
+    "pattern": "vertical"
+  },
+  {
+    "name": "ESTRELLA",
+    "weight_us": "23.0 oz/yd²",
+    "composition": "100% PES",
+    "width_us": "118.1in±1.2",
+    "band": "NO",
+    "pattern": "all"
+  },
+  {
+    "name": "ETERNITY",
+    "weight_us": "22.12 oz/yd²",
+    "composition": "100% PES",
+    "width_us": "118.1in±1.2",
+    "band": "NO",
+    "pattern": "vertical"
+  },
+  {
+    "name": "FAVO",
+    "weight_us": "20.79 oz/yd²",
+    "composition": "100% PES",
+    "width_us": "118.1in±1.2",
+    "band": "NO",
+    "pattern": "all"
+  },
+  {
+    "name": "FERMO",
+    "weight_us": "25.07 oz/yd²",
+    "composition": "4% LIN 96% PES",
+    "width_us": "118.1in±1.2",
+    "band": "NO",
+    "pattern": "all"
+  },
+  {
+    "name": "FIGOULI",
+    "weight_us": "25.95 oz/yd²",
+    "composition": "4% LIN 96% PES",
+    "width_us": "118.1in±1.2",
+    "band": "NO",
+    "pattern": "vertical"
+  },
+  {
+    "name": "FIORE",
+    "weight_us": "25.07 oz/yd²",
+    "composition": "4% LIN 96% PES",
+    "width_us": "120.1in±1.2",
+    "band": "NO",
+    "pattern": "all"
+  },
+  {
+    "name": "FOMARA",
+    "weight_us": "21.83 oz/yd²",
+    "composition": "100% PES",
+    "width_us": "118.1in±1.2",
+    "band": "NO",
+    "pattern": "vertical"
+  },
+  {
+    "name": "FRIDA",
+    "weight_us": "26.54 oz/yd²",
+    "composition": "100% PES",
+    "width_us": "129.9in±1.2",
+    "band": "NO",
+    "pattern": "horizontal"
+  },
+  {
+    "name": "GABBIA",
+    "weight_us": "20.79 oz/yd²",
+    "composition": "100% PES",
+    "width_us": "118.1in±1.2",
+    "band": "NO",
+    "pattern": "all"
+  },
+  {
+    "name": "LEGGERO",
+    "weight_us": "15.93 oz/yd²",
+    "composition": "100% PES",
+    "width_us": "126.0in±1.2",
+    "band": "NO",
+    "pattern": "all"
+  },
+  {
+    "name": "LEON",
+    "weight_us": "25.66 oz/yd²",
+    "composition": "100% PES",
+    "width_us": "129.9in±1.2",
+    "band": "NO",
+    "pattern": "all"
+  },
+  {
+    "name": "LERIDA",
+    "weight_us": "25.66 oz/yd²",
+    "composition": "100% PES",
+    "width_us": "129.9in±1.2",
+    "band": "NO",
+    "pattern": "all"
+  },
+  {
+    "name": "LUCIA",
+    "weight_us": "20.35 oz/yd²",
+    "composition": "100% PES",
+    "width_us": "118.1in±1.2",
+    "band": "NO",
+    "pattern": "all"
+  },
+  {
+    "name": "LUGO",
+    "weight_us": "25.66 oz/yd²",
+    "composition": "100% PES",
+    "width_us": "129.9in±1.2",
+    "band": "NO",
+    "pattern": "vertical"
+  },
+  {
+    "name": "LUNA",
+    "weight_us": "20.35 oz/yd²",
+    "composition": "100% PES",
+    "width_us": "118.1in±1.2",
+    "band": "NO",
+    "pattern": "all"
+  },
+  {
+    "name": "LUSSO",
+    "weight_us": "20.65 oz/yd²",
+    "composition": "100% PES",
+    "width_us": "118.1in±1.2",
+    "band": "NO",
+    "pattern": "vertical"
+  },
+  {
+    "name": "MANHATTAN",
+    "weight_us": "22.12 oz/yd²",
+    "composition": "100% PES",
+    "width_us": "126.0in±1.2",
+    "band": "NO",
+    "pattern": "all"
+  },
+  {
+    "name": "MARBELLA",
+    "weight_us": "23.0 oz/yd²",
+    "composition": "100% PES",
+    "width_us": "118.1in±1.2",
+    "band": "NO",
+    "pattern": "all"
+  },
+  {
+    "name": "MARCO",
+    "weight_us": "19.76 oz/yd²",
+    "composition": "100% PES",
+    "width_us": "118.1in±1.2",
+    "band": "NO",
+    "pattern": "all"
+  },
+  {
+    "name": "MARLON",
+    "weight_us": "21.53 oz/yd²",
+    "composition": "100% PES",
+    "width_us": "118.1in±1.2",
+    "band": "NO",
+    "pattern": "all"
+  },
+  {
+    "name": "MASSA",
+    "weight_us": "20.65 oz/yd²",
+    "composition": "100% PES",
+    "width_us": "118.1in±1.2",
+    "band": "NO",
+    "pattern": "vertical"
+  },
+  {
+    "name": "MICRO_SATIN",
+    "weight_us": "20.2 oz/yd²",
+    "composition": "100% PES",
+    "width_us": "126.0in±1.2",
+    "band": "NO",
+    "pattern": "all"
+  },
+  {
+    "name": "MILAGRO",
+    "weight_us": "32.44 oz/yd²",
+    "composition": "100% PES",
+    "width_us": "118.1in±1.2",
+    "band": "NO",
+    "pattern": "all"
+  },
+  {
+    "name": "MILAZZO",
+    "weight_us": "23.89 oz/yd²",
+    "composition": "100% PES",
+    "width_us": "120.1in±1.2",
+    "band": "NO",
+    "pattern": "all"
+  },
+  {
+    "name": "MIRABELLE",
+    "weight_us": "30.97 oz/yd²",
+    "composition": "40% COTTON 60% POLYESTER",
+    "width_us": "114.2in±1.2",
+    "band": "NO",
+    "pattern": "all"
+  },
+  {
+    "name": "MISTO",
+    "weight_us": "20.79 oz/yd²",
+    "composition": "100% PES",
+    "width_us": "118.1in±1.2",
+    "band": "NO",
+    "pattern": "horizontal"
+  },
+  {
+    "name": "MODO",
+    "weight_us": "20.79 oz/yd²",
+    "composition": "100% PES",
+    "width_us": "118.1in±1.2",
+    "band": "NO",
+    "pattern": "all"
+  },
+  {
+    "name": "MONA",
+    "weight_us": "19.76 oz/yd²",
+    "composition": "100% PES",
+    "width_us": "118.1in±1.2",
+    "band": "NO",
+    "pattern": "all",
+    "face": "Double Face"
+  },
+  {
+    "name": "MOSCOW",
+    "weight_us": "25.36 oz/yd²",
+    "composition": "100% PES",
+    "width_us": "118.1in±1.2",
+    "band": "NO",
+    "pattern": "all"
+  },
+  {
+    "name": "NOBLE",
+    "weight_us": "22.12 oz/yd²",
+    "composition": "100% PES",
+    "width_us": "118.1in±1.2",
+    "band": "NO",
+    "pattern": "vertical"
+  },
+  {
+    "name": "NOPELI",
+    "weight_us": "20.79 oz/yd²",
+    "composition": "100% PES",
+    "width_us": "118.1in±1.2",
+    "band": "NO",
+    "pattern": "all"
+  },
+  {
+    "name": "NORTH",
+    "weight_us": "22.12 oz/yd²",
+    "composition": "100% PES",
+    "width_us": "118.1in±1.2",
+    "band": "NO",
+    "pattern": "vertical"
+  },
+  {
+    "name": "NUBE",
+    "weight_us": "20.65 oz/yd²",
+    "composition": "100% PES",
+    "width_us": "118.1in±1.2",
+    "band": "NO",
+    "pattern": "all"
+  },
+  {
+    "name": "OLYMPOS",
+    "weight_us": "22.12 oz/yd²",
+    "composition": "100% PES",
+    "width_us": "118.1in±1.2",
+    "band": "NO",
+    "pattern": "all",
+    "face": "Double Face"
+  },
+  {
+    "name": "PAROS",
+    "weight_us": "19.32 oz/yd²",
+    "composition": "100% PES",
+    "width_us": "126.0in±1.2",
+    "band": "NO",
+    "pattern": "horizontal"
+  },
+  {
+    "name": "PENELOPE",
+    "weight_us": "29.05 oz/yd²",
+    "composition": "100% PES",
+    "width_us": "118.1in±1.2",
+    "band": "NO",
+    "pattern": "all"
+  },
+  {
+    "name": "PIRLO_DIMOUT",
+    "weight_us": "25.07 oz/yd²",
+    "composition": "100% PES",
+    "width_us": "116.1in±1.2",
+    "band": "NO",
+    "pattern": "all"
+  },
+  {
+    "name": "ROMEO",
+    "weight_us": "24.77 oz/yd²",
+    "composition": "90% PES, 10% COT",
+    "width_us": "126.0in±1.2",
+    "band": "NO",
+    "pattern": "all"
+  },
+  {
+    "name": "ROTTO",
+    "weight_us": "20.79 oz/yd²",
+    "composition": "100% PES",
+    "width_us": "118.1in±1.2",
+    "band": "NO",
+    "pattern": "all"
+  },
+  {
+    "name": "SANTIAGO",
+    "weight_us": "17.11 oz/yd²",
+    "composition": "100% PES",
+    "width_us": "118.1in±1.2",
+    "band": "NO",
+    "pattern": "all"
+  },
+  {
+    "name": "TELLO",
+    "weight_us": "19.17 oz/yd²",
+    "composition": "100% PES",
+    "width_us": "118.1in±1.2",
+    "band": "NO",
+    "pattern": "all"
+  },
+  {
+    "name": "TODI_BLACKOUT",
+    "weight_us": "20.94 oz/yd²",
+    "composition": "100% PES",
+    "width_us": "116.1in±1.2",
+    "band": "NO",
+    "pattern": "all"
+  },
+  {
+    "name": "TONIA",
+    "weight_us": "19.17 oz/yd²",
+    "composition": "100% PES",
+    "width_us": "118.1in±1.2",
+    "band": "NO",
+    "pattern": "vertical"
+  },
+  {
+    "name": "TOSCANELLO",
+    "weight_us": "20.65 oz/yd²",
+    "composition": "100% PES",
+    "width_us": "118.1in±1.2",
+    "band": "AVAILABLE",
+    "pattern": "vertical"
+  },
+  {
+    "name": "TRIESTE",
+    "weight_us": "19.17 oz/yd²",
+    "composition": "100% PES",
+    "width_us": "118.1in±1.2",
+    "band": "NO",
+    "pattern": "all"
+  },
+  {
+    "name": "VIOLA",
+    "weight_us": "27.13 oz/yd²",
+    "composition": "100% PES-CHENILLE",
+    "width_us": "118.1in±1.2",
+    "band": "NO",
+    "pattern": "vertical"
+  },
+  {
+    "name": "VIOLETA",
+    "weight_us": "27.13 oz/yd²",
+    "composition": "100% PES-CHENILLE",
+    "width_us": "118.1in±1.2",
+    "band": "NO",
+    "pattern": "vertical"
+  },
+  {
+    "name": "VIRGINIA",
+    "weight_us": "27.13 oz/yd²",
+    "composition": "100% PES-CHENILLE",
+    "width_us": "118.1in±1.2",
+    "band": "NO",
+    "pattern": "all"
+  }
+]
