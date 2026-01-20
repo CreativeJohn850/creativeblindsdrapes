@@ -16,18 +16,6 @@
                     </div>
                 </div>
 
-                <!-- Quick Links -->
-                <div class="footer-col">
-                    <h4>Quick Links</h4>
-                    <ul class="footer-links">
-                        <li><a href="about.php">About Us</a></li>
-                        <li><a href="products.php">Our Products</a></li>
-                        <li><a href="installation.php">Installation Services</a></li>
-                        <li><a href="gallery.php">Project Gallery</a></li>
-                        <li><a href="contact.php">Contact Us</a></li>
-                    </ul>
-                </div>
-
                 <!-- Products -->
                 <div class="footer-col">
                     <h4>Products</h4>
@@ -73,7 +61,7 @@
 </footer>
 
 <!-- Minimal JavaScript (mobile menu toggle) -->
-<script src="js/script.js"></script>
+<script src="assets/js/script.js"></script>
 </body>
 
 </html>
