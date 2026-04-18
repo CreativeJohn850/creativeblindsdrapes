@@ -1,7 +1,7 @@
 <?php
 // Page-specific variables
 $page_title = 'Contact Us - Get Your Free Quote';
-$meta_description = 'Contact Creative Floors & Windows in Aurora, IL. Get a free consultation for custom drapes, blinds, and shutters. Call (630) 555-0123 or visit our showroom at 850 S Frontenac Street.';
+$meta_description = 'Contact Creative Blinds & Drapes in Aurora, IL. Get a free consultation for custom drapes, blinds, and shutters. Call (630) 946-1406 or visit our showroom at 850 S Frontenac Street.';
 
 // Include header
 require_once 'includes/header.php';
@@ -79,7 +79,7 @@ require_once 'includes/header.php';
                     <div class="form-group">
                         <label style="display: flex; align-items: start; gap: 10px; cursor: pointer;">
                             <input type="checkbox" id="consent" name="consent" required style="width: auto; margin-top: 4px;">
-                            <span style="font-size: 0.9rem; color: var(--text-gray);">I agree to receive communication from Creative Floors & Windows regarding my inquiry. *</span>
+                            <span style="font-size: 0.9rem; color: var(--text-gray);">I agree to receive communication from <?php echo SITE_NAME; ?> regarding my inquiry. *</span>
                         </label>
                     </div>
                     

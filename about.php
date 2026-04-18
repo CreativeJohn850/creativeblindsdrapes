@@ -1,7 +1,7 @@
 <?php
 // Page-specific variables
-$page_title = 'Custom Drapes, Blinds & Shutters';
-$meta_description = 'Transform your Aurora home with premium window treatments from Creative Blinds & Drapes. Custom drapes, blinds, shutters & shades. Featuring quality Adeko products. Free consultation!';
+$page_title = 'About Us';
+$meta_description = 'Learn about Creative Blinds & Drapes in Aurora, IL — a sister company of Creative Floors Inc. with 23+ years of experience. Premium Adeko window treatments, expert in-home consultation and installation.';
 
 // Include header
 require_once 'includes/header.php';

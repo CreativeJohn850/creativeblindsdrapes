@@ -1,22 +1,39 @@
 <?php
-// Page-specific variables
-$page_title = 'Custom Drapes & Curtains';
-$meta_description = 'Browse our premium Adeko drape collections - Tuller and Fonluk. Over 125 elegant fabric options for custom sheers and draperies in Aurora, IL. Professional design and installation.';
+require_once 'includes/config.php';
 
-// Load product data from JSON files
+$page_title = 'Custom Sheer Curtains';
+$meta_description = 'Browse our premium Adeko sheer curtain collections. Over 50 elegant fabric options for custom sheers in Aurora, IL. Professional design and installation.';
+
 $tuller_json = file_get_contents('data/tuller.json');
-$fonluk_json = file_get_contents('data/fonluk.json');
-
 $tuller_products = json_decode($tuller_json, true);
-$fonluk_products = json_decode($fonluk_json, true);
 
-// Optional: Add basic error handling
 if (json_last_error() !== JSON_ERROR_NONE || !is_array($tuller_products)) {
     $tuller_products = [];
-    // You could log the error or show a message
 }
-if (json_last_error() !== JSON_ERROR_NONE || !is_array($fonluk_products)) {
-    $fonluk_products = [];
+
+if (!empty($tuller_products)) {
+    $schema_items = [];
+    foreach ($tuller_products as $i => $p) {
+        $schema_items[] = [
+            '@type' => 'ListItem',
+            'position' => $i + 1,
+            'item' => [
+                '@type' => 'Product',
+                'name' => $p['name'] . ' Sheer Curtain Fabric',
+                'material' => $p['composition'],
+                'brand' => ['@type' => 'Brand', 'name' => 'Adeko'],
+                'image' => SITE_URL . '/assets/products/tuller/thumbnails/' . strtolower($p['name']) . '.webp'
+            ]
+        ];
+    }
+    $page_schema_json = json_encode([
+        '@context' => 'https://schema.org',
+        '@type' => 'ItemList',
+        'name' => 'Custom Sheer Curtains — Adeko Tuller Collection',
+        'description' => $meta_description,
+        'numberOfItems' => count($tuller_products),
+        'itemListElement' => $schema_items
+    ], JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE);
 }
 
 // Include header
@@ -63,7 +80,7 @@ function getPatternArrow($direction)
                     <div class="product-card" data-name="<?php echo strtolower($product['name']); ?>">
                         <div class="card-image" style="position: relative;">
                             <img src="assets/images/products/tuller/thumbnails/<?php echo strtolower($product['name']); ?>.webp"
-                                alt="<?php echo htmlspecialchars($product['name']); ?> drape fabric"
+                                alt="<?php echo htmlspecialchars($product['name']); ?> sheer curtain fabric"
                                 onerror="this.src='images/placeholder-drape.jpg'">
                             <?php if (isset($product['face'])): ?>
                                 <span

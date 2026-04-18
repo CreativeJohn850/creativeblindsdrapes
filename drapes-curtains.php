@@ -1,17 +1,39 @@
 <?php
-// Page-specific variables
+require_once 'includes/config.php';
+
 $page_title = 'Custom Drapes & Curtains';
 $meta_description = 'Browse our premium Adeko draperies. Over 70 elegant fabric options for custom draperies in Aurora, IL. Original Turkish design and professional installation.';
 
-
 $fonluk_json = file_get_contents('data/fonluk.json');
-
-
 $fonluk_products = json_decode($fonluk_json, true);
-
 
 if (json_last_error() !== JSON_ERROR_NONE || !is_array($fonluk_products)) {
     $fonluk_products = [];
+}
+
+if (!empty($fonluk_products)) {
+    $schema_items = [];
+    foreach ($fonluk_products as $i => $p) {
+        $schema_items[] = [
+            '@type' => 'ListItem',
+            'position' => $i + 1,
+            'item' => [
+                '@type' => 'Product',
+                'name' => $p['name'] . ' Drapery Fabric',
+                'material' => $p['composition'],
+                'brand' => ['@type' => 'Brand', 'name' => 'Adeko'],
+                'image' => SITE_URL . '/assets/products/fonluk/thumbnails/' . strtolower($p['name']) . '.webp'
+            ]
+        ];
+    }
+    $page_schema_json = json_encode([
+        '@context' => 'https://schema.org',
+        '@type' => 'ItemList',
+        'name' => 'Custom Draperies — Adeko Collection',
+        'description' => $meta_description,
+        'numberOfItems' => count($fonluk_products),
+        'itemListElement' => $schema_items
+    ], JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE);
 }
 
 // Include header

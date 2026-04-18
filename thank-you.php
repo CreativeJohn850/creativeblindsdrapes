@@ -1,7 +1,8 @@
 <?php
 // Page-specific variables
 $page_title = 'Thank You - Request Received';
-$meta_description = 'Thank you for contacting Creative Floors & Windows. We\'ll be in touch within 24 hours to schedule your free consultation.';
+$noindex = true;
+$meta_description = 'Thank you for contacting Creative Blinds & Drapes. We\'ll be in touch within 24 hours to schedule your free consultation.';
 
 // Include header
 require_once 'includes/header.php';

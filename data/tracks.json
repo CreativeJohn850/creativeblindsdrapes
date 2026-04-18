@@ -1,0 +1,74 @@
+[
+  {
+    "name": "Bendable Champagne Curtain Track",
+    "material": "Ivory",
+    "colors": "3",
+    "track_rollers": "2",
+    "mount": "ceiling or wall",
+    "use": "window or corner"
+  },
+  {
+    "name": "Bendable Curtain Track",
+    "material": "Ivory",
+    "colors": "3",
+    "track_rollers": "2",
+    "mount": "ceiling or wall",
+    "feature": "single or double",
+    "use": "window",
+    "max_weight": "60 lbs"
+  },
+  {
+    "name": "Drapery Track with Valance Rail",
+    "material": "Aluminum",
+    "colors": "5",
+    "track_rollers": "2",
+    "mount": "ceiling or wall",
+    "use": "window"
+  },
+  {
+    "name": "Bendable Curtain Track with Valance Rail",
+    "colors": "5",
+    "feature": "silent glide",
+    "track_rollers": "2",
+    "mount": "ceiling or wall",
+    "use": "window or corner"
+  },
+  {
+    "name": "Heavy Duty Curved Curtain Track",
+    "colors": "3",
+    "track_rollers": "2",
+    "thickness": "0.07 inch",
+    "feature": "single or double",
+    "mount": "ceiling or wall",
+    "use": "window or corner"
+  },
+  {
+    "name": "Bendable Metal Curtain Track",
+    "material": "Metal",
+    "colors": "2",
+    "track_rollers": "2",
+    "feature": "single or double",
+    "mount": "ceiling or wall",
+    "use": "window or corner"
+  },
+  {
+    "name": "Multi-Color Bendable Curtain Track",
+    "code": "CHR39 / CBD6",
+    "material": "Ivory",
+    "colors": "4",
+    "track_rollers": "2",
+    "mount": "ceiling or wall",
+    "use": "window",
+    "max_weight": "60 lbs"
+  },
+  {
+    "name": "Anti-Light Leakage Ceiling Curtain Track",
+    "code": "CHR47",
+    "material": "Aluminum",
+    "colors": "3",
+    "track_rollers": "2",
+    "mount": "ceiling or wall",
+    "use": "window",
+    "max_weight": "70 lbs"
+  }
+]

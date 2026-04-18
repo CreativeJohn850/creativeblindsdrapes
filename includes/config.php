@@ -1,5 +1,6 @@
 <?php
 // Site Configuration
+define('SITE_URL', 'https://creativeblindsdrapes.com');
 define('SITE_NAME', 'Creative Blinds & Drapes');
 define('BUSINESS_PHONE', '(630) 946-1406');
 define('BUSINESS_EMAIL', 'creativeblindsdrapes@gmail.com');
