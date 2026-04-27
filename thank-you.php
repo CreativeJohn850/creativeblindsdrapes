@@ -46,7 +46,7 @@ require_once 'includes/header.php';
         </div>
         
         <p style="color: var(--text-gray); font-size: 0.95rem;">
-            Need immediate assistance? Call us at <a href="tel:<?php echo str_replace(['(', ')', ' ', '-'], '', BUSINESS_PHONE); ?>" style="color: var(--primary-teal); font-weight: 600;"><?php echo BUSINESS_PHONE; ?></a>
+            Need immediate assistance? Call us at <a href="tel:<?php echo str_replace(['(', ')', ' ', '-'], '', BUSINESS_PHONE); ?>" onclick="dataLayer.push({'event': 'phone_click'});" style="color: var(--primary-teal); font-weight: 600;"><?php echo BUSINESS_PHONE; ?></a>
         </p>
     </div>
 </section>

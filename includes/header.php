@@ -54,7 +54,7 @@ $local_business_schema = [
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="<?php echo htmlspecialchars($meta_description); ?>">
     <?php if (!empty($noindex)): ?>
-    <meta name="robots" content="noindex, nofollow">
+        <meta name="robots" content="noindex, nofollow">
     <?php endif; ?>
     <title><?php echo htmlspecialchars($page_title); ?> | <?php echo SITE_NAME; ?></title>
 
@@ -76,14 +76,16 @@ $local_business_schema = [
     <meta name="twitter:description" content="<?php echo htmlspecialchars($meta_description); ?>">
     <meta name="twitter:image" content="<?php echo $og_image; ?>">
 
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-HFYHCDK94L"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
-        gtag('js', new Date());
-        gtag('config', 'G-HFYHCDK94L');
-    </script>
+    <!-- Google Tag Manager -->
+    <script>(function (w, d, s, l, i) {
+            w[l] = w[l] || []; w[l].push({
+                'gtm.start':
+                    new Date().getTime(), event: 'gtm.js'
+            }); var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+                    'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-W9J8WXQX');</script>
+    <!-- End Google Tag Manager -->
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -102,21 +104,27 @@ $local_business_schema = [
     <link rel="shortcut icon" href="assets/images/logo/cd-icon-h.png">
 
     <!-- LocalBusiness Schema -->
-    <script type="application/ld+json"><?php echo json_encode($local_business_schema, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE); ?></script>
+    <script
+        type="application/ld+json"><?php echo json_encode($local_business_schema, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE); ?></script>
 
     <?php if (!empty($page_schema_json)): ?>
-    <script type="application/ld+json"><?php echo $page_schema_json; ?></script>
+        <script type="application/ld+json"><?php echo $page_schema_json; ?></script>
     <?php endif; ?>
 </head>
 
 <body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W9J8WXQX" height="0" width="0"
+            style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
 
     <div class="header-top">
         <div class="container">
             <div class="header-top-content">
                 <div class="contact-info">
                     <a href="tel:<?php echo str_replace(['(', ')', ' ', '-'], '', BUSINESS_PHONE); ?>"
-                        class="header-phone">
+                        onclick="dataLayer.push({'event': 'phone_click'});" class="header-phone">
                         <span class="icon">📞</span>
                         <?php echo BUSINESS_PHONE; ?>
                     </a>
@@ -135,8 +143,9 @@ $local_business_schema = [
                 <div class="header-content">
                     <div class="logo">
                         <a href="index.php">
-                            <img loading="lazy" src="assets/images/logo/CD-logo.png" alt="Creative Blinds & Drapes Aurora IL"
-                                style="margin: 1rem; height: 120px;" class="d-none d-lg-block">
+                            <img loading="lazy" src="assets/images/logo/CD-logo.png"
+                                alt="Creative Blinds & Drapes Aurora IL" style="margin: 1rem; height: 120px;"
+                                class="d-none d-lg-block">
                             <p class="tagline">Aurora's Premier Window Treatment Experts</p>
                         </a>
                     </div>

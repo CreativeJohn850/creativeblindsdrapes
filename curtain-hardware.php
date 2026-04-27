@@ -82,7 +82,7 @@ require_once 'includes/header.php';
         <p>Our experts will recommend the right track or rod for your curtains during your free in-home consultation.</p>
         <div style="display: flex; gap: 15px; justify-content: center; flex-wrap: wrap; margin-top: 30px;">
             <a href="contact.php#quote-form" class="btn btn-primary">Request Free Consultation</a>
-            <a href="tel:<?php echo str_replace(['(', ')', ' ', '-'], '', BUSINESS_PHONE); ?>" class="btn btn-secondary"
+            <a href="tel:<?php echo str_replace(['(', ')', ' ', '-'], '', BUSINESS_PHONE); ?>" onclick="dataLayer.push({'event': 'phone_click'});" class="btn btn-secondary"
                 style="background-color: transparent; color: white; border-color: white;">
                 Call <?php echo BUSINESS_PHONE; ?>
             </a>
