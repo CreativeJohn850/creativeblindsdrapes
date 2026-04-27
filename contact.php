@@ -246,7 +246,6 @@ require_once 'includes/header.php';
             if (result.success) {
                 // Fire GTM conversion event
                 window.dataLayer = window.dataLayer || [];
-                dataLayer.push({ 'event': 'contact_form_submit' });
                 // Redirect to thank you page
                 window.location.href = 'thank-you.php';
             } else {
