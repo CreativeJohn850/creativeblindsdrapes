@@ -120,7 +120,7 @@ $message = htmlspecialchars($message);
 // Prepare email
 $to = BUSINESS_EMAIL;
 $subject = 'New Quote Request from ' . $name;
-$headers = "From: Creative Blinds & Drapes <" . BUSINESS_EMAIL . ">\r\n";
+$headers = "From: Creative Blinds & Drapes <noreply@creativeblindsdrapes.com>\r\n";
 $headers .= "Reply-To: " . $email . "\r\n";
 $headers .= "MIME-Version: 1.0\r\n";
 $headers .= "Content-Type: text/html; charset=UTF-8\r\n";
