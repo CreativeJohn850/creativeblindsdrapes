@@ -8,6 +8,29 @@ require_once '../../includes/config.php';
 // reCAPTCHA configuration (replace with your actual secret key)
 define('RECAPTCHA_SECRET_KEY', '6LdOMk0sAAAAADiT0k7Y2oZWXg9-2Ot0F_020qA2');
 
+function log_submission($event, $data) {
+    $logDir = __DIR__ . '/logs';
+    $logFile = $logDir . '/form_submissions.log';
+    if (!is_dir($logDir)) {
+        mkdir($logDir, 0755, true);
+    }
+    $ip = $_SERVER['HTTP_CF_CONNECTING_IP']
+        ?? $_SERVER['HTTP_X_FORWARDED_FOR']
+        ?? $_SERVER['REMOTE_ADDR']
+        ?? 'unknown';
+    $entry = [
+        'time'       => date('Y-m-d H:i:s T'),
+        'event'      => $event,
+        'ip'         => trim(explode(',', $ip)[0]),
+        'user_agent' => $_SERVER['HTTP_USER_AGENT'] ?? '',
+        'referrer'   => $_SERVER['HTTP_REFERER'] ?? '',
+        'payload'    => $data,
+    ];
+    file_put_contents($logFile, json_encode($entry, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES) . PHP_EOL, FILE_APPEND | LOCK_EX);
+}
+
+$recaptchaScore = null;
+
 // Response array
 $response = ['success' => false, 'message' => ''];
 
@@ -69,8 +92,16 @@ if (!empty($recaptchaToken)) {
     $recaptchaContext = stream_context_create($recaptchaOptions);
     $recaptchaResult = file_get_contents($recaptchaUrl, false, $recaptchaContext);
     $recaptchaJson = json_decode($recaptchaResult);
-    
-    if (!$recaptchaJson->success || $recaptchaJson->score < 0.5) {
+    $recaptchaScore = $recaptchaJson->score ?? null;
+
+    if (!$recaptchaJson->success || $recaptchaScore < 0.5) {
+        log_submission('recaptcha_rejected', [
+            'name'              => $name,
+            'email'             => $email,
+            'phone'             => $phone,
+            'recaptcha_score'   => $recaptchaScore,
+            'recaptcha_success' => $recaptchaJson->success ?? false,
+        ]);
         $response['message'] = 'reCAPTCHA verification failed. Please try again.';
         echo json_encode($response);
         exit;
@@ -89,7 +120,7 @@ $message = htmlspecialchars($message);
 // Prepare email
 $to = BUSINESS_EMAIL;
 $subject = 'New Quote Request from ' . $name;
-$headers = "From: " . $email . "\r\n";
+$headers = "From: Creative Blinds & Drapes <" . BUSINESS_EMAIL . ">\r\n";
 $headers .= "Reply-To: " . $email . "\r\n";
 $headers .= "MIME-Version: 1.0\r\n";
 $headers .= "Content-Type: text/html; charset=UTF-8\r\n";
@@ -163,10 +194,24 @@ $emailBody = "
 ";
 
 // Send email
+$logPayload = [
+    'name'            => $name,
+    'email'           => $email,
+    'phone'           => $phone,
+    'address'         => $address,
+    'service'         => $service,
+    'rooms'           => $rooms,
+    'message'         => $message,
+    'recaptcha_score' => $recaptchaScore,
+];
+
 if (mail($to, $subject, $emailBody, $headers)) {
+    log_submission('mail_sent', $logPayload);
     $response['success'] = true;
     $response['message'] = 'Thank you! Your request has been sent successfully.';
 } else {
+    log_submission('mail_failed', $logPayload);
+    error_log('[CreativeBlinds] mail() failed - To: ' . $to . ' From: ' . BUSINESS_EMAIL);
     $response['message'] = 'Failed to send email. Please call us directly at ' . BUSINESS_PHONE;
 }
 
