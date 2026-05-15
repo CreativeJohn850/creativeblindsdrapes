@@ -59,9 +59,9 @@ require_once 'includes/header.php';
                         </div>
                         <div class="form-group">
                             <label for="zip">ZIP Code *</label>
-                            <input type="text" id="zip" name="zip" required placeholder="e.g. 60505"
+                            <input type="text" id="zip" name="zip" required
                                 pattern="\d{5}(-\d{4})?" maxlength="10"
-                                title="Please enter a valid Illinois ZIP code (e.g. 60505)">
+                                title="Please enter a valid ZIP code!">
                         </div>
                     </div>
 
