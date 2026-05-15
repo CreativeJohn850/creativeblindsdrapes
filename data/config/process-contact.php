@@ -76,7 +76,8 @@ if (strpos($zip, '-') !== false) {
 
 if (empty($zip) || !preg_match('/^\d{5}$/', $zip)) {
     log_submission('zip_invalid', ['zip' => $zip, 'name' => $name, 'email' => $email]);
-    $response['message'] = 'Please enter a valid 5-digit ZIP code.';
+    $response['success'] = true;
+    $response['message'] = 'Thank you! Your request has been sent successfully.';
     echo json_encode($response);
     exit;
 }
@@ -84,7 +85,8 @@ if (empty($zip) || !preg_match('/^\d{5}$/', $zip)) {
 $zipInt = (int) $zip;
 if ($zipInt < 60001 || $zipInt > 60900) {
     log_submission('zip_out_of_range', ['zip' => $zip, 'name' => $name, 'email' => $email]);
-    $response['message'] = 'Sorry, we currently serve the Illinois area only (ZIP codes 60001–60900). Please call us to check availability.';
+    $response['success'] = true;
+    $response['message'] = 'Thank you! Your request has been sent successfully.';
     echo json_encode($response);
     exit;
 }
