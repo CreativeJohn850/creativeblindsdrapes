@@ -46,11 +46,48 @@ $name = trim($_POST['name'] ?? '');
 $email = trim($_POST['email'] ?? '');
 $phone = trim($_POST['phone'] ?? '');
 $address = trim($_POST['address'] ?? '');
+$zip = trim($_POST['zip'] ?? '');
 $service = trim($_POST['service'] ?? '');
 $rooms = trim($_POST['rooms'] ?? '');
 $message = trim($_POST['message'] ?? '');
 $consent = isset($_POST['consent']) ? true : false;
 $recaptchaToken = $_POST['recaptcha_token'] ?? '';
+
+log_submission('request_received', [
+    'name'    => $name,
+    'email'   => $email,
+    'phone'   => $phone,
+    'zip'     => $zip,
+    'service' => $service,
+]);
+
+// ZIP validation — handle ZIP+4 (e.g. 60540-6398 → 60540)
+if (strpos($zip, '-') !== false) {
+    foreach (explode('-', $zip) as $part) {
+        if (preg_match('/^\d{5}$/', $part)) {
+            $partInt = (int) $part;
+            if ($partInt >= 60001 && $partInt <= 60900) {
+                $zip = $part;
+                break;
+            }
+        }
+    }
+}
+
+if (empty($zip) || !preg_match('/^\d{5}$/', $zip)) {
+    log_submission('zip_invalid', ['zip' => $zip, 'name' => $name, 'email' => $email]);
+    $response['message'] = 'Please enter a valid 5-digit ZIP code.';
+    echo json_encode($response);
+    exit;
+}
+
+$zipInt = (int) $zip;
+if ($zipInt < 60001 || $zipInt > 60900) {
+    log_submission('zip_out_of_range', ['zip' => $zip, 'name' => $name, 'email' => $email]);
+    $response['message'] = 'Sorry, we currently serve the Illinois area only (ZIP codes 60001–60900). Please call us to check availability.';
+    echo json_encode($response);
+    exit;
+}
 
 // Basic validation
 if (empty($name) || empty($email) || empty($phone) || empty($service)) {
@@ -113,6 +150,7 @@ $name = htmlspecialchars($name);
 $email = htmlspecialchars($email);
 $phone = htmlspecialchars($phone);
 $address = htmlspecialchars($address);
+$zip = htmlspecialchars($zip);
 $service = htmlspecialchars($service);
 $rooms = htmlspecialchars($rooms);
 $message = htmlspecialchars($message);
@@ -161,9 +199,14 @@ $emailBody = "
             " . (!empty($address) ? "
             <div class='field'>
                 <span class='label'>Address:</span><br>
-                " . $address . "
+                " . $address . ", " . $zip . "
             </div>
-            " : "") . "
+            " : "
+            <div class='field'>
+                <span class='label'>ZIP Code:</span><br>
+                " . $zip . "
+            </div>
+            ") . "
             <div class='field'>
                 <span class='label'>Interested In:</span><br>
                 " . $service . "
@@ -199,6 +242,7 @@ $logPayload = [
     'email'           => $email,
     'phone'           => $phone,
     'address'         => $address,
+    'zip'             => $zip,
     'service'         => $service,
     'rooms'           => $rooms,
     'message'         => $message,

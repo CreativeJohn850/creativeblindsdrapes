@@ -52,9 +52,17 @@ require_once 'includes/header.php';
                         </div>
                     </div>
 
-                    <div class="form-group">
-                        <label for="address">Your Address</label>
-                        <input type="text" id="address" name="address" placeholder="Street address, City, State, ZIP">
+                    <div class="grid-2" style="gap: 20px;">
+                        <div class="form-group">
+                            <label for="address">Street Address</label>
+                            <input type="text" id="address" name="address" placeholder="Street address, City, State">
+                        </div>
+                        <div class="form-group">
+                            <label for="zip">ZIP Code *</label>
+                            <input type="text" id="zip" name="zip" required placeholder="e.g. 60505"
+                                pattern="\d{5}(-\d{4})?" maxlength="10"
+                                title="Please enter a valid Illinois ZIP code (e.g. 60505)">
+                        </div>
                     </div>
 
                     <div class="form-group">
