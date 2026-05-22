@@ -1,7 +1,7 @@
 <?php
 // Page-specific variables
 $page_title = 'About Us';
-$meta_description = 'Learn about Creative Blinds & Drapes in Aurora, IL — a sister company of Creative Floors Inc. with 23+ years of experience. Premium Adeko window treatments, expert in-home consultation and installation.';
+$meta_description = 'Learn about Creative Blinds & Drapes in Aurora, IL — a sister company of Creative Floors Inc. with 23+ years of experience. Expert in-home consultation and professional installation.';
 
 // Include header
 require_once 'includes/header.php';
@@ -33,7 +33,7 @@ require_once 'includes/header.php';
                     outfitting an entire home, we provide end-to-end service, including expert consultations, custom
                     measurements, and professional installations.
                 </p>
-                <p>We proudly feature <u><strong><a href="https://www.adekodesign.com//" target="_blank">Adeko</a></strong></u> window treatments, renowned for their Turkish craftsmanship
+                <p>We proudly feature <strong>Adeko</strong> window treatments, renowned for their Turkish craftsmanship
                     and exceptional quality. Combined with our personalized service and competitive pricing, we're
                     Aurora's premier choice for window solutions.</p>
             </div>
@@ -67,9 +67,8 @@ require_once 'includes/header.php';
 
             <div class="feature-item">
                 <div class="feature-icon">⭐</div>
-                <h3>Quality Adeko Products</h3>
-                <p>Featuring premium window treatments from Adeko, Turkey's leading manufacturer known for exceptional
-                    craftsmanship.</p>
+                <h3>Premium Turkish Fabrics</h3>
+                <p>Our window treatments are sourced from Turkey's leading manufacturer, known for exceptional fabric quality and extensive design variety.</p>
             </div>
 
             <div class="feature-item">

@@ -2,7 +2,7 @@
 require_once 'includes/config.php';
 
 $page_title = 'Custom Sheer Curtains';
-$meta_description = 'Browse our premium Adeko sheer curtain collections. Over 50 elegant fabric options for custom sheers in Aurora, IL. Professional design and installation.';
+$meta_description = 'Browse 50+ premium Turkish sheer curtain fabrics. Elegant custom sheers for Aurora, IL homes. Professional design consultation and installation.';
 
 $tuller_json = file_get_contents('data/tuller.json');
 $tuller_products = json_decode($tuller_json, true);

@@ -2,7 +2,7 @@
 require_once 'includes/config.php';
 
 $page_title = 'Custom Drapes & Curtains';
-$meta_description = 'Browse our premium Adeko draperies. Over 70 elegant fabric options for custom draperies in Aurora, IL. Original Turkish design and professional installation.';
+$meta_description = 'Browse 70+ premium Turkish drapery fabrics. Elegant custom draperies for Aurora, IL homes. Professional design consultation and installation.';
 
 $fonluk_json = file_get_contents('data/fonluk.json');
 $fonluk_products = json_decode($fonluk_json, true);

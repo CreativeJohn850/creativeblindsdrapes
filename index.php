@@ -1,7 +1,7 @@
 <?php
 // Page-specific variables
 $page_title = 'Custom Drapes, Blinds & Shutters';
-$meta_description = 'Transform your Aurora home with premium window treatments from Creative Blinds & Drapes. Custom drapes, blinds, shutters & shades. Featuring quality Adeko products. Free consultation!';
+$meta_description = 'Transform your Aurora home with premium window treatments from Creative Blinds & Drapes. Custom drapes, blinds, shutters & shades. Free consultation!';
 
 // Include header
 require_once 'includes/header.php';
@@ -67,8 +67,8 @@ require_once 'includes/header.php';
             
             <div class="feature-item">
                 <div class="feature-icon">⭐</div>
-                <h3>Quality Adeko Products</h3>
-                <p>Featuring premium window treatments from Adeko, Turkey's leading manufacturer known for exceptional craftsmanship.</p>
+                <h3>Premium Turkish Fabrics</h3>
+                <p>Our window treatments are sourced from Turkey's leading manufacturer, known for exceptional fabric quality and extensive design variety.</p>
             </div>
             
             <div class="feature-item">
