@@ -55,8 +55,22 @@ function getPatternArrow($direction)
 }
 ?>
 <!-- Page Header -->
-<section class="page-header"
-    style="background: linear-gradient(135deg, var(--primary-teal) 0%, var(--primary-teal-dark) 100%); color: white; padding: 60px 20px; text-align: center;">
+<style>
+.page-header-bg {
+    background-image: linear-gradient(rgba(63,61,61,0.52), rgba(63,61,61,0.52)),
+                      url('assets/images/carousel/curtain-drape-background-2365x594.jpg');
+    background-size: cover;
+    background-position: center;
+}
+@media (max-width: 991px) {
+    .page-header-bg {
+        background-image: linear-gradient(rgba(63,61,61,0.52), rgba(63,61,61,0.52)),
+                          url('assets/images/carousel/curtain-drape-background-666x577.jpg');
+    }
+}
+</style>
+<section class="page-header page-header-bg"
+    style="color: white; padding: 60px 20px; text-align: center;">
     <div class="container">
         <h1 style="color: white; margin-bottom: 15px;">Custom Draperies Curtains</h1>
         <p style="font-size: 1.2rem; color: rgba(255,255,255,0.95); max-width: 700px; margin: 0 auto;">Premium Adeko
