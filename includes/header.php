@@ -144,8 +144,8 @@ $local_business_schema = [
                     <div class="logo">
                         <a href="index.php">
                             <img loading="lazy" src="assets/images/logo/CD-logo.png"
-                                alt="Creative Blinds & Drapes Aurora IL" style="margin: 1rem; height: 120px;"
-                                class="d-none d-lg-block">
+                                alt="Creative Blinds & Drapes Aurora IL"
+                                class="logo-img">
                             <p class="tagline">Aurora's Premier Window Treatment Experts</p>
                         </a>
                     </div>

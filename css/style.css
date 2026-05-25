@@ -195,6 +195,13 @@ p {
     display: block;
 }
 
+.logo-img {
+    height: 120px;
+    width: auto;
+    margin: 1rem;
+    display: block;
+}
+
 .logo h1 {
     font-size: 1.8rem;
     font-weight: 700;
@@ -269,7 +276,7 @@ p {
 .mobile-toggle span {
     width: 28px;
     height: 3px;
-    background-color: var(--text-dark);
+    background-color: #C4956A;
     border-radius: 2px;
     transition: all 0.3s ease;
 }
@@ -743,9 +750,14 @@ section.bg-light {
     :root {
         --section-padding: 60px 20px;
     }
-    
+
     h1 { font-size: 2.2rem; }
     h2 { font-size: 1.8rem; }
+
+    .logo-img {
+        height: 79px;
+        margin: 0.5rem;
+    }
     
     .grid-3 {
         grid-template-columns: repeat(2, 1fr);
