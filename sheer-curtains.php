@@ -2,7 +2,7 @@
 require_once 'includes/config.php';
 
 $page_title = 'Custom Sheer Curtains';
-$meta_description = 'Browse 50+ premium Turkish sheer curtain fabrics. Elegant custom sheers for Aurora, IL homes. Professional design consultation and installation.';
+$meta_description = 'Browse 50+ premium sheer curtain fabrics. Elegant custom sheers for Aurora, IL homes. Professional design consultation and installation.';
 
 $tuller_json = file_get_contents('data/tuller.json');
 $tuller_products = json_decode($tuller_json, true);
@@ -74,7 +74,7 @@ function getPatternArrow($direction)
     <div class="container">
         <h1 style="color: white; margin-bottom: 15px;">Custom Sheer Curtains</h1>
         <p style="font-size: 1.2rem; color: rgba(255,255,255,0.95); max-width: 700px; margin: 0 auto;">Premium
-            fabric collections from Turkey. Over 50 options for elegant sheer curtains options for your windows.</p>
+            fabric collections. Over 50 options for elegant sheer curtains options for your windows.</p>
     </div>
 </section><!-- Collection Tabs & Products -->
 <section style="padding: 60px 20px;">

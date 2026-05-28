@@ -33,7 +33,7 @@ require_once 'includes/header.php';
                     outfitting an entire home, we provide end-to-end service, including expert consultations, custom
                     measurements, and professional installations.
                 </p>
-                <p>We proudly feature <strong>Turkish</strong> window treatments, renowned for their craftsmanship
+                <p>We proudly feature window treatments, renowned for their craftsmanship
                     and exceptional quality. Combined with our personalized service and competitive pricing, we're
                     Aurora's premier choice for window solutions.</p>
             </div>
@@ -67,8 +67,8 @@ require_once 'includes/header.php';
 
             <div class="feature-item">
                 <div class="feature-icon">⭐</div>
-                <h3>Premium Turkish Fabrics</h3>
-                <p>Our window treatments are sourced from Turkey's leading manufacturer, known for exceptional fabric quality and extensive design variety.</p>
+                <h3>Premium Fabrics</h3>
+                <p>Our window treatments are known for exceptional fabric quality and extensive design variety.</p>
             </div>
 
             <div class="feature-item">

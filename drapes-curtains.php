@@ -2,7 +2,7 @@
 require_once 'includes/config.php';
 
 $page_title = 'Custom Drapes & Curtains';
-$meta_description = 'Browse 70+ premium Turkish drapery fabrics. Elegant custom draperies for Aurora, IL homes. Professional design consultation and installation.';
+$meta_description = 'Browse 70+ premium drapery fabrics. Elegant custom draperies for Aurora, IL homes. Professional design consultation and installation.';
 
 $fonluk_json = file_get_contents('data/fonluk.json');
 $fonluk_products = json_decode($fonluk_json, true);
@@ -74,7 +74,7 @@ function getPatternArrow($direction)
     <div class="container">
         <h1 style="color: white; margin-bottom: 15px;">Custom Draperies Curtains</h1>
         <p style="font-size: 1.2rem; color: rgba(255,255,255,0.95); max-width: 700px; margin: 0 auto;">Premium 
-            fabric collections from Turkey. Over 70 fabric options for elegant draperies curtains for your windows.</p>
+            fabric collections. Over 70 fabric options for elegant draperies curtains for your windows.</p>
     </div>
 </section><!-- Collection Tabs & Products -->
 <section style="padding: 60px 20px;">
