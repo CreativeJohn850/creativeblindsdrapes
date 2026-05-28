@@ -33,7 +33,7 @@ require_once 'includes/header.php';
                     outfitting an entire home, we provide end-to-end service, including expert consultations, custom
                     measurements, and professional installations.
                 </p>
-                <p>We proudly feature <strong>Adeko</strong> window treatments, renowned for their Turkish craftsmanship
+                <p>We proudly feature <strong>Turkish</strong> window treatments, renowned for their craftsmanship
                     and exceptional quality. Combined with our personalized service and competitive pricing, we're
                     Aurora's premier choice for window solutions.</p>
             </div>

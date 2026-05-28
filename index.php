@@ -38,7 +38,7 @@ require_once 'includes/header.php';
             <div>
                 <h3>Why Choose Us?</h3>
                 <p>At Creative Blinds & Drapes, we believe every window tells a story. Whether you're looking for energy-efficient blinds, elegant custom drapes, or classic plantation shutters, our experienced team will guide you through every step: from initial consultation to professional installation.</p>
-                <p>We proudly feature <strong>Adeko</strong> window treatments, renowned for their Turkish craftsmanship and exceptional quality. Combined with our personalized service and competitive pricing, we're Aurora's premier choice for window solutions.</p>
+                <p>We proudly feature <strong>Turkish</strong> window treatments, renowned for their craftsmanship and exceptional quality. Combined with our personalized service and competitive pricing, we're Aurora's premier choice for window solutions.</p>
                 <a href="about.php" class="btn btn-primary">Learn More About Us</a>
             </div>
             <div>
