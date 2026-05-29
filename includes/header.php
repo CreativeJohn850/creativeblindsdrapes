@@ -158,17 +158,13 @@ $local_business_schema = [
                         </button>
 
                         <ul class="nav-menu">
-                            <li><a href="index.php"
-                                    class="<?php echo ($current_page == 'index.php') ? 'active' : ''; ?>">Home</a></li>
                             <!-- <li><a href="about.php" class="<?php echo ($current_page == 'about.php') ? 'active' : ''; ?>">About</a></li> -->
-                            <li><a href="drapes-curtains.php">Draperies</a></li>
-                            <li><a href="sheer-curtains.php">Sheers</a></li>
+                            <li><a href="shutters.php" class="<?php echo ($current_page == 'shutters.php') ? 'active' : ''; ?>">Shutters</a></li>
+                            <li><a href="blinds.php" class="<?php echo ($current_page == 'blinds.php') ? 'active' : ''; ?>">Blinds</a></li>
+                            <li><a href="shades.php" class="<?php echo ($current_page == 'shades.php') ? 'active' : ''; ?>">Shades</a></li>
+                            <li><a href="curtains.php" class="<?php echo in_array($current_page, ['curtains.php', 'drapes-curtains.php', 'sheer-curtains.php']) ? 'active' : ''; ?>">Curtains</a></li>
                             <!-- <li><a href="gallery.php" class="<?php echo ($current_page == 'gallery.php') ? 'active' : ''; ?>">Gallery</a></li> -->
-                            <li><a href="contact.php"
-                                    class="<?php echo ($current_page == 'contact.php') ? 'active' : ''; ?>">Contact</a>
-                            </li>
-                            <li class="cta-nav"><a href="contact.php#quote-form" class="btn-quote">Get Free Quote</a>
-                            </li>
+                            <li><a href="contact.php" class="<?php echo ($current_page == 'contact.php') ? 'active' : ''; ?>">Contact</a></li>
                         </ul>
                     </nav>
                 </div>

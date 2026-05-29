@@ -61,7 +61,7 @@ log_submission('request_received', [
     'service' => $service,
 ]);
 
-// ZIP validation — handle ZIP+4 (e.g. 60540-6398 → 60540)
+// ZIP validation handle ZIP+4 (e.g. 60540-6398 → 60540)
 if (strpos($zip, '-') !== false) {
     foreach (explode('-', $zip) as $part) {
         if (preg_match('/^\d{5}$/', $part)) {

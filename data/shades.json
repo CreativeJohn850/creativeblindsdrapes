@@ -1,0 +1,139 @@
+[
+  {
+    "name": "Portrait Honeycomb Shades",
+    "slug": "portrait-honeycomb",
+    "category": "honeycomb",
+    "description": "Award-winning cellular honeycomb technology paired with over 500 fabric choices. Portrait Honeycomb Shades trap air in their distinctive cells for superior insulation, reducing energy costs while adding streamlined style.",
+    "images": [
+      "assets/images/products/honeycomb/Portrait Honeycomb/01-Honeycomb.jpg",
+      "assets/images/products/honeycomb/Portrait Honeycomb/02-Honeycomb.jpg",
+      "assets/images/products/honeycomb/Portrait Honeycomb/03-Honeycomb.jpg",
+      "assets/images/products/honeycomb/Portrait Honeycomb/04-Honeycomb.jpg",
+      "assets/images/products/honeycomb/Portrait Honeycomb/05-Honeycomb.jpg",
+      "assets/images/products/honeycomb/Portrait Honeycomb/06-Honeycomb.jpg",
+      "assets/images/products/honeycomb/Portrait Honeycomb/07-Honeycomb.jpg",
+      "assets/images/products/honeycomb/Portrait Honeycomb/08-Honeycomb.jpg",
+      "assets/images/products/honeycomb/Portrait Honeycomb/09-Honeycomb.jpg",
+      "assets/images/products/honeycomb/Portrait Honeycomb/10-Honeycomb.jpg",
+      "assets/images/products/honeycomb/Portrait Honeycomb/11-Honeycomb.jpg",
+      "assets/images/products/honeycomb/Portrait Honeycomb/12-Honeycomb.jpg",
+      "assets/images/products/honeycomb/Portrait Honeycomb/13-Honeycomb.jpg",
+      "assets/images/products/honeycomb/Portrait Honeycomb/14-Honeycomb.jpg",
+      "assets/images/products/honeycomb/Portrait Honeycomb/15-Honeycomb.jpg",
+      "assets/images/products/honeycomb/Portrait Honeycomb/16-Honeycomb.jpg",
+      "assets/images/products/honeycomb/Portrait Honeycomb/17-Honeycomb.jpg"
+    ],
+    "opacity_options": ["Light Filtering", "Room Darkening", "Blackout"],
+    "cell_structure": ["Single Cell", "Double Cell", "Triple Cell"],
+    "lift_options": ["SmartRise Cordless", "Top Down Bottom Up", "Motorized (ShadeAuto)", "Dual Shade with Frame"],
+    "features": ["500+ fabric options", "Superior energy insulation", "Award-winning cellular design", "Child-safe cordless available", "Top-down/bottom-up option"],
+    "manufacturer_url": "https://normanusa.com/product/portrait-honeycomb-shades/"
+  },
+  {
+    "name": "Vertical Honeycomb Shades",
+    "slug": "vertical-honeycomb",
+    "category": "honeycomb",
+    "description": "Vertical Honeycomb Shades bring cellular insulation to wide windows and patio doors. Fabric vanes stack neatly to the side for unobstructed views while providing the same energy efficiency as horizontal cellular shades.",
+    "images": [
+      "assets/images/products/honeycomb/Vertical Honeycomb/01-Vertical HC.jpg",
+      "assets/images/products/honeycomb/Vertical Honeycomb/02-Vertical HC.jpg",
+      "assets/images/products/honeycomb/Vertical Honeycomb/03-Vertical HC.jpg"
+    ],
+    "opacity_options": ["Light Filtering", "Room Darkening"],
+    "cell_structure": ["2¼\" Single Cell"],
+    "lift_options": ["Cord Draw", "Wand Rotation"],
+    "features": ["Ideal for large windows & patio doors", "Honeycomb cell insulation", "Smooth cord-draw operation", "Wand louver rotation", "Stacks neatly to the side"],
+    "manufacturer_url": "https://normanusa.com/product/portrait-honeycomb-shades/"
+  },
+  {
+    "name": "San Clemente Cordless Honeycomb",
+    "slug": "san-clemente-hc",
+    "category": "honeycomb",
+    "description": "The San Clemente Cordless Honeycomb offers effortless no-cord operation in a streamlined, contemporary profile. Where safety and simplicity come first, this cordless cellular shade delivers beautifully.",
+    "images": [
+      "assets/images/products/honeycomb/San Clemente HC/San Clemente cordless HC.jpg"
+    ],
+    "opacity_options": ["Light Filtering", "Room Darkening"],
+    "cell_structure": ["Single Cell"],
+    "lift_options": ["SmartRise Cordless"],
+    "features": ["No-cord safe operation", "Best for Kids certified", "One-touch lift", "Sleek contemporary profile", "Child & pet safe"],
+    "manufacturer_url": "https://normanusa.com/product/portrait-honeycomb-shades/"
+  },
+  {
+    "name": "Soluna Roller Shades",
+    "slug": "soluna-roller",
+    "category": "roller",
+    "description": "Soluna Roller Shades pair PrecisionLift cordless technology with an extensive fabric library ranging from sheer to blackout. Optional smart motorization and premium hardware make them a top choice for modern homes and commercial spaces.",
+    "images": [
+      "assets/images/products/soluna_roller/01-Soluna Roller.jpg",
+      "assets/images/products/soluna_roller/02-Soluna Roller.jpg",
+      "assets/images/products/soluna_roller/03-Soluna Roller.jpg",
+      "assets/images/products/soluna_roller/04-Soluna Roller.jpg",
+      "assets/images/products/soluna_roller/05-Soluna Roller.jpg",
+      "assets/images/products/soluna_roller/06-Soluna Roller.jpg",
+      "assets/images/products/soluna_roller/07-Soluna Roller.jpg",
+      "assets/images/products/soluna_roller/08-Soluna Roller.jpg",
+      "assets/images/products/soluna_roller/09-Soluna Roller-LG360.jpg",
+      "assets/images/products/soluna_roller/10-Soluna Roller_LG360.jpg",
+      "assets/images/products/soluna_roller/11-Soluna Roller_LightGuard.jpg",
+      "assets/images/products/soluna_roller/12-Soluna Roller_commercial.jpg",
+      "assets/images/products/soluna_roller/13-Soluna Roller_commercial.jpg",
+      "assets/images/products/soluna_roller/14-Norman Smart motorization-Roller.jpg",
+      "assets/images/products/soluna_roller/15-Norman Smart motorization-Roller-remote.jpg",
+      "assets/images/products/soluna_roller/16-Premium Hardware-Roller.jpg",
+      "assets/images/products/soluna_roller/17-Premium Hardware-Roller.jpg"
+    ],
+    "opacity_options": ["Sheer", "Light Filtering", "Room Darkening", "Blackout"],
+    "roll_type": ["Regular Roll", "Reverse Roll"],
+    "lift_options": ["PrecisionLift Cordless", "Motorized (ShadeAuto)", "SmartDial Remote", "Voice Control (Alexa & Google)"],
+    "features": ["PrecisionLift cordless technology", "LightGuard side channel option", "LG360 wrap option", "Premium hardware finishes", "Commercial grade available"],
+    "manufacturer_url": "https://normanusa.com/product/soluna-roller-shades/"
+  },
+  {
+    "name": "Centerpiece Roman Shades",
+    "slug": "centerpiece-roman",
+    "category": "roman",
+    "description": "Centerpiece Roman Shades combine luxury fabrics with award-winning engineering. Their crisp folds and tailored silhouette bring understated elegance to any room and matching pillow covers are available in most fabrics.",
+    "images": [
+      "assets/images/products/centerpiece_roman/01-Roman.jpg",
+      "assets/images/products/centerpiece_roman/02-Roman.jpg",
+      "assets/images/products/centerpiece_roman/03-Roman.jpg",
+      "assets/images/products/centerpiece_roman/04-Roman.jpg",
+      "assets/images/products/centerpiece_roman/05-Roman.jpg",
+      "assets/images/products/centerpiece_roman/06-Roman.jpg",
+      "assets/images/products/centerpiece_roman/07-Roman.jpg",
+      "assets/images/products/centerpiece_roman/08-Roman.jpg",
+      "assets/images/products/centerpiece_roman/09-Roman.jpg",
+      "assets/images/products/centerpiece_roman/10-Roman.jpg",
+      "assets/images/products/centerpiece_roman/11-Roman.jpg",
+      "assets/images/products/centerpiece_roman/12-Roman.jpg",
+      "assets/images/products/centerpiece_roman/13-Roman.jpg"
+    ],
+    "opacity_options": ["Light Filtering", "Room Darkening", "Blackout"],
+    "fold_styles": ["Flat Roman", "Hobbled Roman", "Relaxed Roman"],
+    "lift_options": ["Corded", "Cordless", "Motorized"],
+    "features": ["Award-winning design", "Curated luxury fabric collection", "Matching pillow covers available", "Crisp tailored folds", "Custom lining options"],
+    "manufacturer_url": "https://normanusa.com/product/centerpiece-roman-shades/"
+  },
+  {
+    "name": "PerfectSheer Shades",
+    "slug": "perfect-sheer",
+    "category": "sheer",
+    "description": "PerfectSheer Shades blend the elegance of sheer fabric with the privacy of a roller shade. Soft fabric vanes float between two layers of sheer, rotating open and closed for a beautiful, modern interplay of light and shadow.",
+    "images": [
+      "assets/images/products/perfect_sheer/01-PerfectSheer.jpg",
+      "assets/images/products/perfect_sheer/02-PerfectSheer.jpg",
+      "assets/images/products/perfect_sheer/03-PerfectSheer.jpg",
+      "assets/images/products/perfect_sheer/04-PerfectSheer.jpg",
+      "assets/images/products/perfect_sheer/05-PerfectSheer.jpg",
+      "assets/images/products/perfect_sheer/06-PerfectSheer.jpg",
+      "assets/images/products/perfect_sheer/07-PerfectSheer.jpg",
+      "assets/images/products/perfect_sheer/08-PerfectSheer.jpg"
+    ],
+    "opacity_options": ["Sheer (vanes open)", "Privacy (vanes closed)"],
+    "vane_width": ["2¾\"", "3\""],
+    "lift_options": ["Cordless", "Motorized (ShadeAuto)"],
+    "features": ["Floating fabric vane design", "Sheer elegance + privacy in one shade", "Soft interplay of light", "Modern architectural look", "Available without visible headrail"],
+    "manufacturer_url": "https://normanusa.com/product/perfectsheer-shades/"
+  }
+]

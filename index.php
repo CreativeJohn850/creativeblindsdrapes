@@ -15,10 +15,6 @@ require_once 'includes/header.php';
                 <div class="hero-content">
                     <h1>Transform Your Home with Custom Window Treatments</h1>
                     <p>Premium drapes and sheers. Professional design consultation and installation. Serving Aurora and surrounding communities.</p>
-                    <div class="hero-buttons">
-                        <a href="sheer-curtains.php" class="btn btn-primary">Sheers</a>
-                        <a href="drapes-curtains.php" class="btn btn-primary">Draperies</a>
-                    </div>
                 </div>
             </div>
         </div>

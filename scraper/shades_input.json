@@ -1,0 +1,44 @@
+[
+  {
+    "name": "Portrait Honeycomb Shades",
+    "slug": "portrait-honeycomb",
+    "category": "honeycomb",
+    "folder": "assets/images/products/honeycomb/Portrait Honeycomb",
+    "manufacturer_url": "https://normanusa.com/product/portrait-honeycomb-shades/"
+  },
+  {
+    "name": "Vertical Honeycomb Shades",
+    "slug": "vertical-honeycomb",
+    "category": "honeycomb",
+    "folder": "assets/images/products/honeycomb/Vertical Honeycomb",
+    "manufacturer_url": "https://normanusa.com/product/portrait-honeycomb-shades/"
+  },
+  {
+    "name": "San Clemente Cordless Honeycomb",
+    "slug": "san-clemente-hc",
+    "category": "honeycomb",
+    "folder": "assets/images/products/honeycomb/San Clemente HC",
+    "manufacturer_url": "https://normanusa.com/product/portrait-honeycomb-shades/"
+  },
+  {
+    "name": "Soluna Roller Shades",
+    "slug": "soluna-roller",
+    "category": "roller",
+    "folder": "assets/images/products/soluna_roller",
+    "manufacturer_url": "https://normanusa.com/product/soluna-roller-shades/"
+  },
+  {
+    "name": "Centerpiece Roman Shades",
+    "slug": "centerpiece-roman",
+    "category": "roman",
+    "folder": "assets/images/products/centerpiece_roman",
+    "manufacturer_url": "https://normanusa.com/product/centerpiece-roman-shades/"
+  },
+  {
+    "name": "PerfectSheer Shades",
+    "slug": "perfect-sheer",
+    "category": "sheer",
+    "folder": "assets/images/products/perfect_sheer",
+    "manufacturer_url": "https://normanusa.com/product/perfectsheer-shades/"
+  }
+]

@@ -1,0 +1,638 @@
+{
+  "info": {
+    "_postman_id": "lead-tracking-web-forms-api",
+    "name": "Lead Tracking System - Web Forms API",
+    "description": "Web Forms API collection for the Lead Tracking System. Includes public form submission endpoints and authenticated endpoints for viewing submissions.\n\n## Setup\n1. Import this collection\n2. Set base_url if not using the default (http://localhost:8000/api/v1)\n3. Run the Login request first — it sets an HttpOnly cookie used by the authenticated endpoints\n4. Public form submission endpoints do not require authentication",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    {
+      "key": "base_url",
+      "value": "https://cfinc.zapto.org/api/v1",
+      "type": "string"
+    },
+    {
+      "key": "username",
+      "value": "ThunderRollsHeavyStone",
+      "type": "string"
+    },
+    {
+      "key": "password",
+      "value": "sand.water.and.big.menu",
+      "type": "string"
+    }
+  ],
+  "item": [
+    {
+      "name": "Authentication",
+      "item": [
+        {
+          "name": "Login",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test('Status code is 200', function () {",
+                  "    pm.response.to.have.status(200);",
+                  "});",
+                  "",
+                  "pm.test('Response has user object', function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    pm.expect(jsonData).to.have.property('message');",
+                  "    pm.expect(jsonData).to.have.property('user');",
+                  "    pm.expect(jsonData.user).to.have.property('id');",
+                  "    pm.expect(jsonData.user).to.have.property('username');",
+                  "    pm.expect(jsonData.user).to.have.property('role');",
+                  "});",
+                  "",
+                  "pm.test('Auth cookie is set', function () {",
+                  "    var cookie = pm.cookies.get('lts_access_token');",
+                  "    pm.expect(cookie).to.not.be.undefined;",
+                  "});"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"username\": \"{{username}}\",\n  \"password\": \"{{password}}\"\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/auth/login",
+              "host": ["{{base_url}}"],
+              "path": ["auth", "login"]
+            },
+            "description": "Authenticate with username and password. Sets an HttpOnly JWT cookie (lts_access_token) on success. Rate limited to 2/minute."
+          },
+          "response": []
+        },
+        {
+          "name": "Get Current User",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test('Status code is 200', function () {",
+                  "    pm.response.to.have.status(200);",
+                  "});",
+                  "",
+                  "pm.test('Response has required fields', function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    pm.expect(jsonData).to.have.property('id');",
+                  "    pm.expect(jsonData).to.have.property('username');",
+                  "    pm.expect(jsonData).to.have.property('email');",
+                  "    pm.expect(jsonData).to.have.property('role');",
+                  "});"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/auth/me",
+              "host": ["{{base_url}}"],
+              "path": ["auth", "me"]
+            },
+            "description": "Get current authenticated user information. Requires valid auth cookie."
+          },
+          "response": []
+        },
+        {
+          "name": "Logout",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test('Status code is 200', function () {",
+                  "    pm.response.to.have.status(200);",
+                  "});",
+                  "",
+                  "pm.test('Response has logout message', function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    pm.expect(jsonData).to.have.property('message');",
+                  "});"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/auth/logout",
+              "host": ["{{base_url}}"],
+              "path": ["auth", "logout"]
+            },
+            "description": "Clear the auth cookie and log out."
+          },
+          "response": []
+        }
+      ],
+      "description": "Authentication endpoints. Login sets an HttpOnly JWT cookie used automatically by the authenticated web form endpoints."
+    },
+    {
+      "name": "Health Check",
+      "item": [
+        {
+          "name": "Health Check",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test('Status code is 200', function () {",
+                  "    pm.response.to.have.status(200);",
+                  "});",
+                  "",
+                  "pm.test('Status is healthy', function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    pm.expect(jsonData.status).to.equal('healthy');",
+                  "});"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "https://cfinc.zapto.org/health",
+              "host": ["https://cfinc.zapto.org"],
+              "path": ["health"]
+            },
+            "description": "Basic health check. No authentication required."
+          },
+          "response": []
+        },
+        {
+          "name": "System Status",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test('Status code is 200', function () {",
+                  "    pm.response.to.have.status(200);",
+                  "});",
+                  "",
+                  "pm.test('Response has status info', function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    pm.expect(jsonData).to.have.property('application');",
+                  "    pm.expect(jsonData).to.have.property('status');",
+                  "    pm.expect(jsonData).to.have.property('database');",
+                  "});"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/status",
+              "host": ["{{base_url}}"],
+              "path": ["status"]
+            },
+            "description": "Detailed system status with database connectivity. No authentication required."
+          },
+          "response": []
+        }
+      ],
+      "description": "Health check and system status endpoints. No authentication required."
+    },
+    {
+      "name": "Web Forms (Public)",
+      "item": [
+        {
+          "name": "Submit Question",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test('Status code is 200', function () {",
+                  "    pm.response.to.have.status(200);",
+                  "});",
+                  "",
+                  "pm.test('Response has success message', function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    pm.expect(jsonData.success).to.be.true;",
+                  "    pm.expect(jsonData).to.have.property('message');",
+                  "});"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"question\": \"What types of flooring do you offer?\",\n  \"zip\": \"60003\",\n  \"email\": \"visitor@example.com\",\n  \"data_consent\": true\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/web-forms/question",
+              "host": ["{{base_url}}"],
+              "path": ["web-forms", "question"]
+            },
+            "description": "Submit a question form from the public website. No authentication required. Rate limited to 5/minute."
+          },
+          "response": []
+        },
+        {
+          "name": "Submit Newsletter Signup",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test('Status code is 200', function () {",
+                  "    pm.response.to.have.status(200);",
+                  "});",
+                  "",
+                  "pm.test('Response has success message', function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    pm.expect(jsonData.success).to.be.true;",
+                  "    pm.expect(jsonData).to.have.property('message');",
+                  "});"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"full_name\": \"Jane Smith\",\n  \"zip\": \"60003\",\n  \"email\": \"jane.smith@example.com\",\n  \"data_consent\": true\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/web-forms/newsletter",
+              "host": ["{{base_url}}"],
+              "path": ["web-forms", "newsletter"]
+            },
+            "description": "Submit a newsletter signup form from the public website. No authentication required. Rate limited to 5/minute."
+          },
+          "response": []
+        },
+        {
+          "name": "Submit Contact Form (Full)",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test('Status code is 200', function () {",
+                  "    pm.response.to.have.status(200);",
+                  "});",
+                  "",
+                  "pm.test('Response has success message', function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    pm.expect(jsonData.success).to.be.true;",
+                  "    pm.expect(jsonData).to.have.property('message');",
+                  "});"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"first_name\": \"John\",\n  \"last_name\": \"Doe\",\n  \"email\": \"john.doe@example.com\",\n  \"phone\": \"555-123-4567\",\n  \"city\": \"Portland\",\n  \"zip\": \"60003\",\n  \"project\": \"hardwood\",\n  \"sqft\": \"1500\",\n  \"comment\": \"Looking for hardwood flooring installation\",\n  \"news_consent\": true,\n  \"data_consent\": true\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/web-forms/contact",
+              "host": ["{{base_url}}"],
+              "path": ["web-forms", "contact"]
+            },
+            "description": "Submit the full contact form (Contact1) from the public website. No authentication required. Rate limited to 5/minute."
+          },
+          "response": []
+        },
+        {
+          "name": "Submit Contact Form (Short)",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test('Status code is 200', function () {",
+                  "    pm.response.to.have.status(200);",
+                  "});",
+                  "",
+                  "pm.test('Response has success message', function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    pm.expect(jsonData.success).to.be.true;",
+                  "    pm.expect(jsonData).to.have.property('message');",
+                  "});"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"full_name\": \"Jane Smith\",\n  \"email\": \"jane.smith@example.com\",\n  \"phone\": \"555-987-6543\",\n  \"project\": \"tile\",\n  \"data_consent\": true\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/web-forms/contact-short",
+              "host": ["{{base_url}}"],
+              "path": ["web-forms", "contact-short"]
+            },
+            "description": "Submit the short contact form (Contact2) from the public website. No authentication required. Rate limited to 5/minute."
+          },
+          "response": []
+        }
+      ],
+      "description": "Public web form submission endpoints. No authentication required. All endpoints are rate limited (5 requests/minute per IP) and include honeypot bot protection."
+    },
+    {
+      "name": "Web Forms (Authenticated)",
+      "item": [
+        {
+          "name": "List Question Submissions",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test('Status code is 200', function () {",
+                  "    pm.response.to.have.status(200);",
+                  "});",
+                  "",
+                  "pm.test('Response has pagination', function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    pm.expect(jsonData).to.have.property('items');",
+                  "    pm.expect(jsonData).to.have.property('total');",
+                  "    pm.expect(jsonData).to.have.property('limit');",
+                  "    pm.expect(jsonData).to.have.property('offset');",
+                  "});"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/web-forms/questions?limit=50&offset=0&sort_by=created_at&sort_order=desc",
+              "host": ["{{base_url}}"],
+              "path": ["web-forms", "questions"],
+              "query": [
+                {
+                  "key": "limit",
+                  "value": "50"
+                },
+                {
+                  "key": "offset",
+                  "value": "0"
+                },
+                {
+                  "key": "sort_by",
+                  "value": "created_at"
+                },
+                {
+                  "key": "sort_order",
+                  "value": "desc"
+                },
+                {
+                  "key": "status",
+                  "value": "new",
+                  "disabled": true
+                },
+                {
+                  "key": "search",
+                  "value": "",
+                  "disabled": true
+                }
+              ]
+            },
+            "description": "List question form submissions with filtering and pagination. Requires authentication."
+          },
+          "response": []
+        },
+        {
+          "name": "Get Question Submission by ID",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/web-forms/questions/{{test_question_id}}",
+              "host": ["{{base_url}}"],
+              "path": ["web-forms", "questions", "{{test_question_id}}"]
+            },
+            "description": "Get a single question submission by ID. Requires authentication."
+          },
+          "response": []
+        },
+        {
+          "name": "List Newsletter Submissions",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test('Status code is 200', function () {",
+                  "    pm.response.to.have.status(200);",
+                  "});",
+                  "",
+                  "pm.test('Response has pagination', function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    pm.expect(jsonData).to.have.property('items');",
+                  "    pm.expect(jsonData).to.have.property('total');",
+                  "    pm.expect(jsonData).to.have.property('limit');",
+                  "    pm.expect(jsonData).to.have.property('offset');",
+                  "});"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/web-forms/newsletters?limit=50&offset=0&sort_by=created_at&sort_order=desc",
+              "host": ["{{base_url}}"],
+              "path": ["web-forms", "newsletters"],
+              "query": [
+                {
+                  "key": "limit",
+                  "value": "50"
+                },
+                {
+                  "key": "offset",
+                  "value": "0"
+                },
+                {
+                  "key": "sort_by",
+                  "value": "created_at"
+                },
+                {
+                  "key": "sort_order",
+                  "value": "desc"
+                },
+                {
+                  "key": "status",
+                  "value": "new",
+                  "disabled": true
+                },
+                {
+                  "key": "search",
+                  "value": "",
+                  "disabled": true
+                }
+              ]
+            },
+            "description": "List newsletter form submissions with filtering and pagination. Requires authentication."
+          },
+          "response": []
+        },
+        {
+          "name": "Get Newsletter Submission by ID",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/web-forms/newsletters/{{test_newsletter_id}}",
+              "host": ["{{base_url}}"],
+              "path": ["web-forms", "newsletters", "{{test_newsletter_id}}"]
+            },
+            "description": "Get a single newsletter submission by ID. Requires authentication."
+          },
+          "response": []
+        },
+        {
+          "name": "List Web Lead Submissions",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test('Status code is 200', function () {",
+                  "    pm.response.to.have.status(200);",
+                  "});",
+                  "",
+                  "pm.test('Response has pagination', function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    pm.expect(jsonData).to.have.property('items');",
+                  "    pm.expect(jsonData).to.have.property('total');",
+                  "    pm.expect(jsonData).to.have.property('limit');",
+                  "    pm.expect(jsonData).to.have.property('offset');",
+                  "});"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/web-forms/leads?limit=50&offset=0&sort_by=created_at&sort_order=desc",
+              "host": ["{{base_url}}"],
+              "path": ["web-forms", "leads"],
+              "query": [
+                {
+                  "key": "limit",
+                  "value": "50"
+                },
+                {
+                  "key": "offset",
+                  "value": "0"
+                },
+                {
+                  "key": "sort_by",
+                  "value": "created_at"
+                },
+                {
+                  "key": "sort_order",
+                  "value": "desc"
+                },
+                {
+                  "key": "status",
+                  "value": "new",
+                  "disabled": true
+                },
+                {
+                  "key": "form_type",
+                  "value": "contact1",
+                  "disabled": true
+                },
+                {
+                  "key": "search",
+                  "value": "",
+                  "disabled": true
+                }
+              ]
+            },
+            "description": "List contact form submissions (Contact1 and Contact2) with filtering and pagination. Requires authentication."
+          },
+          "response": []
+        },
+        {
+          "name": "Get Web Lead Submission by ID",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/web-forms/leads/{{test_web_lead_id}}",
+              "host": ["{{base_url}}"],
+              "path": ["web-forms", "leads", "{{test_web_lead_id}}"]
+            },
+            "description": "Get a single contact form submission by ID. Requires authentication."
+          },
+          "response": []
+        }
+      ],
+      "description": "Authenticated endpoints for viewing web form submissions. Requires login first (auth cookie)."
+    }
+  ]
+}

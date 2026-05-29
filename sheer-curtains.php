@@ -29,7 +29,7 @@ if (!empty($tuller_products)) {
     $page_schema_json = json_encode([
         '@context' => 'https://schema.org',
         '@type' => 'ItemList',
-        'name' => 'Custom Sheer Curtains — Adeko Tuller Collection',
+        'name' => 'Custom Sheer Curtains Adeko Tuller Collection',
         'description' => $meta_description,
         'numberOfItems' => count($tuller_products),
         'itemListElement' => $schema_items
@@ -80,11 +80,13 @@ function getPatternArrow($direction)
 <section style="padding: 60px 20px;">
     <div class="container">
 
+        <?php if (count($tuller_products) > 1): ?>
         <!-- Search/Filter Bar -->
         <div style="margin-bottom: 40px; max-width: 600px; margin-left: auto; margin-right: auto;">
             <input type="text" id="productSearch" placeholder="Search products by name..."
                 style="width: 100%; padding: 14px 20px; border: 2px solid var(--border-color); border-radius: 4px; font-size: 1rem; font-family: var(--font-primary);">
         </div>
+        <?php endif; ?>
 
         <!-- Tuller Tab Content -->
         <div class="tab-content active" id="tuller-content">
@@ -181,7 +183,8 @@ function getPatternArrow($direction)
     });
 
     // Search functionality
-    document.getElementById('productSearch').addEventListener('input', function (e) {
+    const searchInput = document.getElementById('productSearch');
+    if (searchInput) searchInput.addEventListener('input', function (e) {
         const searchTerm = e.target.value.toLowerCase();
         const activeTab = document.querySelector('.tab-content.active') || document.querySelector('.tab-content[style*="display: block"]');
         const products = activeTab.querySelectorAll('.product-card');

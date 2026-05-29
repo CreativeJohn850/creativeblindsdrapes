@@ -1,0 +1,148 @@
+[
+  {
+    "name": "Brightwood",
+    "slug": "brightwood",
+    "description": "Brightwood shutters combine the timeless beauty of real wood with exceptional craftsmanship. Available in a wide range of custom paint and stain options, these shutters bring natural warmth and elegance to any room.",
+    "images": [
+      "assets/images/products/shutters/Brightwood/01-BrightwoodShutter.jpg",
+      "assets/images/products/shutters/Brightwood/02-BrightwoodShutter.jpg",
+      "assets/images/products/shutters/Brightwood/03-BrightwoodShutter.jpg",
+      "assets/images/products/shutters/Brightwood/04-BrightwoodShutter.jpg",
+      "assets/images/products/shutters/Brightwood/05-BrightwoodShutter.jpg",
+      "assets/images/products/shutters/Brightwood/06-BrightwoodShutter.jpg",
+      "assets/images/products/shutters/Brightwood/07-BrightwoodShutter.jpg",
+      "assets/images/products/shutters/Brightwood/08-BrightwoodShutter.jpg"
+    ],
+    "colors": ["White", "Off-White", "Antique White", "Cotton", "Custom Paint (2000+ colors)", "Custom Stain (10 options)"],
+    "louver_sizes": ["2½\"", "3½\"", "4½\""],
+    "frames": ["Standard L-Frame", "Z-Frame", "Deco Frame"],
+    "control_options": ["Traditional Tilt Rod", "PerfectTilt"],
+    "features": ["Real basswood construction", "Smooth factory finish", "Custom paint & stain available", "Premium mortise & tenon joinery"],
+    "manufacturer_url": "https://normanusa.com/product/brightwood-shutters/"
+  },
+  {
+    "name": "Bypass Shutter",
+    "slug": "bypass-shutter",
+    "description": "Bypass shutters are the ideal solution for wide windows, patio doors, and closets. Panels glide along a track for full coverage and easy access without swinging open perfect where space is limited.",
+    "images": [
+      "assets/images/products/shutters/Bypass Shutter/Deco Bypass.jpg",
+      "assets/images/products/shutters/Bypass Shutter/Plain Bypass.jpg"
+    ],
+    "colors": ["White", "Off-White", "Antique White", "Bone"],
+    "louver_sizes": ["3½\"", "4½\""],
+    "frames": ["Bypass Track System (Deco)", "Bypass Track System (Plain)"],
+    "control_options": ["Traditional Tilt Rod", "Panel Slide"],
+    "features": ["Ideal for wide windows & patio doors", "Space-saving sliding design", "Multiple panel configurations", "Full light & privacy control"],
+    "manufacturer_url": "https://normanusa.com/product/bypass-shutters/"
+  },
+  {
+    "name": "Normandy",
+    "slug": "normandy",
+    "description": "Normandy shutters represent the pinnacle of Norman's wood shutter line. Crafted from the finest North American hardwood, they offer unmatched quality and a virtually unlimited palette of custom finishes.",
+    "images": [
+      "assets/images/products/shutters/Normandy/01-Normandy.jpg",
+      "assets/images/products/shutters/Normandy/02-Normandy.jpg",
+      "assets/images/products/shutters/Normandy/03-Normandy.jpg",
+      "assets/images/products/shutters/Normandy/04-Normandy.jpg",
+      "assets/images/products/shutters/Normandy/05-Normandy.jpg",
+      "assets/images/products/shutters/Normandy/06-Normandy.jpg",
+      "assets/images/products/shutters/Normandy/07-Normandy.jpg",
+      "assets/images/products/shutters/Normandy/08-Normandy.jpg",
+      "assets/images/products/shutters/Normandy/09-Normandy.jpg"
+    ],
+    "colors": ["White", "Off-White", "Antique White", "Bone", "Canvas", "Custom Paint (2000+ colors)", "Custom Stain (10 options)"],
+    "louver_sizes": ["2½\"", "3½\"", "4½\""],
+    "frames": ["Standard L-Frame", "Z-Frame", "Deco Frame", "Café Style"],
+    "control_options": ["Traditional Tilt Rod", "PerfectTilt"],
+    "features": ["Premium North American hardwood", "Widest louver options available", "2000+ custom paint colors", "10 custom stain options", "Café-style configuration available"],
+    "manufacturer_url": "https://normanusa.com/product/normandy-shutters/"
+  },
+  {
+    "name": "PerfectTilt",
+    "slug": "perfecttilt",
+    "description": "PerfectTilt is Norman's patented hidden-tilt technology. Louvers are controlled by a concealed mechanism no visible tilt rod delivering a clean, modern look with optional smart-home control via the Norman Hub.",
+    "images": [
+      "assets/images/products/shutters/PerfectTilt/Norman Hub-1.jpg",
+      "assets/images/products/shutters/PerfectTilt/Norman Hub-2.jpg",
+      "assets/images/products/shutters/PerfectTilt/Norman SmartDial remote control-1.jpg",
+      "assets/images/products/shutters/PerfectTilt/Norman SmartDial remote control-2.jpg"
+    ],
+    "colors": ["White", "Off-White", "Antique White"],
+    "louver_sizes": ["3½\"", "4½\""],
+    "frames": ["Standard L-Frame", "Z-Frame"],
+    "control_options": ["SmartDial Remote Control", "Norman Hub App Control", "Timer & Schedule", "Voice Control (Alexa & Google)", "Manual"],
+    "features": ["No visible tilt rod", "Patented hidden tilt mechanism", "Smart home compatible", "Works with Woodlore, Woodlore Plus & Normandy", "Motorized louver control"],
+    "manufacturer_url": "https://normanusa.com/product/perfecttilt/"
+  },
+  {
+    "name": "Specialty Shapes Shutter",
+    "slug": "specialty-shapes-shutter",
+    "description": "Specialty Shapes shutters are custom-crafted to fit arched, circular, triangular, and other non-rectangular windows. Every shutter is built to exact specifications for a perfect fit on even the most unique architectural details.",
+    "images": [
+      "assets/images/products/shutters/Specialty Shapes Shutter/01-Speciaity Shapes Shutter.jpg",
+      "assets/images/products/shutters/Specialty Shapes Shutter/02-Speciaity Shapes Shutter.jpg",
+      "assets/images/products/shutters/Specialty Shapes Shutter/03-Speciaity Shapes Shutter.jpg",
+      "assets/images/products/shutters/Specialty Shapes Shutter/04-Speciaity Shapes Shutter.jpg",
+      "assets/images/products/shutters/Specialty Shapes Shutter/05-Speciaity Shapes Shutter.jpg",
+      "assets/images/products/shutters/Specialty Shapes Shutter/06-Speciaity Shapes Shutter.jpg",
+      "assets/images/products/shutters/Specialty Shapes Shutter/07-Speciaity Shapes Shutter.jpg",
+      "assets/images/products/shutters/Specialty Shapes Shutter/08-Speciaity Shapes Shutter.jpg",
+      "assets/images/products/shutters/Specialty Shapes Shutter/09-Speciaity Shapes Shutter.jpg",
+      "assets/images/products/shutters/Specialty Shapes Shutter/10-Speciaity Shapes Shutter.jpg"
+    ],
+    "colors": ["White", "Off-White", "Antique White", "Custom Paint"],
+    "louver_sizes": ["2½\"", "3½\""],
+    "frames": ["Custom to Shape", "Arched Frame", "Angled Frame"],
+    "control_options": ["Traditional Tilt Rod", "Fixed Louver"],
+    "features": ["Arched & eyebrow windows", "Circular & octagon shapes", "Triangular & angled windows", "Custom-built to exact measurements", "Available in composite or wood"],
+    "manufacturer_url": "https://normanusa.com/product/specialty-shape-shutters/"
+  },
+  {
+    "name": "Woodlore",
+    "slug": "woodlore",
+    "description": "Norman's best-selling composite shutter, Woodlore offers the look of real wood with superior durability. Its moisture-resistant material makes it ideal for kitchens, bathrooms, and high-humidity environments.",
+    "images": [
+      "assets/images/products/shutters/Woodlore/01-Woodlore.jpg",
+      "assets/images/products/shutters/Woodlore/02-Woodlore.jpg",
+      "assets/images/products/shutters/Woodlore/03-Woodlore.jpg",
+      "assets/images/products/shutters/Woodlore/04-Woodlore.jpg",
+      "assets/images/products/shutters/Woodlore/05-Woodlore.jpg",
+      "assets/images/products/shutters/Woodlore/06-Woodlore.jpg",
+      "assets/images/products/shutters/Woodlore/07-Woodlore.jpg",
+      "assets/images/products/shutters/Woodlore/08-Woodlore.jpg",
+      "assets/images/products/shutters/Woodlore/09-Woodlore.jpg",
+      "assets/images/products/shutters/Woodlore/10-Woodlore.jpg",
+      "assets/images/products/shutters/Woodlore/11-Woodlore.jpg"
+    ],
+    "colors": ["White", "Off-White", "Antique White", "Bone", "Canvas"],
+    "louver_sizes": ["2½\"", "3½\"", "4½\""],
+    "frames": ["Standard L-Frame", "Z-Frame", "Deco Frame", "Café Style"],
+    "control_options": ["Traditional Tilt Rod", "PerfectTilt", "SmartDial"],
+    "features": ["Warp-proof composite material", "Moisture & humidity resistant", "Easy to clean", "Ideal for kitchens & bathrooms", "Energy efficient"],
+    "manufacturer_url": "https://normanusa.com/product/woodlore-shutters/"
+  },
+  {
+    "name": "Woodlore Plus",
+    "slug": "woodlore-plus",
+    "description": "Woodlore Plus elevates the classic Woodlore with a wider color palette, additional frame styles, and expanded configuration options. The durability of composite with more design flexibility for discerning homeowners.",
+    "images": [
+      "assets/images/products/shutters/Woodlore Plus/01-Woodlore Plus.jpg",
+      "assets/images/products/shutters/Woodlore Plus/02-Woodlore Plus.jpg",
+      "assets/images/products/shutters/Woodlore Plus/03-Woodlore Plus.jpg",
+      "assets/images/products/shutters/Woodlore Plus/04-Woodlore Plus.jpg",
+      "assets/images/products/shutters/Woodlore Plus/05-Woodlore Plus.jpg",
+      "assets/images/products/shutters/Woodlore Plus/06-Woodlore Plus.jpg",
+      "assets/images/products/shutters/Woodlore Plus/07-Woodlore Plus.jpg",
+      "assets/images/products/shutters/Woodlore Plus/08-Woodlore Plus.jpg",
+      "assets/images/products/shutters/Woodlore Plus/09-Woodlore Plus.jpg",
+      "assets/images/products/shutters/Woodlore Plus/10-Woodlore Plus.jpg",
+      "assets/images/products/shutters/Woodlore Plus/11-Woodlore Plus.jpg"
+    ],
+    "colors": ["White", "Off-White", "Antique White", "Linen", "Parchment", "Cream", "Bone", "Canvas"],
+    "louver_sizes": ["2½\"", "3½\"", "4½\""],
+    "frames": ["Standard L-Frame", "Z-Frame", "Deco Frame", "Bypass", "Bi-fold", "Café Style"],
+    "control_options": ["Traditional Tilt Rod", "PerfectTilt", "SmartDial", "Norman Hub App Control"],
+    "features": ["Expanded 8-color palette", "Bi-fold & bypass configurations", "Warp-proof composite", "Moisture resistant", "Smart home ready"],
+    "manufacturer_url": "https://normanusa.com/product/woodlore-plus-shutters/"
+  }
+]

@@ -20,8 +20,10 @@
                 <div class="footer-col">
                     <h4>Products</h4>
                     <ul class="footer-links">
-                        <li><a href="drapes-curtains.php">Drapes Curtains</a></li>
-                        <li><a href="sheer-curtains.php">Sheer Curtains</a></li>
+                        <li><a href="shutters.php">Shutters</a></li>
+                        <li><a href="blinds.php">Blinds</a></li>
+                        <li><a href="shades.php">Shades</a></li>
+                        <li><a href="curtains.php">Curtains</a></li>
                     </ul>
                 </div>
 

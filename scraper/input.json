@@ -1,0 +1,37 @@
+[
+  {
+    "name": "Brightwood",
+    "folder": "assets/images/products/shutters/Brightwood",
+    "manufacturer_url": "https://normanusa.com/product/brightwood-shutters/"
+  },
+  {
+    "name": "Bypass Shutter",
+    "folder": "assets/images/products/shutters/Bypass Shutter",
+    "manufacturer_url": "https://normanusa.com/product/bypass-shutters/"
+  },
+  {
+    "name": "Normandy",
+    "folder": "assets/images/products/shutters/Normandy",
+    "manufacturer_url": "https://normanusa.com/product/normandy-shutters/"
+  },
+  {
+    "name": "PerfectTilt",
+    "folder": "assets/images/products/shutters/PerfectTilt",
+    "manufacturer_url": "https://normanusa.com/product/perfecttilt/"
+  },
+  {
+    "name": "Specialty Shapes Shutter",
+    "folder": "assets/images/products/shutters/Specialty Shapes Shutter",
+    "manufacturer_url": "https://normanusa.com/product/specialty-shape-shutters/"
+  },
+  {
+    "name": "Woodlore",
+    "folder": "assets/images/products/shutters/Woodlore",
+    "manufacturer_url": "https://normanusa.com/product/woodlore-shutters/"
+  },
+  {
+    "name": "Woodlore Plus",
+    "folder": "assets/images/products/shutters/Woodlore Plus",
+    "manufacturer_url": "https://normanusa.com/product/woodlore-plus-shutters/"
+  }
+]
