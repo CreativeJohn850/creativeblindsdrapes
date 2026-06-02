@@ -41,7 +41,7 @@ if (!empty($blinds_products)) {
     $page_schema_json = json_encode([
         '@context' => 'https://schema.org',
         '@type' => 'ItemList',
-        'name' => 'Custom Window Blinds — Norman Window Fashions Collection',
+        'name' => 'Custom Window Blinds  Norman Window Fashions Collection',
         'description' => $meta_description,
         'numberOfItems' => count($blinds_products),
         'itemListElement' => $schema_items
@@ -74,7 +74,7 @@ if (!function_exists('thumbPath')) {
     style="color: white; padding: 60px 20px; text-align: center;">
     <div class="container">
         <h1 style="color: white; margin-bottom: 15px;">Custom Window Blinds</h1>
-        <p style="font-size: 1.2rem; color: rgba(255,255,255,0.95); max-width: 700px; margin: 0 auto;">Premium horizontal and vertical blinds by Norman Window Fashions. Faux wood, real wood, aluminum, and more — for every room and every style.</p>
+        <p style="font-size: 1.2rem; color: rgba(255,255,255,0.95); max-width: 700px; margin: 0 auto;">Premium horizontal and vertical blinds by Norman Window Fashions. Faux wood, real wood, aluminum, and more for every room and every style.</p>
     </div>
 </section>
 
