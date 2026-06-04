@@ -41,8 +41,7 @@ require_once 'includes/header.php';
         
         <div style="display: flex; gap: 15px; justify-content: center; flex-wrap: wrap; margin-bottom: 30px;">
             <a href="index.php" class="btn btn-primary">Return to Homepage</a>
-            <a href="drapes-curtains.php" class="btn btn-secondary">Browse Drapes</a>
-            <a href="sheer-curtains.php" class="btn btn-secondary">Browse Sheers</a>
+            <a href="curtains.php" class="btn btn-secondary">Browse Curtains</a>
         </div>
         
         <p style="color: var(--text-gray); font-size: 0.95rem;">

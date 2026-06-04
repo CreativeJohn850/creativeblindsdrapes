@@ -38,7 +38,7 @@ require_once 'includes/header.php';
                 <a href="about.php" class="btn btn-primary">Learn More About Us</a>
             </div>
             <div>
-                <img src="assets/images/showroom/showroom-right.jpeg" alt="Creative Blinds & Drapes Showroom in Aurora, IL" style="border-radius: 8px; box-shadow: 0 4px 20px rgba(0,0,0,0.1);">
+                <img src="assets/images/showroom/displays-cfa.jpeg" alt="Creative Blinds & Drapes Showroom in Aurora, IL" style="border-radius: 8px; box-shadow: 0 4px 20px rgba(0,0,0,0.1);">
             </div>
         </div>
     </div>

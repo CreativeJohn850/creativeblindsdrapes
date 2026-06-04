@@ -6,12 +6,22 @@
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://creativeblindsdrapes.com/drapes-curtains.php</loc>
+    <loc>https://creativeblindsdrapes.com/shutters.php</loc>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://creativeblindsdrapes.com/sheer-curtains.php</loc>
+    <loc>https://creativeblindsdrapes.com/blinds.php</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://creativeblindsdrapes.com/shades.php</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://creativeblindsdrapes.com/curtains.php</loc>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>

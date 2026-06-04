@@ -11,7 +11,7 @@ $current_page = basename($_SERVER['PHP_SELF']);
 $canonical_url = ($current_page === 'index.php')
     ? SITE_URL . '/'
     : SITE_URL . '/' . $current_page;
-$og_image = SITE_URL . '/assets/images/showroom/showroom-right.jpeg';
+$og_image = SITE_URL . '/assets/images/showroom/displays-cfa.jpeg';
 
 $local_business_schema = [
     '@context' => 'https://schema.org',
@@ -162,7 +162,7 @@ $local_business_schema = [
                             <li><a href="shutters.php" class="<?php echo ($current_page == 'shutters.php') ? 'active' : ''; ?>">Shutters</a></li>
                             <li><a href="blinds.php" class="<?php echo ($current_page == 'blinds.php') ? 'active' : ''; ?>">Blinds</a></li>
                             <li><a href="shades.php" class="<?php echo ($current_page == 'shades.php') ? 'active' : ''; ?>">Shades</a></li>
-                            <li><a href="curtains.php" class="<?php echo in_array($current_page, ['curtains.php', 'drapes-curtains.php', 'sheer-curtains.php']) ? 'active' : ''; ?>">Curtains</a></li>
+                            <li><a href="curtains.php" class="<?php echo $current_page == 'curtains.php' ? 'active' : ''; ?>">Curtains</a></li>
                             <!-- <li><a href="gallery.php" class="<?php echo ($current_page == 'gallery.php') ? 'active' : ''; ?>">Gallery</a></li> -->
                             <li><a href="contact.php" class="<?php echo ($current_page == 'contact.php') ? 'active' : ''; ?>">Contact</a></li>
                         </ul>
