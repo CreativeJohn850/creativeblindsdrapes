@@ -2,42 +2,34 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://creativeblindsdrapes.com/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <lastmod>2026-06-02</lastmod>
   </url>
   <url>
     <loc>https://creativeblindsdrapes.com/shutters.php</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
+    <lastmod>2026-05-29</lastmod>
   </url>
   <url>
     <loc>https://creativeblindsdrapes.com/blinds.php</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
+    <lastmod>2026-05-29</lastmod>
   </url>
   <url>
     <loc>https://creativeblindsdrapes.com/shades.php</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
+    <lastmod>2026-05-29</lastmod>
   </url>
   <url>
     <loc>https://creativeblindsdrapes.com/curtains.php</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
+    <lastmod>2026-05-29</lastmod>
   </url>
   <url>
     <loc>https://creativeblindsdrapes.com/curtain-hardware.php</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <lastmod>2026-04-27</lastmod>
   </url>
   <url>
     <loc>https://creativeblindsdrapes.com/about.php</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <lastmod>2026-06-02</lastmod>
   </url>
   <url>
     <loc>https://creativeblindsdrapes.com/contact.php</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <lastmod>2026-05-15</lastmod>
   </url>
 </urlset>
