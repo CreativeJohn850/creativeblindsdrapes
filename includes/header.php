@@ -165,12 +165,19 @@ $local_business_schema = [
                             <li><a href="curtains.php" class="<?php echo $current_page == 'curtains.php' ? 'active' : ''; ?>">Curtains</a></li>
                             <!-- <li><a href="gallery.php" class="<?php echo ($current_page == 'gallery.php') ? 'active' : ''; ?>">Gallery</a></li> -->
                             <li><a href="contact.php" class="<?php echo ($current_page == 'contact.php') ? 'active' : ''; ?>">Contact</a></li>
+                            <li class="nav-cta-item">
+                                <button type="button" id="cqTrigger" class="btn btn-primary cq-trigger-btn"
+                                        aria-expanded="false" aria-controls="cqPanel">
+                                    Get Free Quote
+                                </button>
+                            </li>
                         </ul>
                     </nav>
                 </div>
             </div>
         </div>
     </header>
+    <?php include __DIR__ . '/compact-form.php'; ?>
 
     <!-- Main Content Start -->
     <main class="main-content"></main>

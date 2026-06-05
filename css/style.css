@@ -949,3 +949,186 @@ section.bg-light {
 .mb-3 { margin-bottom: 3rem; }
 
 .hidden { display: none; }
+
+/* === COMPACT QUOTE PANEL === */
+.nav-cta-item {
+    margin-left: 6px;
+}
+
+.cq-trigger-btn {
+    font-size: 0.88rem;
+    padding: 9px 20px;
+    border-radius: 4px;
+    white-space: nowrap;
+    line-height: 1.3;
+}
+
+.cq-panel {
+    position: fixed;
+    top: 0; /* overridden by JS on open */
+    left: 0;
+    right: 0;
+    z-index: 999;
+    background-color: var(--warm-cream);
+    border-top: 1px solid var(--warm-beige);
+    border-bottom: 3px solid var(--primary-teal);
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.35s ease, box-shadow 0.35s ease;
+}
+
+.cq-panel.open {
+    max-height: 560px; /* fallback if JS hasn't run; JS overrides via inline style */
+    overflow-y: auto;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+}
+
+.cq-panel-inner {
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 20px 20px 24px;
+}
+
+.cq-title {
+    font-family: var(--font-headings);
+    font-size: 1.15rem;
+    color: var(--text-dark);
+    font-weight: 600;
+    margin: 0 0 14px;
+}
+
+.cq-row {
+    display: flex;
+    gap: 14px;
+    margin-bottom: 12px;
+    flex-wrap: wrap;
+}
+
+.cq-field {
+    flex: 1;
+    min-width: 160px;
+}
+
+.cq-field input,
+.cq-field select {
+    width: 100%;
+    padding: 10px 14px;
+    border: 1.5px solid var(--border-color);
+    border-radius: 4px;
+    font-family: var(--font-primary);
+    font-size: 0.92rem;
+    color: var(--text-dark);
+    background: var(--white);
+    transition: border-color 0.2s;
+    box-sizing: border-box;
+    appearance: auto;
+}
+
+.cq-field input:focus,
+.cq-field select:focus {
+    outline: none;
+    border-color: var(--primary-teal);
+    box-shadow: 0 0 0 2px rgba(122, 189, 60, 0.15);
+}
+
+.cq-field input::placeholder {
+    color: #999;
+}
+
+.cq-bottom-row {
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.cq-consent {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.87rem;
+    color: var(--text-gray);
+    cursor: pointer;
+    flex: 1;
+    min-width: 200px;
+}
+
+.cq-consent input[type="checkbox"] {
+    width: 16px;
+    height: 16px;
+    flex-shrink: 0;
+    accent-color: var(--primary-teal);
+    cursor: pointer;
+}
+
+.cq-submit {
+    padding: 10px 28px;
+    font-size: 0.92rem;
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.cq-msg {
+    font-size: 0.9rem;
+    font-weight: 500;
+    margin-top: 4px;
+    min-height: 20px;
+}
+
+.cq-msg.success { color: var(--primary-teal-dark); }
+.cq-msg.error   { color: #c0392b; }
+
+.cq-field--zip {
+    max-width: 160px;
+}
+
+.cq-zip-hint {
+    display: block;
+    font-size: 0.78rem;
+    margin-top: 4px;
+    min-height: 16px;
+    line-height: 1.3;
+}
+
+.cq-zip-hint--error { color: #c0392b; }
+.cq-zip-hint--warn  { color: #b07d00; }
+
+@media (max-width: 768px) {
+    /* In the mobile nav drawer the trigger must look like the other nav items */
+    .nav-cta-item {
+        margin-left: 0;
+    }
+
+    .cq-trigger-btn {
+        display: block;
+        width: 100%;
+        margin: 0;
+        padding: 15px 10px;
+        border-radius: 0;
+        font-size: 0.95rem;
+        text-align: left;
+        white-space: normal;
+    }
+
+    .cq-panel-inner {
+        padding: 16px 16px 20px;
+    }
+
+    .cq-row {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .cq-field {
+        min-width: 100%;
+    }
+
+    .cq-bottom-row {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+    }
+
+    .cq-submit {
+        width: 100%;
+        text-align: center;
+    }
+}
