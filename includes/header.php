@@ -98,10 +98,10 @@ $local_business_schema = [
     <link rel="stylesheet" href="css/style.css">
 
     <!-- Favicon -->
-    <link rel="icon" type="image/png" sizes="32x32" href="assets/images/logo/cd-icon-h.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="assets/images/logo/cd-icon-h.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="assets/images/logo/cd-icon.png">
-    <link rel="shortcut icon" href="assets/images/logo/cd-icon-h.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/images/logo/cd-icon-round.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/images/logo/cd-icon-round.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/images/logo/cd-icon-round.png">
+    <link rel="shortcut icon" href="assets/images/logo/cd-icon-round.png">
 
     <!-- LocalBusiness Schema -->
     <script

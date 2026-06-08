@@ -4,6 +4,9 @@ $page_title = 'Thank You - Request Received';
 $noindex = true;
 $meta_description = 'Thank you for contacting Creative Blinds & Drapes. We\'ll be in touch within 24 hours to schedule your free consultation.';
 
+$visitor_name  = htmlspecialchars(trim($_GET['name']  ?? ''), ENT_QUOTES, 'UTF-8');
+$visitor_email = htmlspecialchars(trim($_GET['email'] ?? ''), ENT_QUOTES, 'UTF-8');
+
 // Include header
 require_once 'includes/header.php';
 ?>
@@ -16,9 +19,9 @@ require_once 'includes/header.php';
         
         <h1 style="color: var(--primary-teal); margin-bottom: 20px;">Thank You!</h1>
         <h2 style="font-size: 1.5rem; font-weight: 400; color: var(--text-dark); margin-bottom: 25px;">Your request has been received.</h2>
-        
+
         <p style="font-size: 1.1rem; color: var(--text-gray); margin-bottom: 30px; line-height: 1.8;">
-            We appreciate you contacting <strong><?php echo SITE_NAME; ?></strong>. One of our window treatment experts will reach out to you within 24 hours to schedule your free in-home consultation.
+            <?php if ($visitor_name !== ''): ?><strong><?php echo $visitor_name; ?></strong>, <?php endif; ?>we appreciate you contacting <strong><?php echo SITE_NAME; ?></strong>. One of our window treatment experts will reach out to you within 24 hours to schedule your free in-home consultation.
         </p>
         
         <div style="background: var(--warm-cream); padding: 30px; border-radius: 8px; margin-bottom: 40px;">
@@ -26,7 +29,7 @@ require_once 'includes/header.php';
             <div style="text-align: left; max-width: 500px; margin: 0 auto;">
                 <div style="display: flex; gap: 15px; margin-bottom: 15px;">
                     <span style="color: var(--primary-teal); font-size: 1.5rem; font-weight: bold;">1</span>
-                    <p style="margin: 0;">We'll call or email you within 24 hours to confirm your request</p>
+                    <p style="margin: 0;">We'll call or email you<?php if ($visitor_email !== ''): ?> (at <strong><?php echo $visitor_email; ?></strong>)<?php endif; ?> within 24 hours to confirm your request</p>
                 </div>
                 <div style="display: flex; gap: 15px; margin-bottom: 15px;">
                     <span style="color: var(--primary-teal); font-size: 1.5rem; font-weight: bold;">2</span>

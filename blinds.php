@@ -132,7 +132,7 @@ if (!function_exists('thumbPath')) {
                                 </h3>
 
                                 <p style="font-size: 0.88rem; color: var(--text-gray); margin-bottom: 14px; line-height: 1.6;">
-                                    <?php echo htmlspecialchars(mb_strimwidth($product['description'], 0, 110, '...')); ?>
+                                    <?php echo htmlspecialchars($product['description']); ?>
                                 </p>
 
                                 <div class="product-specs"

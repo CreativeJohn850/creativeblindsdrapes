@@ -254,8 +254,10 @@ require_once 'includes/header.php';
             if (result.success) {
                 // Fire GTM conversion event
                 window.dataLayer = window.dataLayer || [];
-                // Redirect to thank you page
-                window.location.href = 'thank-you.php';
+                // Redirect to thank you page with name and email for personalization
+                const name  = encodeURIComponent(document.getElementById('name').value.trim());
+                const email = encodeURIComponent(document.getElementById('email').value.trim());
+                window.location.href = 'thank-you.php?name=' + name + '&email=' + email;
             } else {
                 // Show error message
                 formMessage.style.display = 'block';

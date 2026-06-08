@@ -165,7 +165,7 @@ document.addEventListener('DOMContentLoaded', function () {
         // Honeypot — silent fake success if bot filled the hidden field
         if (document.getElementById('cqHoneypot').value) {
             window.location.href = 'thank-you.php';
-            return;
+            return; // no params — bots don't deserve a personalized page
         }
 
         // Client-side ZIP validation before hitting the server
@@ -202,7 +202,9 @@ document.addEventListener('DOMContentLoaded', function () {
             const data = await res.json();
 
             if (data.success) {
-                window.location.href = 'thank-you.php';
+                const name  = encodeURIComponent(document.getElementById('cqName').value.trim());
+                const email = encodeURIComponent(document.getElementById('cqEmail').value.trim());
+                window.location.href = 'thank-you.php?name=' + name + '&email=' + email;
             } else {
                 showMsg('error', data.message || 'Something went wrong. Please try again.');
                 submitBtn.disabled = false;
