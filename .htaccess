@@ -1,0 +1,9 @@
+RewriteEngine On
+
+# Redirect www → non-www (canonical: creativeblindsdrapes.com)
+RewriteCond %{HTTP_HOST} ^www\.creativeblindsdrapes\.com [NC]
+RewriteRule ^ https://creativeblindsdrapes.com%{REQUEST_URI} [L,R=301]
+
+# Redirect HTTP → HTTPS
+RewriteCond %{HTTPS} off
+RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]

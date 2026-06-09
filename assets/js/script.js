@@ -228,19 +228,17 @@ document.addEventListener('DOMContentLoaded', function() {
     const slides = document.querySelectorAll('.hero-slide');
     const dots = document.querySelectorAll('.slider-dot');
     
-    if (slides.length === 0) return; // Exit if no slider on page
-    
+    if (slides.length <= 1) return; // Exit if no slider or only one slide on page
+
     let currentSlide = 0;
     const slideInterval = 5000; // 5 seconds
-    
+
     function showSlide(index) {
-        // Remove active from all
         slides.forEach(slide => slide.classList.remove('active'));
         dots.forEach(dot => dot.classList.remove('active'));
-        
-        // Add active to current
+
         slides[index].classList.add('active');
-        dots[index].classList.add('active');
+        if (dots[index]) dots[index].classList.add('active');
     }
     
     function nextSlide() {
