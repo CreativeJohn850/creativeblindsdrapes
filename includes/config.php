@@ -9,8 +9,8 @@ define('BUSINESS_HOURS', 'Mon-Fri: 9am - 6pm, Sat: 10am - 1pm, Sun: Closed');
 define('BUSINESS_HOURS_ML', 'Mon-Fri: 9am - 6pm<br>Sat: 10am - 1pm<br>Sun: Closed');
 
 // Social Media (optional - add links later)
-define('FACEBOOK_URL', '#');
-define('INSTAGRAM_URL', '#');
+define('FACEBOOK_URL', 'https://www.facebook.com/CreativeBlindsDrapes');
+define('INSTAGRAM_URL', 'https://www.instagram.com/creative_blindsdrapes');
 
 // Default Page Title
 define('DEFAULT_TITLE', 'Custom Drapes, Blinds & Shutters in Aurora, IL');
