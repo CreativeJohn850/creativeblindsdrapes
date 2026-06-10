@@ -1,7 +1,7 @@
 <?php
 // Page-specific variables
 $page_title = 'About Us';
-$meta_description = 'Learn about Creative Blinds & Drapes in Aurora, IL  a sister company of Creative Floors Inc. with 23+ years of experience. Expert in-home consultation and professional installation.';
+$meta_description = 'Creative Blinds & Drapes in Aurora, IL. Sister company of Creative Floors with 23+ years of experience. Expert in-home consultation and installation.';
 
 // Include header
 require_once 'includes/header.php';

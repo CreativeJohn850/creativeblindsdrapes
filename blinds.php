@@ -2,7 +2,7 @@
 require_once 'includes/config.php';
 
 $page_title = 'Custom Window Blinds';
-$meta_description = 'Browse premium horizontal and vertical blinds by Norman Window Fashions. Faux wood, real wood, aluminum, and vertical options for Aurora, IL homes. Free in-home consultation.';
+$meta_description = 'Browse premium horizontal and vertical blinds by Norman Window Fashions. Faux wood, real wood, aluminum, vertical options for Aurora, IL. Free consultation.';
 
 $blinds_json = file_get_contents('data/blinds.json');
 $blinds_products = json_decode($blinds_json, true);

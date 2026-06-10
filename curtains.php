@@ -2,7 +2,7 @@
 require_once 'includes/config.php';
 
 $page_title = 'Custom Curtains & Drapes';
-$meta_description = 'Browse 70+ premium drapery fabrics and 50+ sheer curtain options. Elegant custom curtains and drapes for Aurora, IL homes. Professional design consultation and installation.';
+$meta_description = 'Browse 70+ premium drapery fabrics and 50+ sheer options. Elegant custom curtains and drapes for Aurora, IL homes. Free design consultation.';
 
 $fonluk_json = file_get_contents('data/fonluk.json');
 $fonluk_products = json_decode($fonluk_json, true);

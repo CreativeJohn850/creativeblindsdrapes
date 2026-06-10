@@ -2,7 +2,7 @@
 require_once 'includes/config.php';
 
 $page_title = 'Custom Window Shades';
-$meta_description = 'Browse premium honeycomb, roller, roman, and sheer shades by Norman Window Fashions. Energy-efficient and stylish window shades for Aurora, IL homes. Free in-home consultation.';
+$meta_description = 'Browse honeycomb, roller, roman, and sheer shades by Norman Window Fashions. Energy-efficient window shades for Aurora, IL homes. Free in-home consultation.';
 
 $shades_json = file_get_contents('data/shades.json');
 $shades_products = json_decode($shades_json, true);

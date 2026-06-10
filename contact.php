@@ -1,7 +1,7 @@
 <?php
 // Page-specific variables
 $page_title = 'Contact Us - Get Your Free Quote';
-$meta_description = 'Contact Creative Blinds & Drapes in Aurora, IL. Get a free consultation for custom drapes, blinds, and shutters. Call (630) 946-1406 or visit our showroom at 850 S Frontenac Street.';
+$meta_description = 'Contact Creative Blinds & Drapes in Aurora, IL. Free consultation for custom drapes, blinds & shutters. Call (630) 946-1406 or visit our showroom.';
 
 // Include header
 require_once 'includes/header.php';
