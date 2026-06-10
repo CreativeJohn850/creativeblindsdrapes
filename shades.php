@@ -84,7 +84,7 @@ if (!function_exists('thumbPath')) {
 <section class="page-header page-header-bg"
     style="color: white; padding: 60px 20px; text-align: center;">
     <div class="container">
-        <h1 style="color: white; margin-bottom: 15px;">Custom Window Shades</h1>
+        <h1 style="color: white; margin-bottom: 15px;">Custom Window Shades in Aurora, IL</h1>
         <p style="font-size: 1.2rem; color: rgba(255,255,255,0.95); max-width: 700px; margin: 0 auto;">Energy-efficient honeycomb, sleek roller, elegant roman, and modern sheer shades by Norman Window Fashions  for every window in your home.</p>
     </div>
 </section>

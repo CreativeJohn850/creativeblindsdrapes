@@ -67,7 +67,7 @@ function thumbPath($path) {
 <section class="page-header page-header-bg"
     style="color: white; padding: 60px 20px; text-align: center;">
     <div class="container">
-        <h1 style="color: white; margin-bottom: 15px;">Custom Window Shutters</h1>
+        <h1 style="color: white; margin-bottom: 15px;">Custom Window Shutters in Aurora, IL</h1>
         <p style="font-size: 1.2rem; color: rgba(255,255,255,0.95); max-width: 700px; margin: 0 auto;">Premium shutter collections by Norman Window Fashions. Composite, wood, and specialty shapes for every window in your home.</p>
     </div>
 </section>

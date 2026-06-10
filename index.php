@@ -15,7 +15,7 @@ require_once 'includes/header.php';
         <div class="hero-overlay">
             <div class="container">
                 <div class="hero-content">
-                    <h1>Transform Your Home with Custom Window Treatments</h1>
+                    <h1>Custom Blinds, Shades &amp; Drapes in Aurora, IL</h1>
                     <p>Premium drapes and sheers. Professional design consultation and installation. Serving Aurora and surrounding communities.</p>
                 </div>
             </div>

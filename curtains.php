@@ -100,7 +100,7 @@ function getPatternArrow($direction)
 <section class="page-header page-header-bg"
     style="color: white; padding: 60px 20px; text-align: center;">
     <div class="container">
-        <h1 style="color: white; margin-bottom: 15px;">Custom Curtains &amp; Drapes</h1>
+        <h1 style="color: white; margin-bottom: 15px;">Custom Curtains &amp; Drapes in Aurora, IL</h1>
         <p style="font-size: 1.2rem; color: rgba(255,255,255,0.95); max-width: 700px; margin: 0 auto;">
             Over 70 premium drapery fabrics and 50+ sheer options for elegant windows in every room.
         </p>

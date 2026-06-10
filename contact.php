@@ -11,7 +11,7 @@ require_once 'includes/header.php';
 <section class="page-header"
     style="background: linear-gradient(135deg, var(--primary-teal) 0%, var(--primary-teal-dark) 100%); color: white; padding: 60px 20px; text-align: center;">
     <div class="container">
-        <h1 style="color: white; margin-bottom: 15px;">Contact Us</h1>
+        <h1 style="color: white; margin-bottom: 15px;">Contact Creative Blinds &amp; Drapes in Aurora, IL</h1>
         <p style="font-size: 1.2rem; color: rgba(255,255,255,0.95); max-width: 700px; margin: 0 auto;">Get your free
             consultation today. We're here to help transform your windows!</p>
     </div>
