@@ -50,6 +50,9 @@ if (!empty($shades_products)) {
     ], JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE);
 }
 
+$lcp_image        = 'assets/products/honeycomb/Portrait Honeycomb/01-Honeycomb.jpg';
+$lcp_image_mobile = 'assets/products/honeycomb/Portrait Honeycomb/01-Honeycomb_m.webp';
+
 require_once 'includes/header.php';
 
 if (!function_exists('encodeImagePath')) {
@@ -70,6 +73,12 @@ if (!function_exists('thumbPath')) {
                       url('<?php echo encodeImagePath('assets/products/honeycomb/Portrait Honeycomb/01-Honeycomb.jpg'); ?>');
     background-size: cover;
     background-position: center;
+}
+@media (max-width: 991px) {
+    .page-header-bg {
+        background-image: linear-gradient(rgba(63,61,61,0.52), rgba(63,61,61,0.52)),
+                          url('<?php echo encodeImagePath('assets/products/honeycomb/Portrait Honeycomb/01-Honeycomb_m.webp'); ?>');
+    }
 }
 </style>
 <section class="page-header page-header-bg"

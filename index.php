@@ -3,6 +3,8 @@
 $page_title = 'Custom Drapes, Blinds & Shutters';
 $meta_description = 'Transform your Aurora home with premium window treatments from Creative Blinds & Drapes. Custom drapes, blinds, shutters & shades. Free consultation!';
 
+$lcp_image = 'assets/images/carousel/adeko-2-1.jpg';
+
 // Include header
 require_once 'includes/header.php';
 ?>

@@ -103,6 +103,14 @@ $local_business_schema = [
     <link rel="apple-touch-icon" sizes="180x180" href="assets/images/logo/cd-icon-round.png">
     <link rel="shortcut icon" href="assets/images/logo/cd-icon-round.png">
 
+    <!-- LCP hero image preload -->
+    <?php if (!empty($lcp_image_mobile)): ?>
+        <link rel="preload" as="image" href="<?php echo htmlspecialchars($lcp_image_mobile); ?>" media="(max-width: 991px)">
+        <link rel="preload" as="image" href="<?php echo htmlspecialchars($lcp_image); ?>" media="(min-width: 992px)">
+    <?php elseif (!empty($lcp_image)): ?>
+        <link rel="preload" as="image" href="<?php echo htmlspecialchars($lcp_image); ?>">
+    <?php endif; ?>
+
     <!-- LocalBusiness Schema -->
     <script
         type="application/ld+json"><?php echo json_encode($local_business_schema, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE); ?></script>
@@ -143,7 +151,7 @@ $local_business_schema = [
                 <div class="header-content">
                     <div class="logo">
                         <a href="index.php">
-                            <img loading="lazy" src="assets/images/logo/CD-logo.png"
+                            <img src="assets/images/logo/CD-logo.png"
                                 alt="Creative Blinds & Drapes Aurora IL"
                                 class="logo-img">
                             <p class="tagline">Aurora's Premier Window Treatment Experts</p>

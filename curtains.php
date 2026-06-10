@@ -62,6 +62,9 @@ if (!empty($all_products)) {
     ], JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE);
 }
 
+$lcp_image        = 'assets/images/carousel/curtain-drape-background-2365x594.jpg';
+$lcp_image_mobile = 'assets/images/carousel/curtain-drape-background-666x577.jpg';
+
 require_once 'includes/header.php';
 
 function getPatternArrow($direction)

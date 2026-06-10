@@ -37,6 +37,9 @@ if (!empty($shutters_products)) {
     ], JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE);
 }
 
+$lcp_image        = 'assets/products/shutters/Woodlore/01-Woodlore.jpg';
+$lcp_image_mobile = 'assets/products/shutters/Woodlore/01-Woodlore_m.webp';
+
 require_once 'includes/header.php';
 
 function encodeImagePath($path) {
@@ -53,6 +56,12 @@ function thumbPath($path) {
                       url('assets/products/shutters/Woodlore/01-Woodlore.jpg');
     background-size: cover;
     background-position: center;
+}
+@media (max-width: 991px) {
+    .page-header-bg {
+        background-image: linear-gradient(rgba(63,61,61,0.52), rgba(63,61,61,0.52)),
+                          url('assets/products/shutters/Woodlore/01-Woodlore_m.webp');
+    }
 }
 </style>
 <section class="page-header page-header-bg"
