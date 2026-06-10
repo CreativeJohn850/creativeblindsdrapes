@@ -5,11 +5,11 @@
     "category": "horizontal",
     "description": "CityLights Aluminum Blinds deliver crisp, contemporary style at an accessible price. Slender aluminum slats offer precise light control and a polished finish that complements any décor, from home offices to living rooms.",
     "images": [
-      "assets/images/products/horizontal_blinds/Citylights Alunimum Blinds/01-CityLight.jpg",
-      "assets/images/products/horizontal_blinds/Citylights Alunimum Blinds/02-CityLight.jpg",
-      "assets/images/products/horizontal_blinds/Citylights Alunimum Blinds/03-CityLight.jpg",
-      "assets/images/products/horizontal_blinds/Citylights Alunimum Blinds/04-CityLight.jpg",
-      "assets/images/products/horizontal_blinds/Citylights Alunimum Blinds/05-CityLight.jpg"
+      "assets/products/horizontal_blinds/Citylights Alunimum Blinds/01-CityLight.jpg",
+      "assets/products/horizontal_blinds/Citylights Alunimum Blinds/02-CityLight.jpg",
+      "assets/products/horizontal_blinds/Citylights Alunimum Blinds/03-CityLight.jpg",
+      "assets/products/horizontal_blinds/Citylights Alunimum Blinds/04-CityLight.jpg",
+      "assets/products/horizontal_blinds/Citylights Alunimum Blinds/05-CityLight.jpg"
     ],
     "colors": ["White", "Off-White", "Champagne", "Silver", "Bronze", "Graphite", "Black"],
     "slat_sizes": ["1\"", "2\""],
@@ -24,13 +24,13 @@
     "category": "horizontal",
     "description": "A child-safe, cord-free faux wood blind that delivers the natural look of wood with the durability of a composite material. The one-touch cordless lift is simple to operate and certified Best for Kids.",
     "images": [
-      "assets/images/products/horizontal_blinds/Cordless Faux Wood Blinds/01-Cordless Blinds.jpg",
-      "assets/images/products/horizontal_blinds/Cordless Faux Wood Blinds/02-Cordless Blinds.jpg",
-      "assets/images/products/horizontal_blinds/Cordless Faux Wood Blinds/03-Cordless Blinds.jpg",
-      "assets/images/products/horizontal_blinds/Cordless Faux Wood Blinds/04-Cordless Blinds.jpg",
-      "assets/images/products/horizontal_blinds/Cordless Faux Wood Blinds/05-Cordless Blinds.jpg",
-      "assets/images/products/horizontal_blinds/Cordless Faux Wood Blinds/06-Cordless Blinds.jpg",
-      "assets/images/products/horizontal_blinds/Cordless Faux Wood Blinds/07-Cordless Blinds.jpg"
+      "assets/products/horizontal_blinds/Cordless Faux Wood Blinds/01-Cordless Blinds.jpg",
+      "assets/products/horizontal_blinds/Cordless Faux Wood Blinds/02-Cordless Blinds.jpg",
+      "assets/products/horizontal_blinds/Cordless Faux Wood Blinds/03-Cordless Blinds.jpg",
+      "assets/products/horizontal_blinds/Cordless Faux Wood Blinds/04-Cordless Blinds.jpg",
+      "assets/products/horizontal_blinds/Cordless Faux Wood Blinds/05-Cordless Blinds.jpg",
+      "assets/products/horizontal_blinds/Cordless Faux Wood Blinds/06-Cordless Blinds.jpg",
+      "assets/products/horizontal_blinds/Cordless Faux Wood Blinds/07-Cordless Blinds.jpg"
     ],
     "colors": ["White", "Off-White", "Cream", "Linen", "Espresso", "Walnut Brown"],
     "slat_sizes": ["2\"", "2½\""],
@@ -45,11 +45,11 @@
     "category": "horizontal",
     "description": "Normandy Wood Blinds are crafted from sustainable Phoenix Wood, offering the warmth and character of real wood. A rich selection of stains and custom paint colors makes them a truly tailored window solution.",
     "images": [
-      "assets/images/products/horizontal_blinds/Normandy Wood Blinds/01-Normandy Wood Blinds.jpg",
-      "assets/images/products/horizontal_blinds/Normandy Wood Blinds/02-Normandy Wood Blinds.jpg",
-      "assets/images/products/horizontal_blinds/Normandy Wood Blinds/03-Normandy Wood Blinds.jpg",
-      "assets/images/products/horizontal_blinds/Normandy Wood Blinds/04-Normandy Wood Blinds.jpg",
-      "assets/images/products/horizontal_blinds/Normandy Wood Blinds/05-Normandy Wood Blinds.jpg"
+      "assets/products/horizontal_blinds/Normandy Wood Blinds/01-Normandy Wood Blinds.jpg",
+      "assets/products/horizontal_blinds/Normandy Wood Blinds/02-Normandy Wood Blinds.jpg",
+      "assets/products/horizontal_blinds/Normandy Wood Blinds/03-Normandy Wood Blinds.jpg",
+      "assets/products/horizontal_blinds/Normandy Wood Blinds/04-Normandy Wood Blinds.jpg",
+      "assets/products/horizontal_blinds/Normandy Wood Blinds/05-Normandy Wood Blinds.jpg"
     ],
     "colors": ["Natural Maple", "Golden Oak", "Cherry", "Walnut", "Espresso", "White", "Custom Paint (2000+ colors)", "Custom Stain (10 options)"],
     "slat_sizes": ["2\"", "2½\""],
@@ -64,12 +64,12 @@
     "category": "horizontal",
     "description": "Norman's flagship faux wood blind features an exclusive bottom rail that pivots 90° for the tightest closure available. Certified Best for Kids with a cordless system that is safe, stylish, and effortless to operate.",
     "images": [
-      "assets/images/products/horizontal_blinds/Ultimate Fauxwood Blinds/01-Ultimate-Blinds.jpg",
-      "assets/images/products/horizontal_blinds/Ultimate Fauxwood Blinds/02-Ultimate-Blinds.jpg",
-      "assets/images/products/horizontal_blinds/Ultimate Fauxwood Blinds/03-Ultimate-Blinds.jpg",
-      "assets/images/products/horizontal_blinds/Ultimate Fauxwood Blinds/04-Ultimate-Blinds.jpg",
-      "assets/images/products/horizontal_blinds/Ultimate Fauxwood Blinds/05-Ultimate-Blinds.jpg",
-      "assets/images/products/horizontal_blinds/Ultimate Fauxwood Blinds/06-Ultimate-Blinds.jpg"
+      "assets/products/horizontal_blinds/Ultimate Fauxwood Blinds/01-Ultimate-Blinds.jpg",
+      "assets/products/horizontal_blinds/Ultimate Fauxwood Blinds/02-Ultimate-Blinds.jpg",
+      "assets/products/horizontal_blinds/Ultimate Fauxwood Blinds/03-Ultimate-Blinds.jpg",
+      "assets/products/horizontal_blinds/Ultimate Fauxwood Blinds/04-Ultimate-Blinds.jpg",
+      "assets/products/horizontal_blinds/Ultimate Fauxwood Blinds/05-Ultimate-Blinds.jpg",
+      "assets/products/horizontal_blinds/Ultimate Fauxwood Blinds/06-Ultimate-Blinds.jpg"
     ],
     "colors": ["White", "Off-White", "Antique White", "Cream", "Sand", "Espresso", "Walnut"],
     "slat_sizes": ["2\"", "2½\""],
@@ -84,13 +84,13 @@
     "category": "vertical",
     "description": "Synchrony Vertical Blinds combine bold design with superior light control. A valance-free headrail and impact-resistant polydeco construction give them a clean, modern profile winner of the Best New Style Concept award.",
     "images": [
-      "assets/images/products/vertical_blinds/Synchrony Vertical Blinds/01-Synchrony.jpg",
-      "assets/images/products/vertical_blinds/Synchrony Vertical Blinds/02-Synchrony.jpg",
-      "assets/images/products/vertical_blinds/Synchrony Vertical Blinds/03-Synchrony.jpg",
-      "assets/images/products/vertical_blinds/Synchrony Vertical Blinds/04-Synchrony.jpg",
-      "assets/images/products/vertical_blinds/Synchrony Vertical Blinds/05-Synchrony.jpg",
-      "assets/images/products/vertical_blinds/Synchrony Vertical Blinds/06-Synchrony.jpg",
-      "assets/images/products/vertical_blinds/Synchrony Vertical Blinds/07-Synchrony.jpg"
+      "assets/products/vertical_blinds/Synchrony Vertical Blinds/01-Synchrony.jpg",
+      "assets/products/vertical_blinds/Synchrony Vertical Blinds/02-Synchrony.jpg",
+      "assets/products/vertical_blinds/Synchrony Vertical Blinds/03-Synchrony.jpg",
+      "assets/products/vertical_blinds/Synchrony Vertical Blinds/04-Synchrony.jpg",
+      "assets/products/vertical_blinds/Synchrony Vertical Blinds/05-Synchrony.jpg",
+      "assets/products/vertical_blinds/Synchrony Vertical Blinds/06-Synchrony.jpg",
+      "assets/products/vertical_blinds/Synchrony Vertical Blinds/07-Synchrony.jpg"
     ],
     "colors": ["White", "Off-White", "Chalk", "Linen", "Mocha", "Graphite", "Custom fabrics"],
     "vane_width": ["3½\""],

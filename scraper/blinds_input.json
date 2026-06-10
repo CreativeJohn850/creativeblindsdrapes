@@ -3,35 +3,35 @@
     "name": "Citylights Aluminum Blinds",
     "slug": "citylights-aluminum-blinds",
     "category": "horizontal",
-    "folder": "assets/images/products/horizontal_blinds/Citylights Alunimum Blinds",
+    "folder": "assets/products/horizontal_blinds/Citylights Alunimum Blinds",
     "manufacturer_url": "https://normanusa.com/product/citylights-aluminum-blinds/"
   },
   {
     "name": "Cordless Faux Wood Blinds",
     "slug": "cordless-faux-wood-blinds",
     "category": "horizontal",
-    "folder": "assets/images/products/horizontal_blinds/Cordless Faux Wood Blinds",
+    "folder": "assets/products/horizontal_blinds/Cordless Faux Wood Blinds",
     "manufacturer_url": "https://normanusa.com/product/ultimate-faux-wood-blinds/"
   },
   {
     "name": "Normandy Wood Blinds",
     "slug": "normandy-wood-blinds",
     "category": "horizontal",
-    "folder": "assets/images/products/horizontal_blinds/Normandy Wood Blinds",
+    "folder": "assets/products/horizontal_blinds/Normandy Wood Blinds",
     "manufacturer_url": "https://normanusa.com/product/normandy-wood-blinds/"
   },
   {
     "name": "Ultimate Fauxwood Blinds",
     "slug": "ultimate-fauxwood-blinds",
     "category": "horizontal",
-    "folder": "assets/images/products/horizontal_blinds/Ultimate Fauxwood Blinds",
+    "folder": "assets/products/horizontal_blinds/Ultimate Fauxwood Blinds",
     "manufacturer_url": "https://normanusa.com/product/ultimate-faux-wood-blinds/"
   },
   {
     "name": "Synchrony Vertical Blinds",
     "slug": "synchrony-vertical-blinds",
     "category": "vertical",
-    "folder": "assets/images/products/vertical_blinds/Synchrony Vertical Blinds",
+    "folder": "assets/products/vertical_blinds/Synchrony Vertical Blinds",
     "manufacturer_url": "https://normanusa.com/product/synchrony-vertical-blinds/"
   }
 ]

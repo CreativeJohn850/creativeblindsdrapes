@@ -1,5 +1,14 @@
 RewriteEngine On
 
+# Dead page slugs → curtains.php
+Redirect 301 /sheer-curtains.php /curtains.php
+Redirect 301 /drapes-curtains.php /curtains.php
+Redirect 301 /products/adeko-window-treatments /curtains.php
+
+# Old image path → new consolidated path (GSC-indexed URLs)
+RewriteCond %{REQUEST_URI} ^/assets/images/products/(.*)$
+RewriteRule ^ /assets/products/%1 [L,R=301]
+
 # Redirect www → non-www (canonical: creativeblindsdrapes.com)
 RewriteCond %{HTTP_HOST} ^www\.creativeblindsdrapes\.com [NC]
 RewriteRule ^ https://creativeblindsdrapes.com%{REQUEST_URI} [L,R=301]

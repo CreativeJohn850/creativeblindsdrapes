@@ -50,7 +50,7 @@ function thumbPath($path) {
 <style>
 .page-header-bg {
     background-image: linear-gradient(rgba(63,61,61,0.52), rgba(63,61,61,0.52)),
-                      url('assets/images/products/shutters/Woodlore/01-Woodlore.jpg');
+                      url('assets/products/shutters/Woodlore/01-Woodlore.jpg');
     background-size: cover;
     background-position: center;
 }

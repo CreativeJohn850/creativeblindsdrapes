@@ -1,7 +1,5 @@
 User-agent: *
 Allow: /
 Disallow: /data/
-Disallow: /assets/products/fonluk/pdfs/
-Disallow: /assets/products/tuller/pdfs/
 
 Sitemap: https://creativeblindsdrapes.com/sitemap.xml

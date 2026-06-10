@@ -65,7 +65,7 @@ if (!function_exists('thumbPath')) {
 <style>
 .page-header-bg {
     background-image: linear-gradient(rgba(63,61,61,0.52), rgba(63,61,61,0.52)),
-                      url('<?php echo encodeImagePath('assets/images/products/horizontal_blinds/Ultimate Fauxwood Blinds/01-Ultimate-Blinds.jpg'); ?>');
+                      url('<?php echo encodeImagePath('assets/products/horizontal_blinds/Ultimate Fauxwood Blinds/01-Ultimate-Blinds.jpg'); ?>');
     background-size: cover;
     background-position: center;
 }
@@ -83,17 +83,19 @@ if (!function_exists('thumbPath')) {
     <div class="container">
 
         <!-- Tab Navigation -->
-        <div style="display: flex; gap: 0; border-bottom: 2px solid var(--border-color); margin-bottom: 40px; overflow-x: auto;">
-            <?php $tabIndex = 0; foreach ($tabs as $key => $tab): ?>
-                <?php if (empty($tab['products'])) { $tabIndex++; continue; } ?>
-                <button class="tab-btn <?php echo $tabIndex === 0 ? 'active' : ''; ?>"
-                    data-tab="<?php echo $key; ?>"
-                    data-count="<?php echo count($tab['products']); ?>"
-                    style="padding: 14px 28px; background: none; border: none; border-bottom: 3px solid <?php echo $tabIndex === 0 ? 'var(--primary-teal)' : 'transparent'; ?>; color: <?php echo $tabIndex === 0 ? 'var(--primary-teal)' : 'var(--text-gray)'; ?>; font-family: var(--font-primary); font-size: 1rem; font-weight: 600; cursor: pointer; white-space: nowrap; margin-bottom: -2px;">
-                    <?php echo htmlspecialchars($tab['label']); ?>
-                    <span style="font-weight: 400; font-size: 0.85rem; margin-left: 6px;">(<?php echo count($tab['products']); ?>)</span>
-                </button>
-            <?php $tabIndex++; endforeach; ?>
+        <div style="overflow-x: auto; margin-bottom: 40px;">
+            <div style="display: flex; gap: 0; border-bottom: 2px solid var(--border-color);">
+                <?php $tabIndex = 0; foreach ($tabs as $key => $tab): ?>
+                    <?php if (empty($tab['products'])) { $tabIndex++; continue; } ?>
+                    <button class="tab-btn <?php echo $tabIndex === 0 ? 'active' : ''; ?>"
+                        data-tab="<?php echo $key; ?>"
+                        data-count="<?php echo count($tab['products']); ?>"
+                        style="padding: 14px 28px; background: none; border: none; border-bottom: 3px solid <?php echo $tabIndex === 0 ? 'var(--primary-teal)' : 'transparent'; ?>; color: <?php echo $tabIndex === 0 ? 'var(--primary-teal)' : 'var(--text-gray)'; ?>; font-family: var(--font-primary); font-size: 1rem; font-weight: 600; cursor: pointer; white-space: nowrap; margin-bottom: -2px;">
+                        <?php echo htmlspecialchars($tab['label']); ?>
+                        <span style="font-weight: 400; font-size: 0.85rem; margin-left: 6px;">(<?php echo count($tab['products']); ?>)</span>
+                    </button>
+                <?php $tabIndex++; endforeach; ?>
+            </div>
         </div>
 
         <!-- Search/Filter Bar -->
