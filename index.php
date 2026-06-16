@@ -24,6 +24,8 @@ require_once 'includes/header.php';
 
 </section>
 
+<?php include 'includes/compact-form.php'; ?>
+
 <!-- Welcome Section -->
 <section class="welcome-section">
     <div class="container">

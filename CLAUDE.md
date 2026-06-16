@@ -53,7 +53,7 @@ Product assets live under `assets/products/{fonluk,tuller}/{images,pdfs,thumbnai
 - Logs all submissions (including rejections) to `data/config/logs/form_submissions.log`
 - Returns JSON response
 
-`includes/compact-form.php` is a slide-down quote panel included on every page via `header.php`, backed by the same `process-contact.php` endpoint.
+`includes/compact-form.php` is a compact quote form rendered as a static section directly below the hero/page-header — each page includes it explicitly after its hero section (all public pages except `contact.php` and `thank-you.php`). Backed by the same `process-contact.php` endpoint.
 
 ### Apache / URL Handling
 Root `.htaccess` handles:
@@ -71,7 +71,7 @@ Single stylesheet `css/style.css`. CSS variables defined in `:root`:
 ### JavaScript
 Single file `assets/js/script.js` (~265 lines, vanilla ES6+):
 - Mobile nav menu toggle (creates overlay dynamically, manages body scroll lock)
-- Compact quote panel (open/close, position anchoring on scroll/resize, form submit with reCAPTCHA v3)
+- Compact quote form (live ZIP hint, form submit with reCAPTCHA v3)
 - Hero image slider (auto-rotates every 5s, dot navigation; exits early if ≤1 slide present)
 
 ### SEO / Discoverability

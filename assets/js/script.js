@@ -49,79 +49,15 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
-// Compact Quote Panel
+// Compact Quote Form (embedded below the hero on every page)
 document.addEventListener('DOMContentLoaded', function () {
-    const trigger = document.getElementById('cqTrigger');
-    const panel   = document.getElementById('cqPanel');
     const form    = document.getElementById('compactQuoteForm');
     const submitBtn = document.getElementById('cqSubmitBtn');
     const msgEl   = document.getElementById('cqMsg');
 
-    if (!trigger || !panel) return;
+    if (!form) return;
 
     const RECAPTCHA_SITE_KEY = '6LdOMk0sAAAAAMnWfjTV2JtpuimpVL5N8Qql_qc4';
-
-    function setPanelTop() {
-        var siteHeader = document.querySelector('.site-header');
-        if (!siteHeader) return;
-        var headerBottom = Math.round(siteHeader.getBoundingClientRect().bottom);
-        panel.style.top = headerBottom + 'px';
-        // Limit height to available viewport so form is never cut off on short screens
-        panel.style.maxHeight = Math.min(560, window.innerHeight - headerBottom - 8) + 'px';
-    }
-
-    function openPanel() {
-        setPanelTop();
-        panel.classList.add('open');
-        panel.setAttribute('aria-hidden', 'false');
-        trigger.setAttribute('aria-expanded', 'true');
-    }
-
-    function closePanel() {
-        // Clear the inline max-height so the CSS max-height:0 transition fires correctly
-        panel.style.maxHeight = '';
-        panel.classList.remove('open');
-        panel.setAttribute('aria-hidden', 'true');
-        trigger.setAttribute('aria-expanded', 'false');
-    }
-
-    // Keep panel anchored on scroll/resize while open
-    window.addEventListener('scroll', function () {
-        if (panel.classList.contains('open')) setPanelTop();
-    }, { passive: true });
-    window.addEventListener('resize', function () {
-        if (panel.classList.contains('open')) setPanelTop();
-    });
-
-    trigger.addEventListener('click', function (e) {
-        e.stopPropagation();
-        if (panel.classList.contains('open')) {
-            closePanel();
-        } else {
-            // Close mobile nav before opening panel
-            var navMenu = document.querySelector('.nav-menu');
-            if (navMenu && navMenu.classList.contains('active')) {
-                var mobileToggle = document.getElementById('mobileToggle');
-                if (mobileToggle) mobileToggle.click();
-            }
-            openPanel();
-        }
-    });
-
-    document.addEventListener('click', function (e) {
-        if (panel.classList.contains('open') &&
-            !panel.contains(e.target) &&
-            e.target !== trigger &&
-            !trigger.contains(e.target)) {
-            closePanel();
-        }
-    });
-
-    document.addEventListener('keydown', function (e) {
-        if (e.key === 'Escape') closePanel();
-    });
-
-    if (!form) return;
 
     // Live ZIP hint — mirrors the server-side range check in process-contact.php
     var zipInput = document.getElementById('cqZip');

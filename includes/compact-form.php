@@ -1,6 +1,6 @@
-<div class="cq-panel" id="cqPanel" aria-hidden="true">
-    <div class="cq-panel-inner">
-        <p class="cq-title">Request a Free Estimate</p>
+<section class="cq-inline" id="quote">
+    <div class="cq-inline-inner">
+        <h2 class="cq-title">Request a Free Estimate</h2>
         <form id="compactQuoteForm" novalidate>
             <div class="cq-row">
                 <div class="cq-field">
@@ -47,5 +47,5 @@
             <div class="cq-msg" id="cqMsg" aria-live="polite"></div>
         </form>
     </div>
-</div>
+</section>
 <script src="https://www.google.com/recaptcha/api.js?render=6LdOMk0sAAAAAMnWfjTV2JtpuimpVL5N8Qql_qc4" async defer></script>

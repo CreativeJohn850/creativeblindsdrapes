@@ -25,6 +25,8 @@ require_once 'includes/header.php';
     </div>
 </section>
 
+<?php include 'includes/compact-form.php'; ?>
+
 <!-- Curtain Tracks Section -->
 <section style="padding: 60px 20px;">
     <div class="container">

@@ -950,43 +950,19 @@ section.bg-light {
 
 .hidden { display: none; }
 
-/* === COMPACT QUOTE PANEL === */
-.nav-cta-item {
-    margin-left: 6px;
-}
-
-.cq-trigger-btn {
-    font-size: 0.88rem;
-    padding: 9px 20px;
-    border-radius: 4px;
-    white-space: nowrap;
-    line-height: 1.3;
-}
-
-.cq-panel {
-    position: fixed;
-    top: 0; /* overridden by JS on open */
-    left: 0;
-    right: 0;
-    z-index: 999;
+/* === COMPACT QUOTE FORM (embedded below the hero) === */
+.cq-inline {
+    /* Override the global `section` padding — inner wrapper handles spacing */
+    padding: 0;
     background-color: var(--warm-cream);
     border-top: 1px solid var(--warm-beige);
     border-bottom: 3px solid var(--primary-teal);
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.35s ease, box-shadow 0.35s ease;
 }
 
-.cq-panel.open {
-    max-height: 560px; /* fallback if JS hasn't run; JS overrides via inline style */
-    overflow-y: auto;
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
-}
-
-.cq-panel-inner {
+.cq-inline-inner {
     max-width: 780px;
     margin: 0 auto;
-    padding: 20px 20px 24px;
+    padding: 10px 20px;
 }
 
 .cq-title {
@@ -1092,24 +1068,8 @@ section.bg-light {
 .cq-zip-hint--warn  { color: #b07d00; }
 
 @media (max-width: 768px) {
-    /* In the mobile nav drawer the trigger must look like the other nav items */
-    .nav-cta-item {
-        margin-left: 0;
-    }
-
-    .cq-trigger-btn {
-        display: block;
-        width: 100%;
-        margin: 0;
-        padding: 15px 10px;
-        border-radius: 0;
-        font-size: 0.95rem;
-        text-align: left;
-        white-space: normal;
-    }
-
-    .cq-panel-inner {
-        padding: 16px 16px 20px;
+    .cq-inline-inner {
+        padding: 10px 16px;
     }
 
     .cq-row {

@@ -87,6 +87,8 @@ if (!function_exists('thumbPath')) {
     </div>
 </section>
 
+<?php include 'includes/compact-form.php'; ?>
+
 <!-- Products Section -->
 <section style="padding: 60px 20px;">
     <div class="container">
