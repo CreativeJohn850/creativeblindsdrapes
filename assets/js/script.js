@@ -100,7 +100,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
         // Honeypot — silent fake success if bot filled the hidden field
         if (document.getElementById('cqHoneypot').value) {
-            window.location.href = 'thank-you.php';
+            window.location.href = (window.SITE_BASE || '') + '/thank-you/';
             return; // no params — bots don't deserve a personalized page
         }
 
@@ -131,7 +131,7 @@ document.addEventListener('DOMContentLoaded', function () {
             });
             document.getElementById('cqRecaptchaToken').value = token;
 
-            const res  = await fetch('data/config/process-contact.php', {
+            const res  = await fetch((window.SITE_BASE || '') + '/data/config/process-contact.php', {
                 method: 'POST',
                 body: new FormData(form)
             });
@@ -140,7 +140,7 @@ document.addEventListener('DOMContentLoaded', function () {
             if (data.success) {
                 const name  = encodeURIComponent(document.getElementById('cqName').value.trim());
                 const email = encodeURIComponent(document.getElementById('cqEmail').value.trim());
-                window.location.href = 'thank-you.php?name=' + name + '&email=' + email;
+                window.location.href = (window.SITE_BASE || '') + '/thank-you/?name=' + name + '&email=' + email;
             } else {
                 showMsg('error', data.message || 'Something went wrong. Please try again.');
                 submitBtn.disabled = false;

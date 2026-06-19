@@ -1,17 +1,19 @@
 <?php
+require_once __DIR__ . '/includes/config.php';
+
 // Page-specific variables
 $page_title = 'Custom Drapes, Blinds & Shutters';
 $meta_description = 'Transform your Aurora home with premium window treatments from Creative Blinds & Drapes. Custom drapes, blinds, shutters & shades. Free consultation!';
 
-$lcp_image = 'assets/images/carousel/adeko-2-1.jpg';
+$lcp_image = BASE_URL . '/assets/images/carousel/adeko-2-1.jpg';
 
 // Include header
-require_once 'includes/header.php';
+require_once __DIR__ . '/includes/header.php';
 ?>
 
 <!-- Hero Slider -->
 <section class="hero-slider">
-    <div class="hero-slide active" style="background-image: url('assets/images/carousel/adeko-2-1.jpg');">
+    <div class="hero-slide active" style="background-image: url('<?php echo BASE_URL; ?>/assets/images/carousel/adeko-2-1.jpg');">
         <div class="hero-overlay">
             <div class="container">
                 <div class="hero-content">
@@ -24,7 +26,7 @@ require_once 'includes/header.php';
 
 </section>
 
-<?php include 'includes/compact-form.php'; ?>
+<?php include __DIR__ . '/includes/compact-form.php'; ?>
 
 <!-- Welcome Section -->
 <section class="welcome-section">
@@ -39,10 +41,10 @@ require_once 'includes/header.php';
                 <h3>Why Choose Us?</h3>
                 <p>At Creative Blinds & Drapes, we believe every window tells a story. Whether you're looking for energy-efficient blinds, elegant custom drapes, or classic plantation shutters, our experienced team will guide you through every step: from initial consultation to professional installation.</p>
                 <p>We proudly feature window treatments, renowned for their craftsmanship and exceptional quality. Combined with our personalized service and competitive pricing, we're Aurora's premier choice for window solutions.</p>
-                <a href="about.php" class="btn btn-primary">Learn More About Us</a>
+                <a href="<?php echo url('/about-us/'); ?>" class="btn btn-primary">Learn More About Us</a>
             </div>
             <div>
-                <img src="assets/images/showroom/displays-cfa.jpeg" alt="Creative Blinds & Drapes Showroom in Aurora, IL" style="border-radius: 8px; box-shadow: 0 4px 20px rgba(0,0,0,0.1);">
+                <img src="<?php echo url('/assets/images/showroom/displays-cfa.jpeg'); ?>" alt="Creative Blinds & Drapes Showroom in Aurora, IL" style="border-radius: 8px; box-shadow: 0 4px 20px rgba(0,0,0,0.1);">
             </div>
         </div>
     </div>
@@ -130,7 +132,7 @@ require_once 'includes/header.php';
         </div>
         
         <div class="text-center mt-2">
-            <p><strong>Not sure if we serve your area?</strong> <a href="contact.php" style="color: var(--primary-teal); font-weight: 600;">Contact us</a> and we'll be happy to help!</p>
+            <p><strong>Not sure if we serve your area?</strong> <a href="<?php echo url('/contact/'); ?>" style="color: var(--primary-teal); font-weight: 600;">Contact us</a> and we'll be happy to help!</p>
         </div>
     </div>
 </section>
@@ -142,7 +144,7 @@ require_once 'includes/header.php';
         <h2>Ready to Transform Your Windows?</h2>
         <p>Get started today with a free in-home consultation. We'll help you find the perfect window treatments for your style and budget.</p>
         <div style="display: flex; gap: 15px; justify-content: center; flex-wrap: wrap; margin-top: 30px;">
-            <a href="contact.php#quote-form" class="btn btn-primary">Request Free Quote</a>
+            <a href="<?php echo url('/contact/'); ?>#quote-form" class="btn btn-primary">Request Free Quote</a>
             <a href="tel:<?php echo str_replace(['(', ')', ' ', '-'], '', BUSINESS_PHONE); ?>" onclick="dataLayer.push({'event': 'phone_click'});" class="btn btn-secondary" style="background-color: transparent; color: white; border-color: white;">
                 Call <?php echo BUSINESS_PHONE; ?>
             </a>
@@ -152,5 +154,5 @@ require_once 'includes/header.php';
 
 <?php
 // Include footer
-require_once 'includes/footer.php';
+require_once __DIR__ . '/includes/footer.php';
 ?>

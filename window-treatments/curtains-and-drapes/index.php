@@ -1,16 +1,16 @@
 <?php
-require_once 'includes/config.php';
+require_once dirname(__DIR__, 2) . '/includes/config.php';
 
 $page_title = 'Custom Curtains & Drapes';
 $meta_description = 'Browse 70+ premium drapery fabrics and 50+ sheer options. Elegant custom curtains and drapes for Aurora, IL homes. Free design consultation.';
 
-$fonluk_json = file_get_contents('data/fonluk.json');
+$fonluk_json = file_get_contents(ROOT_PATH . '/data/fonluk.json');
 $fonluk_products = json_decode($fonluk_json, true);
 if (json_last_error() !== JSON_ERROR_NONE || !is_array($fonluk_products)) {
     $fonluk_products = [];
 }
 
-$tuller_json = file_get_contents('data/tuller.json');
+$tuller_json = file_get_contents(ROOT_PATH . '/data/tuller.json');
 $tuller_products = json_decode($tuller_json, true);
 if (json_last_error() !== JSON_ERROR_NONE || !is_array($tuller_products)) {
     $tuller_products = [];
@@ -20,8 +20,8 @@ $tabs = [
     'draperies' => [
         'label'        => 'Draperies',
         'products'     => $fonluk_products,
-        'img_prefix'   => 'assets/products/fonluk/thumbnails/',
-        'pdf_prefix'   => 'assets/products/fonluk/pdfs/',
+        'img_prefix'   => BASE_URL . '/assets/products/fonluk/thumbnails/',
+        'pdf_prefix'   => BASE_URL . '/assets/products/fonluk/pdfs/',
         'img_ext'      => '.webp',
         'product_type' => 'Drapery Fabric',
         'brand'        => 'Adeko',
@@ -29,8 +29,8 @@ $tabs = [
     'sheers' => [
         'label'        => 'Sheers',
         'products'     => $tuller_products,
-        'img_prefix'   => 'assets/products/tuller/thumbnails/',
-        'pdf_prefix'   => 'assets/products/tuller/pdfs/',
+        'img_prefix'   => BASE_URL . '/assets/products/tuller/thumbnails/',
+        'pdf_prefix'   => BASE_URL . '/assets/products/tuller/pdfs/',
         'img_ext'      => '.webp',
         'product_type' => 'Sheer Curtain Fabric',
         'brand'        => 'Adeko',
@@ -62,10 +62,10 @@ if (!empty($all_products)) {
     ], JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE);
 }
 
-$lcp_image        = 'assets/images/carousel/curtain-drape-background-2365x594.jpg';
-$lcp_image_mobile = 'assets/images/carousel/curtain-drape-background-666x577.jpg';
+$lcp_image        = BASE_URL . '/assets/images/carousel/curtain-drape-background-2365x594.jpg';
+$lcp_image_mobile = BASE_URL . '/assets/images/carousel/curtain-drape-background-666x577.jpg';
 
-require_once 'includes/header.php';
+require_once ROOT_PATH . '/includes/header.php';
 
 function getPatternArrow($direction)
 {
@@ -86,14 +86,14 @@ function getPatternArrow($direction)
 <style>
 .page-header-bg {
     background-image: linear-gradient(rgba(63,61,61,0.52), rgba(63,61,61,0.52)),
-                      url('assets/images/carousel/curtain-drape-background-2365x594.jpg');
+                      url('<?php echo BASE_URL; ?>/assets/images/carousel/curtain-drape-background-2365x594.jpg');
     background-size: cover;
     background-position: center;
 }
 @media (max-width: 991px) {
     .page-header-bg {
         background-image: linear-gradient(rgba(63,61,61,0.52), rgba(63,61,61,0.52)),
-                          url('assets/images/carousel/curtain-drape-background-666x577.jpg');
+                          url('<?php echo BASE_URL; ?>/assets/images/carousel/curtain-drape-background-666x577.jpg');
     }
 }
 </style>
@@ -107,7 +107,7 @@ function getPatternArrow($direction)
     </div>
 </section>
 
-<?php include 'includes/compact-form.php'; ?>
+<?php include ROOT_PATH . '/includes/compact-form.php'; ?>
 
 <!-- Products Section -->
 <section style="padding: 60px 20px;">
@@ -190,7 +190,7 @@ function getPatternArrow($direction)
         <h2>Ready to Choose Your Perfect Fabric?</h2>
         <p>Schedule a free in-home consultation. We'll bring fabric samples directly to you!</p>
         <div style="display: flex; gap: 15px; justify-content: center; flex-wrap: wrap; margin-top: 30px;">
-            <a href="contact.php#quote-form" class="btn btn-primary">Request Free Consultation</a>
+            <a href="<?php echo url('/contact/'); ?>#quote-form" class="btn btn-primary">Request Free Consultation</a>
             <a href="tel:<?php echo str_replace(['(', ')', ' ', '-'], '', BUSINESS_PHONE); ?>" onclick="dataLayer.push({'event': 'phone_click'});" class="btn btn-secondary"
                 style="background-color: transparent; color: white; border-color: white;">
                 Call <?php echo BUSINESS_PHONE; ?>
@@ -234,5 +234,5 @@ function getPatternArrow($direction)
     });
 </script>
 <?php
-require_once 'includes/footer.php';
+require_once ROOT_PATH . '/includes/footer.php';
 ?>

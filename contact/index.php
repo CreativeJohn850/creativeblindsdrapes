@@ -4,7 +4,7 @@ $page_title = 'Contact Us - Get Your Free Quote';
 $meta_description = 'Contact Creative Blinds & Drapes in Aurora, IL. Free consultation for custom drapes, blinds & shutters. Call (630) 946-1406 or visit our showroom.';
 
 // Include header
-require_once 'includes/header.php';
+require_once dirname(__DIR__) . '/includes/header.php';
 ?>
 
 <!-- Page Header -->
@@ -244,7 +244,7 @@ require_once 'includes/header.php';
             const formData = new FormData(form);
 
             // Send to backend
-            const response = await fetch('data/config/process-contact.php', {
+            const response = await fetch('<?php echo BASE_URL; ?>/data/config/process-contact.php', {
                 method: 'POST',
                 body: formData
             });
@@ -257,7 +257,7 @@ require_once 'includes/header.php';
                 // Redirect to thank you page with name and email for personalization
                 const name  = encodeURIComponent(document.getElementById('name').value.trim());
                 const email = encodeURIComponent(document.getElementById('email').value.trim());
-                window.location.href = 'thank-you.php?name=' + name + '&email=' + email;
+                window.location.href = '<?php echo BASE_URL; ?>/thank-you/?name=' + name + '&email=' + email;
             } else {
                 // Show error message
                 formMessage.style.display = 'block';
@@ -293,5 +293,5 @@ require_once 'includes/header.php';
 
 <?php
 // Include footer
-require_once 'includes/footer.php';
+require_once ROOT_PATH . '/includes/footer.php';
 ?>

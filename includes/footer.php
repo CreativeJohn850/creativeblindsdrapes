@@ -20,10 +20,10 @@
                 <div class="footer-col">
                     <h4>Products</h4>
                     <ul class="footer-links">
-                        <li><a href="shutters.php">Shutters</a></li>
-                        <li><a href="blinds.php">Blinds</a></li>
-                        <li><a href="shades.php">Shades</a></li>
-                        <li><a href="curtains.php">Curtains</a></li>
+                        <?php foreach (PRIMARY_NAV as $nav_path => $nav_label): ?>
+                            <?php if ($nav_path === '/contact/') continue; ?>
+                            <li><a href="<?php echo url($nav_path); ?>"><?php echo htmlspecialchars($nav_label); ?></a></li>
+                        <?php endforeach; ?>
                     </ul>
                 </div>
 
@@ -62,8 +62,10 @@
     </div>
 </footer>
 
+<!-- Expose the URL base path to JS (for form endpoint + redirects) -->
+<script>window.SITE_BASE = '<?php echo BASE_URL; ?>';</script>
 <!-- Minimal JavaScript (mobile menu toggle) -->
-<script src="assets/js/script.js"></script>
+<script src="<?php echo url('/assets/js/script.js'); ?>"></script>
 </body>
 
 </html>

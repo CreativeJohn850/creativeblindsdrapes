@@ -1,10 +1,10 @@
 <?php
-require_once 'includes/config.php';
+require_once __DIR__ . '/includes/config.php';
 
 $page_title = 'Curtain Hardware & Accessories';
 $meta_description = 'Browse our selection of premium curtain hardware and accessories. Bendable tracks, valance rails, and more to complete your window treatments in Aurora, IL.';
 
-$tracks_json = file_get_contents('data/tracks.json');
+$tracks_json = file_get_contents(ROOT_PATH . '/data/tracks.json');
 $track_products = json_decode($tracks_json, true);
 
 if (json_last_error() !== JSON_ERROR_NONE || !is_array($track_products)) {
@@ -12,7 +12,7 @@ if (json_last_error() !== JSON_ERROR_NONE || !is_array($track_products)) {
 }
 
 // Include header
-require_once 'includes/header.php';
+require_once ROOT_PATH . '/includes/header.php';
 ?>
 <!-- Page Header -->
 <section class="page-header"
@@ -25,7 +25,7 @@ require_once 'includes/header.php';
     </div>
 </section>
 
-<?php include 'includes/compact-form.php'; ?>
+<?php include ROOT_PATH . '/includes/compact-form.php'; ?>
 
 <!-- Curtain Tracks Section -->
 <section style="padding: 60px 20px;">
@@ -71,7 +71,7 @@ require_once 'includes/header.php';
         </div>
         <?php else: ?>
         <p style="text-align: center; color: var(--text-gray); margin-top: 40px;">
-            Hardware catalog coming soon. <a href="contact.php" style="color: var(--primary-teal);">Contact us</a> for availability.
+            Hardware catalog coming soon. <a href="<?php echo url('/contact/'); ?>" style="color: var(--primary-teal);">Contact us</a> for availability.
         </p>
         <?php endif; ?>
     </div>
@@ -83,7 +83,7 @@ require_once 'includes/header.php';
         <h2>Need Help Choosing the Right Hardware?</h2>
         <p>Our experts will recommend the right track or rod for your curtains during your free in-home consultation.</p>
         <div style="display: flex; gap: 15px; justify-content: center; flex-wrap: wrap; margin-top: 30px;">
-            <a href="contact.php#quote-form" class="btn btn-primary">Request Free Consultation</a>
+            <a href="<?php echo url('/contact/'); ?>#quote-form" class="btn btn-primary">Request Free Consultation</a>
             <a href="tel:<?php echo str_replace(['(', ')', ' ', '-'], '', BUSINESS_PHONE); ?>" onclick="dataLayer.push({'event': 'phone_click'});" class="btn btn-secondary"
                 style="background-color: transparent; color: white; border-color: white;">
                 Call <?php echo BUSINESS_PHONE; ?>
@@ -93,5 +93,5 @@ require_once 'includes/header.php';
 </section>
 
 <?php
-require_once 'includes/footer.php';
+require_once ROOT_PATH . '/includes/footer.php';
 ?>

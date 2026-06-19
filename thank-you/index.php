@@ -8,7 +8,7 @@ $visitor_name  = htmlspecialchars(trim($_GET['name']  ?? ''), ENT_QUOTES, 'UTF-8
 $visitor_email = htmlspecialchars(trim($_GET['email'] ?? ''), ENT_QUOTES, 'UTF-8');
 
 // Include header
-require_once 'includes/header.php';
+require_once dirname(__DIR__) . '/includes/header.php';
 ?>
 
 <section style="padding: 100px 20px; text-align: center; min-height: 60vh; display: flex; align-items: center; justify-content: center;">
@@ -43,8 +43,8 @@ require_once 'includes/header.php';
         </div>
         
         <div style="display: flex; gap: 15px; justify-content: center; flex-wrap: wrap; margin-bottom: 30px;">
-            <a href="index.php" class="btn btn-primary">Return to Homepage</a>
-            <a href="curtains.php" class="btn btn-secondary">Browse Curtains</a>
+            <a href="<?php echo url('/'); ?>" class="btn btn-primary">Return to Homepage</a>
+            <a href="<?php echo url('/window-treatments/curtains-and-drapes/'); ?>" class="btn btn-secondary">Browse Curtains</a>
         </div>
         
         <p style="color: var(--text-gray); font-size: 0.95rem;">
@@ -55,5 +55,5 @@ require_once 'includes/header.php';
 
 <?php
 // Include footer
-require_once 'includes/footer.php';
+require_once ROOT_PATH . '/includes/footer.php';
 ?>

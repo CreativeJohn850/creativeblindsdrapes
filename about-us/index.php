@@ -4,7 +4,7 @@ $page_title = 'About Us';
 $meta_description = 'Creative Blinds & Drapes in Aurora, IL. Sister company of Creative Floors with 23+ years of experience. Expert in-home consultation and installation.';
 
 // Include header
-require_once 'includes/header.php';
+require_once dirname(__DIR__) . '/includes/header.php';
 ?>
 
 <!-- Page Header -->
@@ -18,7 +18,7 @@ require_once 'includes/header.php';
     </div>
 </section>
 
-<?php include 'includes/compact-form.php'; ?>
+<?php include ROOT_PATH . '/includes/compact-form.php'; ?>
 
 <!-- Welcome Section -->
 <section class="welcome-section">
@@ -51,7 +51,7 @@ require_once 'includes/header.php';
                     Aurora's premier choice for window solutions.</p>
             </div>
             <div>
-                <img src="assets/images/showroom/displays-cfa.jpeg"
+                <img src="<?php echo url('/assets/images/showroom/displays-cfa.jpeg'); ?>"
                     alt="Creative Blinds & Drapes Showroom in Aurora, IL"
                     style="border-radius: 8px; box-shadow: 0 4px 20px rgba(0,0,0,0.1);">
             </div>
@@ -146,7 +146,7 @@ require_once 'includes/header.php';
         </div>
 
         <div class="text-center mt-2">
-            <p><strong>Not sure if we serve your area?</strong> <a href="contact.php"
+            <p><strong>Not sure if we serve your area?</strong> <a href="<?php echo url('/contact/'); ?>"
                     style="color: var(--primary-teal); font-weight: 600;">Contact us</a> and we'll be happy to help!</p>
         </div>
     </div>
@@ -160,7 +160,7 @@ require_once 'includes/header.php';
         <p>Get started today with a free in-home consultation. We'll help you find the perfect window treatments for
             your style and budget.</p>
         <div style="display: flex; gap: 15px; justify-content: center; flex-wrap: wrap; margin-top: 30px;">
-            <a href="contact.php#quote-form" class="btn btn-primary">Request Free Quote</a>
+            <a href="<?php echo url('/contact/'); ?>#quote-form" class="btn btn-primary">Request Free Quote</a>
             <a href="tel:<?php echo str_replace(['(', ')', ' ', '-'], '', BUSINESS_PHONE); ?>" onclick="dataLayer.push({'event': 'phone_click'});" class="btn btn-secondary"
                 style="background-color: transparent; color: white; border-color: white;">
                 Call <?php echo BUSINESS_PHONE; ?>
@@ -171,5 +171,5 @@ require_once 'includes/header.php';
 
 <?php
 // Include footer
-require_once 'includes/footer.php';
+require_once ROOT_PATH . '/includes/footer.php';
 ?>

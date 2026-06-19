@@ -1,0 +1,21 @@
+# Hand-picked URLs for a targeted IndexNow submission.
+# One URL per line. Blank lines and lines starting with '#' are ignored.
+# Submit with:  php indexnow_sync.php --urls
+#
+# Only put URLs that genuinely benefit from a crawl nudge here - i.e. GSC
+# "Discovered - currently not indexed" pages (Last crawled: N/A). Do NOT add
+# "Crawled - currently not indexed" or "Duplicate" pages; IndexNow won't help those.
+#
+# The key file is at the site root, so the whole site is in scope:
+# https://creativeblindsdrapes.com/  (out-of-scope URLs are skipped automatically).
+
+# --- Public pages (uncomment the ones you want to nudge) ---
+#https://creativeblindsdrapes.com/
+#https://creativeblindsdrapes.com/window-treatments/
+#https://creativeblindsdrapes.com/window-treatments/window-shutters/
+#https://creativeblindsdrapes.com/window-treatments/window-blinds/
+#https://creativeblindsdrapes.com/window-treatments/shades/
+#https://creativeblindsdrapes.com/window-treatments/curtains-and-drapes/
+#https://creativeblindsdrapes.com/curtain-hardware.php
+#https://creativeblindsdrapes.com/about-us/
+#https://creativeblindsdrapes.com/contact/

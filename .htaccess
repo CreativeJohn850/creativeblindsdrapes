@@ -1,9 +1,20 @@
 RewriteEngine On
 
-# Dead page slugs → curtains.php
-Redirect 301 /sheer-curtains.php /curtains.php
-Redirect 301 /drapes-curtains.php /curtains.php
-Redirect 301 /products/adeko-window-treatments /curtains.php
+# --- Legacy flat URLs → new nested structure (301, preserve indexed SEO equity) ---
+# Leading-slash targets are resolved against the (production) domain root, same convention
+# as the image rewrite below. These fire for the live domain's indexed URLs.
+RewriteRule ^blinds\.php$     /window-treatments/window-blinds/       [L,R=301]
+RewriteRule ^shutters\.php$   /window-treatments/window-shutters/     [L,R=301]
+RewriteRule ^shades\.php$     /window-treatments/shades/              [L,R=301]
+RewriteRule ^curtains\.php$   /window-treatments/curtains-and-drapes/ [L,R=301]
+RewriteRule ^about\.php$      /about-us/                              [L,R=301]
+RewriteRule ^contact\.php$    /contact/                               [L,R=301]
+RewriteRule ^thank-you\.php$  /thank-you/                             [L,R=301]
+
+# Older dead slugs → new curtains URL (re-pointed direct to avoid 301 chains)
+RewriteRule ^sheer-curtains\.php$                /window-treatments/curtains-and-drapes/ [L,R=301]
+RewriteRule ^drapes-curtains\.php$               /window-treatments/curtains-and-drapes/ [L,R=301]
+RewriteRule ^products/adeko-window-treatments/?$ /window-treatments/curtains-and-drapes/ [L,R=301]
 
 # Old image path → new consolidated path (GSC-indexed URLs)
 RewriteCond %{REQUEST_URI} ^/assets/images/products/(.*)$

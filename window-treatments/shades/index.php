@@ -1,10 +1,10 @@
 <?php
-require_once 'includes/config.php';
+require_once dirname(__DIR__, 2) . '/includes/config.php';
 
 $page_title = 'Custom Window Shades';
 $meta_description = 'Browse honeycomb, roller, roman, and sheer shades by Norman Window Fashions. Energy-efficient window shades for Aurora, IL homes. Free in-home consultation.';
 
-$shades_json = file_get_contents('data/shades.json');
+$shades_json = file_get_contents(ROOT_PATH . '/data/shades.json');
 $shades_products = json_decode($shades_json, true);
 
 if (json_last_error() !== JSON_ERROR_NONE || !is_array($shades_products)) {
@@ -50,14 +50,14 @@ if (!empty($shades_products)) {
     ], JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE);
 }
 
-$lcp_image        = 'assets/products/honeycomb/Portrait Honeycomb/01-Honeycomb.jpg';
-$lcp_image_mobile = 'assets/products/honeycomb/Portrait Honeycomb/01-Honeycomb_m.webp';
+$lcp_image        = BASE_URL . '/assets/products/honeycomb/Portrait Honeycomb/01-Honeycomb.jpg';
+$lcp_image_mobile = BASE_URL . '/assets/products/honeycomb/Portrait Honeycomb/01-Honeycomb_m.webp';
 
-require_once 'includes/header.php';
+require_once ROOT_PATH . '/includes/header.php';
 
 if (!function_exists('encodeImagePath')) {
     function encodeImagePath($path) {
-        return implode('/', array_map('rawurlencode', explode('/', $path)));
+        return BASE_URL . '/' . implode('/', array_map('rawurlencode', explode('/', $path)));
     }
 }
 if (!function_exists('thumbPath')) {
@@ -89,7 +89,7 @@ if (!function_exists('thumbPath')) {
     </div>
 </section>
 
-<?php include 'includes/compact-form.php'; ?>
+<?php include ROOT_PATH . '/includes/compact-form.php'; ?>
 
 <!-- Products Section -->
 <section style="padding: 60px 20px;">
@@ -169,7 +169,7 @@ if (!function_exists('thumbPath')) {
                                 </div>
 
                                 <div style="display: flex; gap: 10px;">
-                                    <a href="contact.php#quote-form"
+                                    <a href="<?php echo url('/contact/'); ?>#quote-form"
                                         class="btn btn-primary"
                                         style="flex: 1; text-align: center; padding: 10px; font-size: 0.9rem;">
                                         Get a Quote
@@ -191,7 +191,7 @@ if (!function_exists('thumbPath')) {
         <h2>Ready to Find Your Perfect Shades?</h2>
         <p>Schedule a free in-home consultation. We'll bring samples directly to you!</p>
         <div style="display: flex; gap: 15px; justify-content: center; flex-wrap: wrap; margin-top: 30px;">
-            <a href="contact.php#quote-form" class="btn btn-primary">Request Free Consultation</a>
+            <a href="<?php echo url('/contact/'); ?>#quote-form" class="btn btn-primary">Request Free Consultation</a>
             <a href="tel:<?php echo str_replace(['(', ')', ' ', '-'], '', BUSINESS_PHONE); ?>" onclick="dataLayer.push({'event': 'phone_click'});" class="btn btn-secondary"
                 style="background-color: transparent; color: white; border-color: white;">
                 Call <?php echo BUSINESS_PHONE; ?>
@@ -236,5 +236,5 @@ if (!function_exists('thumbPath')) {
     });
 </script>
 <?php
-require_once 'includes/footer.php';
+require_once ROOT_PATH . '/includes/footer.php';
 ?>

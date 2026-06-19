@@ -7,10 +7,15 @@ if (!isset($page_title)) {
 if (!isset($meta_description)) {
     $meta_description = DEFAULT_DESCRIPTION;
 }
-$current_page = basename($_SERVER['PHP_SELF']);
-$canonical_url = ($current_page === 'index.php')
-    ? SITE_URL . '/'
-    : SITE_URL . '/' . $current_page;
+// Request path (BASE_URL stripped, query removed) drives canonical + nav active state.
+$request_path = strtok($_SERVER['REQUEST_URI'] ?? '/', '?');
+if (BASE_URL !== '' && strpos($request_path, BASE_URL) === 0) {
+    $request_path = substr($request_path, strlen(BASE_URL));
+}
+if ($request_path === '' || $request_path === '/index.php') {
+    $request_path = '/';
+}
+$canonical_url = SITE_URL . $request_path;
 $og_image = SITE_URL . '/assets/images/showroom/displays-cfa.jpeg';
 
 $local_business_schema = [
@@ -95,13 +100,13 @@ $local_business_schema = [
         rel="stylesheet">
 
     <!-- Main Stylesheet -->
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="<?php echo url('/css/style.css'); ?>">
 
     <!-- Favicon -->
-    <link rel="icon" type="image/png" sizes="32x32" href="assets/images/logo/cd-icon-round.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="assets/images/logo/cd-icon-round.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="assets/images/logo/cd-icon-round.png">
-    <link rel="shortcut icon" href="assets/images/logo/cd-icon-round.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="<?php echo url('/assets/images/logo/cd-icon-round.png'); ?>">
+    <link rel="icon" type="image/png" sizes="16x16" href="<?php echo url('/assets/images/logo/cd-icon-round.png'); ?>">
+    <link rel="apple-touch-icon" sizes="180x180" href="<?php echo url('/assets/images/logo/cd-icon-round.png'); ?>">
+    <link rel="shortcut icon" href="<?php echo url('/assets/images/logo/cd-icon-round.png'); ?>">
 
     <!-- LCP hero image preload -->
     <?php if (!empty($lcp_image_mobile)): ?>
@@ -150,8 +155,8 @@ $local_business_schema = [
             <div class="container">
                 <div class="header-content">
                     <div class="logo">
-                        <a href="index.php">
-                            <img src="assets/images/logo/CD-logo.png"
+                        <a href="<?php echo url('/'); ?>">
+                            <img src="<?php echo url('/assets/images/logo/CD-logo.png'); ?>"
                                 alt="Creative Blinds & Drapes Aurora IL"
                                 class="logo-img">
                             <p class="tagline">Aurora's Premier Window Treatment Experts</p>
@@ -166,13 +171,10 @@ $local_business_schema = [
                         </button>
 
                         <ul class="nav-menu">
-                            <!-- <li><a href="about.php" class="<?php echo ($current_page == 'about.php') ? 'active' : ''; ?>">About</a></li> -->
-                            <li><a href="shutters.php" class="<?php echo ($current_page == 'shutters.php') ? 'active' : ''; ?>">Shutters</a></li>
-                            <li><a href="blinds.php" class="<?php echo ($current_page == 'blinds.php') ? 'active' : ''; ?>">Blinds</a></li>
-                            <li><a href="shades.php" class="<?php echo ($current_page == 'shades.php') ? 'active' : ''; ?>">Shades</a></li>
-                            <li><a href="curtains.php" class="<?php echo $current_page == 'curtains.php' ? 'active' : ''; ?>">Curtains</a></li>
-                            <!-- <li><a href="gallery.php" class="<?php echo ($current_page == 'gallery.php') ? 'active' : ''; ?>">Gallery</a></li> -->
-                            <li><a href="contact.php" class="<?php echo ($current_page == 'contact.php') ? 'active' : ''; ?>">Contact</a></li>
+                            <?php $cur = rtrim($request_path, '/'); foreach (PRIMARY_NAV as $nav_path => $nav_label): ?>
+                                <li><a href="<?php echo url($nav_path); ?>"
+                                       class="<?php echo $cur === rtrim($nav_path, '/') ? 'active' : ''; ?>"><?php echo htmlspecialchars($nav_label); ?></a></li>
+                            <?php endforeach; ?>
                         </ul>
                     </nav>
                 </div>

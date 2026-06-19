@@ -1,10 +1,10 @@
 <?php
-require_once 'includes/config.php';
+require_once dirname(__DIR__, 2) . '/includes/config.php';
 
 $page_title = 'Custom Window Shutters';
 $meta_description = 'Browse 7 premium shutter collections by Norman Window Fashions. Composite, wood, and specialty shape shutters for Aurora, IL homes. Free in-home consultation.';
 
-$shutters_json = file_get_contents('data/shutters.json');
+$shutters_json = file_get_contents(ROOT_PATH . '/data/shutters.json');
 $shutters_products = json_decode($shutters_json, true);
 
 if (json_last_error() !== JSON_ERROR_NONE || !is_array($shutters_products)) {
@@ -37,13 +37,13 @@ if (!empty($shutters_products)) {
     ], JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE);
 }
 
-$lcp_image        = 'assets/products/shutters/Woodlore/01-Woodlore.jpg';
-$lcp_image_mobile = 'assets/products/shutters/Woodlore/01-Woodlore_m.webp';
+$lcp_image        = BASE_URL . '/assets/products/shutters/Woodlore/01-Woodlore.jpg';
+$lcp_image_mobile = BASE_URL . '/assets/products/shutters/Woodlore/01-Woodlore_m.webp';
 
-require_once 'includes/header.php';
+require_once ROOT_PATH . '/includes/header.php';
 
 function encodeImagePath($path) {
-    return implode('/', array_map('rawurlencode', explode('/', $path)));
+    return BASE_URL . '/' . implode('/', array_map('rawurlencode', explode('/', $path)));
 }
 function thumbPath($path) {
     return substr($path, 0, strrpos($path, '.')) . '_thumb.webp';
@@ -53,14 +53,14 @@ function thumbPath($path) {
 <style>
 .page-header-bg {
     background-image: linear-gradient(rgba(63,61,61,0.52), rgba(63,61,61,0.52)),
-                      url('assets/products/shutters/Woodlore/01-Woodlore.jpg');
+                      url('<?php echo BASE_URL; ?>/assets/products/shutters/Woodlore/01-Woodlore.jpg');
     background-size: cover;
     background-position: center;
 }
 @media (max-width: 991px) {
     .page-header-bg {
         background-image: linear-gradient(rgba(63,61,61,0.52), rgba(63,61,61,0.52)),
-                          url('assets/products/shutters/Woodlore/01-Woodlore_m.webp');
+                          url('<?php echo BASE_URL; ?>/assets/products/shutters/Woodlore/01-Woodlore_m.webp');
     }
 }
 </style>
@@ -72,7 +72,7 @@ function thumbPath($path) {
     </div>
 </section>
 
-<?php include 'includes/compact-form.php'; ?>
+<?php include ROOT_PATH . '/includes/compact-form.php'; ?>
 
 <!-- Products Section -->
 <section style="padding: 60px 20px;">
@@ -136,7 +136,7 @@ function thumbPath($path) {
                             </div>
 
                             <div style="display: flex; gap: 10px;">
-                                <a href="contact.php#quote-form"
+                                <a href="<?php echo url('/contact/'); ?>#quote-form"
                                     class="btn btn-primary"
                                     style="flex: 1; text-align: center; padding: 10px; font-size: 0.9rem;">
                                     Get a Quote
@@ -157,7 +157,7 @@ function thumbPath($path) {
         <h2>Ready to Transform Your Windows?</h2>
         <p>Schedule a free in-home consultation. We'll bring shutter samples directly to you!</p>
         <div style="display: flex; gap: 15px; justify-content: center; flex-wrap: wrap; margin-top: 30px;">
-            <a href="contact.php#quote-form" class="btn btn-primary">Request Free Consultation</a>
+            <a href="<?php echo url('/contact/'); ?>#quote-form" class="btn btn-primary">Request Free Consultation</a>
             <a href="tel:<?php echo str_replace(['(', ')', ' ', '-'], '', BUSINESS_PHONE); ?>" onclick="dataLayer.push({'event': 'phone_click'});" class="btn btn-secondary"
                 style="background-color: transparent; color: white; border-color: white;">
                 Call <?php echo BUSINESS_PHONE; ?>
@@ -180,5 +180,5 @@ function thumbPath($path) {
     }
 </script>
 <?php
-require_once 'includes/footer.php';
+require_once ROOT_PATH . '/includes/footer.php';
 ?>

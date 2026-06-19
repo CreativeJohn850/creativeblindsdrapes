@@ -1,10 +1,10 @@
 <?php
-require_once 'includes/config.php';
+require_once dirname(__DIR__, 2) . '/includes/config.php';
 
 $page_title = 'Custom Window Blinds';
 $meta_description = 'Browse premium horizontal and vertical blinds by Norman Window Fashions. Faux wood, real wood, aluminum, vertical options for Aurora, IL. Free consultation.';
 
-$blinds_json = file_get_contents('data/blinds.json');
+$blinds_json = file_get_contents(ROOT_PATH . '/data/blinds.json');
 $blinds_products = json_decode($blinds_json, true);
 
 if (json_last_error() !== JSON_ERROR_NONE || !is_array($blinds_products)) {
@@ -48,14 +48,14 @@ if (!empty($blinds_products)) {
     ], JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE);
 }
 
-$lcp_image        = 'assets/products/horizontal_blinds/Ultimate Fauxwood Blinds/01-Ultimate-Blinds.jpg';
-$lcp_image_mobile = 'assets/products/horizontal_blinds/Ultimate Fauxwood Blinds/01-Ultimate-Blinds_m.webp';
+$lcp_image        = BASE_URL . '/assets/products/horizontal_blinds/Ultimate Fauxwood Blinds/01-Ultimate-Blinds.jpg';
+$lcp_image_mobile = BASE_URL . '/assets/products/horizontal_blinds/Ultimate Fauxwood Blinds/01-Ultimate-Blinds_m.webp';
 
-require_once 'includes/header.php';
+require_once ROOT_PATH . '/includes/header.php';
 
 if (!function_exists('encodeImagePath')) {
     function encodeImagePath($path) {
-        return implode('/', array_map('rawurlencode', explode('/', $path)));
+        return BASE_URL . '/' . implode('/', array_map('rawurlencode', explode('/', $path)));
     }
 }
 if (!function_exists('thumbPath')) {
@@ -87,7 +87,7 @@ if (!function_exists('thumbPath')) {
     </div>
 </section>
 
-<?php include 'includes/compact-form.php'; ?>
+<?php include ROOT_PATH . '/includes/compact-form.php'; ?>
 
 <!-- Products Section -->
 <section style="padding: 60px 20px;">
@@ -162,7 +162,7 @@ if (!function_exists('thumbPath')) {
                                 </div>
 
                                 <div style="display: flex; gap: 10px;">
-                                    <a href="contact.php#quote-form"
+                                    <a href="<?php echo url('/contact/'); ?>#quote-form"
                                         class="btn btn-primary"
                                         style="flex: 1; text-align: center; padding: 10px; font-size: 0.9rem;">
                                         Get a Quote
@@ -184,7 +184,7 @@ if (!function_exists('thumbPath')) {
         <h2>Ready to Find Your Perfect Blinds?</h2>
         <p>Schedule a free in-home consultation. We'll bring samples directly to you!</p>
         <div style="display: flex; gap: 15px; justify-content: center; flex-wrap: wrap; margin-top: 30px;">
-            <a href="contact.php#quote-form" class="btn btn-primary">Request Free Consultation</a>
+            <a href="<?php echo url('/contact/'); ?>#quote-form" class="btn btn-primary">Request Free Consultation</a>
             <a href="tel:<?php echo str_replace(['(', ')', ' ', '-'], '', BUSINESS_PHONE); ?>" onclick="dataLayer.push({'event': 'phone_click'});" class="btn btn-secondary"
                 style="background-color: transparent; color: white; border-color: white;">
                 Call <?php echo BUSINESS_PHONE; ?>
@@ -230,5 +230,5 @@ if (!function_exists('thumbPath')) {
     });
 </script>
 <?php
-require_once 'includes/footer.php';
+require_once ROOT_PATH . '/includes/footer.php';
 ?>
