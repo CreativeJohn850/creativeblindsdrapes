@@ -2,7 +2,7 @@
 require_once __DIR__ . '/includes/config.php';
 
 $page_title = 'Curtain Hardware & Accessories';
-$meta_description = 'Browse our selection of premium curtain hardware and accessories. Bendable tracks, valance rails, and more to complete your window treatments in Aurora, IL.';
+$meta_description = 'Browse premium curtain hardware and accessories. Bendable tracks, valance rails, and more to complete your window treatments in Aurora, IL.';
 
 $tracks_json = file_get_contents(ROOT_PATH . '/data/tracks.json');
 $track_products = json_decode($tracks_json, true);

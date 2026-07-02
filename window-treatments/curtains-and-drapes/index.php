@@ -37,30 +37,16 @@ $tabs = [
     ],
 ];
 
-$all_products = array_merge($fonluk_products, $tuller_products);
-if (!empty($all_products)) {
-    $schema_items = [];
-    foreach ($all_products as $i => $p) {
-        $schema_items[] = [
-            '@type'    => 'ListItem',
-            'position' => $i + 1,
-            'item'     => [
-                '@type'    => 'Product',
-                'name'     => $p['name'] . ' Curtain Fabric',
-                'material' => $p['composition'] ?? '',
-                'brand'    => ['@type' => 'Brand', 'name' => 'Adeko'],
-            ]
-        ];
-    }
-    $page_schema_json = json_encode([
-        '@context'       => 'https://schema.org',
-        '@type'          => 'ItemList',
-        'name'           => 'Custom Curtains & Drapes Adeko Collection',
-        'description'    => $meta_description,
-        'numberOfItems'  => count($all_products),
-        'itemListElement' => $schema_items,
-    ], JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE);
-}
+$page_schema_json = json_encode([
+    '@context'    => 'https://schema.org',
+    '@type'       => 'Service',
+    'serviceType' => 'Custom Curtains & Drapes',
+    'name'        => 'Custom Curtains & Drapes in Aurora, IL',
+    'provider'    => ['@id' => SITE_URL . '/#business'],
+    'areaServed'  => array_map(fn($c) => ['@type' => 'City', 'name' => $c . ', IL'], SERVICE_AREAS),
+    'description' => $meta_description,
+    'url'         => SITE_URL . '/window-treatments/curtains-and-drapes/',
+], JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE);
 
 $lcp_image        = BASE_URL . '/assets/images/carousel/curtain-drape-background-2365x594.jpg';
 $lcp_image_mobile = BASE_URL . '/assets/images/carousel/curtain-drape-background-666x577.jpg';
@@ -168,11 +154,12 @@ function getPatternArrow($direction)
                                     </div>
                                 </div>
                                 <div style="display: flex; gap: 10px;">
-                                    <a href="<?php echo $tab['pdf_prefix'] . $product['name']; ?>.pdf"
-                                        class="btn btn-primary"
-                                        style="flex: 1; text-align: center; padding: 10px; font-size: 0.9rem;" download>
+                                    <button type="button"
+                                        class="btn btn-primary pdf-download"
+                                        data-pdf="<?php echo htmlspecialchars($tab['pdf_prefix'] . $product['name'] . '.pdf'); ?>"
+                                        style="flex: 1; text-align: center; padding: 10px; font-size: 0.9rem; cursor: pointer;">
                                         Download PDF
-                                    </a>
+                                    </button>
                                 </div>
                             </div>
                         </div>
@@ -230,6 +217,14 @@ function getPatternArrow($direction)
         if (!activeTab) return;
         activeTab.querySelectorAll('.product-card').forEach(product => {
             product.style.display = product.dataset.name.includes(searchTerm) ? 'block' : 'none';
+        });
+    });
+
+    // PDF spec sheets opened via JS so they aren't crawlable <a> links
+    // (keeps this page well under the 100-link SEO threshold — was ~142 links).
+    document.querySelectorAll('.pdf-download').forEach(function (btn) {
+        btn.addEventListener('click', function () {
+            window.open(this.dataset.pdf, '_blank', 'noopener');
         });
     });
 </script>

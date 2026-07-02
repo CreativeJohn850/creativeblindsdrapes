@@ -2,7 +2,7 @@
 require_once dirname(__DIR__, 2) . '/includes/config.php';
 
 $page_title = 'Custom Window Blinds';
-$meta_description = 'Browse premium horizontal and vertical blinds by Norman Window Fashions. Faux wood, real wood, aluminum, vertical options for Aurora, IL. Free consultation.';
+$meta_description = 'Browse horizontal and vertical blinds by Norman Window Fashions. Faux wood, real wood, aluminum, vertical options for Aurora, IL. Free consultation.';
 
 $blinds_json = file_get_contents(ROOT_PATH . '/data/blinds.json');
 $blinds_products = json_decode($blinds_json, true);
@@ -22,31 +22,16 @@ foreach ($blinds_products as $p) {
     }
 }
 
-if (!empty($blinds_products)) {
-    $schema_items = [];
-    foreach ($blinds_products as $i => $p) {
-        $schema_items[] = [
-            '@type' => 'ListItem',
-            'position' => $i + 1,
-            'item' => [
-                '@type' => 'Product',
-                'name' => $p['name'],
-                'description' => $p['description'],
-                'brand' => ['@type' => 'Brand', 'name' => 'Norman Window Fashions'],
-                'url' => $p['manufacturer_url'],
-                'image' => SITE_URL . '/' . $p['images'][0]
-            ]
-        ];
-    }
-    $page_schema_json = json_encode([
-        '@context' => 'https://schema.org',
-        '@type' => 'ItemList',
-        'name' => 'Custom Window Blinds  Norman Window Fashions Collection',
-        'description' => $meta_description,
-        'numberOfItems' => count($blinds_products),
-        'itemListElement' => $schema_items
-    ], JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE);
-}
+$page_schema_json = json_encode([
+    '@context'    => 'https://schema.org',
+    '@type'       => 'Service',
+    'serviceType' => 'Custom Window Blinds',
+    'name'        => 'Custom Window Blinds in Aurora, IL',
+    'provider'    => ['@id' => SITE_URL . '/#business'],
+    'areaServed'  => array_map(fn($c) => ['@type' => 'City', 'name' => $c . ', IL'], SERVICE_AREAS),
+    'description' => $meta_description,
+    'url'         => SITE_URL . '/window-treatments/window-blinds/',
+], JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE);
 
 $lcp_image        = BASE_URL . '/assets/products/horizontal_blinds/Ultimate Fauxwood Blinds/01-Ultimate-Blinds.jpg';
 $lcp_image_mobile = BASE_URL . '/assets/products/horizontal_blinds/Ultimate Fauxwood Blinds/01-Ultimate-Blinds_m.webp';

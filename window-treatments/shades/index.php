@@ -2,7 +2,7 @@
 require_once dirname(__DIR__, 2) . '/includes/config.php';
 
 $page_title = 'Custom Window Shades';
-$meta_description = 'Browse honeycomb, roller, roman, and sheer shades by Norman Window Fashions. Energy-efficient window shades for Aurora, IL homes. Free in-home consultation.';
+$meta_description = 'Browse honeycomb, roller, roman, and sheer shades by Norman Window Fashions. Energy-efficient window shades for Aurora, IL homes. Free consultation.';
 
 $shades_json = file_get_contents(ROOT_PATH . '/data/shades.json');
 $shades_products = json_decode($shades_json, true);
@@ -24,31 +24,16 @@ foreach ($shades_products as $p) {
     }
 }
 
-if (!empty($shades_products)) {
-    $schema_items = [];
-    foreach ($shades_products as $i => $p) {
-        $schema_items[] = [
-            '@type' => 'ListItem',
-            'position' => $i + 1,
-            'item' => [
-                '@type' => 'Product',
-                'name' => $p['name'],
-                'description' => $p['description'],
-                'brand' => ['@type' => 'Brand', 'name' => 'Norman Window Fashions'],
-                'url' => $p['manufacturer_url'],
-                'image' => SITE_URL . '/' . $p['images'][0]
-            ]
-        ];
-    }
-    $page_schema_json = json_encode([
-        '@context' => 'https://schema.org',
-        '@type' => 'ItemList',
-        'name' => 'Custom Window Shades Norman Window Fashions Collection',
-        'description' => $meta_description,
-        'numberOfItems' => count($shades_products),
-        'itemListElement' => $schema_items
-    ], JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE);
-}
+$page_schema_json = json_encode([
+    '@context'    => 'https://schema.org',
+    '@type'       => 'Service',
+    'serviceType' => 'Custom Window Shades',
+    'name'        => 'Custom Window Shades in Aurora, IL',
+    'provider'    => ['@id' => SITE_URL . '/#business'],
+    'areaServed'  => array_map(fn($c) => ['@type' => 'City', 'name' => $c . ', IL'], SERVICE_AREAS),
+    'description' => $meta_description,
+    'url'         => SITE_URL . '/window-treatments/shades/',
+], JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE);
 
 $lcp_image        = BASE_URL . '/assets/products/honeycomb/Portrait Honeycomb/01-Honeycomb.jpg';
 $lcp_image_mobile = BASE_URL . '/assets/products/honeycomb/Portrait Honeycomb/01-Honeycomb_m.webp';

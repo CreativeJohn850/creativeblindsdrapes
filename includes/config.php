@@ -8,6 +8,12 @@ define('BUSINESS_ADDRESS', '850 S Frontenac St, Aurora, IL 60504');
 define('BUSINESS_HOURS', 'Mon-Fri: 9am - 6pm, Sat: 10am - 1pm, Sun: Closed');
 define('BUSINESS_HOURS_ML', 'Mon-Fri: 9am - 6pm<br>Sat: 10am - 1pm<br>Sun: Closed');
 
+/*
+ * Service-area communities (Aurora + 20-mile radius). Single source of truth for
+ * Service/LocalBusiness areaServed schema and the upcoming /service-areas/ pages.
+ */
+define('SERVICE_AREAS', ['Aurora', 'Naperville', 'Oswego', 'Yorkville', 'Batavia', 'Geneva', 'St. Charles', 'Plainfield']);
+
 // Social Media (optional - add links later)
 define('FACEBOOK_URL', 'https://www.facebook.com/CreativeBlindsDrapes');
 define('INSTAGRAM_URL', 'https://www.instagram.com/creative_blindsdrapes');

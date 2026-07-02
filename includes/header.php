@@ -92,6 +92,10 @@ $local_business_schema = [
         })(window, document, 'script', 'dataLayer', 'GTM-W9J8WXQX');</script>
     <!-- End Google Tag Manager -->
 
+    <!-- CallRail Dynamic Number Insertion -->
+    <script type="text/javascript" src="https://cdn.callrail.com/companies/351100287/0436d05c85c55e6a5496/12/swap.js"></script>
+    <!-- End CallRail -->
+
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>

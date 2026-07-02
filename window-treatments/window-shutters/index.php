@@ -2,7 +2,7 @@
 require_once dirname(__DIR__, 2) . '/includes/config.php';
 
 $page_title = 'Custom Window Shutters';
-$meta_description = 'Browse 7 premium shutter collections by Norman Window Fashions. Composite, wood, and specialty shape shutters for Aurora, IL homes. Free in-home consultation.';
+$meta_description = 'Browse 7 premium shutter collections by Norman Window Fashions. Composite, wood, and specialty shape shutters for Aurora, IL homes. Free consultation.';
 
 $shutters_json = file_get_contents(ROOT_PATH . '/data/shutters.json');
 $shutters_products = json_decode($shutters_json, true);
@@ -11,31 +11,16 @@ if (json_last_error() !== JSON_ERROR_NONE || !is_array($shutters_products)) {
     $shutters_products = [];
 }
 
-if (!empty($shutters_products)) {
-    $schema_items = [];
-    foreach ($shutters_products as $i => $p) {
-        $schema_items[] = [
-            '@type' => 'ListItem',
-            'position' => $i + 1,
-            'item' => [
-                '@type' => 'Product',
-                'name' => $p['name'] . ' Window Shutter',
-                'description' => $p['description'],
-                'brand' => ['@type' => 'Brand', 'name' => 'Norman Window Fashions'],
-                'url' => $p['manufacturer_url'],
-                'image' => SITE_URL . '/' . $p['images'][0]
-            ]
-        ];
-    }
-    $page_schema_json = json_encode([
-        '@context' => 'https://schema.org',
-        '@type' => 'ItemList',
-        'name' => 'Custom Window Shutters Norman Window Fashions Collection',
-        'description' => $meta_description,
-        'numberOfItems' => count($shutters_products),
-        'itemListElement' => $schema_items
-    ], JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE);
-}
+$page_schema_json = json_encode([
+    '@context'    => 'https://schema.org',
+    '@type'       => 'Service',
+    'serviceType' => 'Custom Window Shutters',
+    'name'        => 'Custom Window Shutters in Aurora, IL',
+    'provider'    => ['@id' => SITE_URL . '/#business'],
+    'areaServed'  => array_map(fn($c) => ['@type' => 'City', 'name' => $c . ', IL'], SERVICE_AREAS),
+    'description' => $meta_description,
+    'url'         => SITE_URL . '/window-treatments/window-shutters/',
+], JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE);
 
 $lcp_image        = BASE_URL . '/assets/products/shutters/Woodlore/01-Woodlore.jpg';
 $lcp_image_mobile = BASE_URL . '/assets/products/shutters/Woodlore/01-Woodlore_m.webp';
