@@ -25,6 +25,8 @@
                             <li><a href="<?php echo url($nav_path); ?>"><?php echo htmlspecialchars($nav_label); ?></a></li>
                         <?php endforeach; ?>
                         <li><a href="<?php echo url('/curtain-hardware.php'); ?>">Curtain Hardware</a></li>
+                        <li><a href="<?php echo url('/window-treatments/window-treatment-installer/'); ?>">Installation</a></li>
+                        <li><a href="<?php echo url('/window-treatments/motorized-window-treatment/'); ?>">Motorized</a></li>
                     </ul>
                 </div>
 

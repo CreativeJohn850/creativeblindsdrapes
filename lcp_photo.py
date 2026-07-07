@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-lcp_photo.py — Generate mobile-optimised hero images for LCP improvement.
+lcp_photo.py - Generate mobile-optimised hero images for LCP improvement.
 
 For each source file, produces a _m.webp sibling in the same directory:
   - Resized to fit within 768 × 600 px (maintains aspect ratio, no upscale)

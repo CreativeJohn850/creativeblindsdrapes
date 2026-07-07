@@ -8,8 +8,8 @@ Implementation guide to replicate the portfolio gallery used in `pages/projects.
 
 Two-page pattern:
 
-1. **Listing page** — grid of project cards with category filter tabs and pagination.
-2. **Detail page** — full-screen lightbox gallery for a single project's images.
+1. **Listing page**: grid of project cards with category filter tabs and pagination.
+2. **Detail page**: full-screen lightbox gallery for a single project's images.
 
 ---
 
@@ -53,7 +53,7 @@ Each item in the JSON collection needs these fields:
 
 **Convention:** `images[0]` is the thumbnail shown on the listing card. `images[1..n]` are shown in the lightbox gallery on the detail page. `alt-text` maps to gallery images starting at index 0 (aligns with `images[1]`).
 
-The category filter uses a numeric ID derived from `floor(id / 100) * 100` — so IDs 101–199 all belong to category `100`. Define your own ID ranges per category.
+The category filter uses a numeric ID derived from `floor(id / 100) * 100`, so IDs 101-199 all belong to category `100`. Define your own ID ranges per category.
 
 ---
 
@@ -193,7 +193,7 @@ if (!$item) {
 }
 
 $pageTitle = $item['title'];
-$metaDescription = "Browse " . strtolower($item['title']) . " — gallery of completed work.";
+$metaDescription = "Browse " . strtolower($item['title']) . ": gallery of completed work.";
 include '../includes/header.php';
 ?>
 ```
@@ -287,7 +287,7 @@ Videos: store the `.mp4` alongside a `.jpg` poster with the same base name. The 
 
 ## Pagination
 
-`script.js` automatically handles pagination when the `#articlesPagination` nav element is present. Default page size is **10 cards**. No changes needed to the JS — the DOM class names drive it.
+`script.js` automatically handles pagination when the `#articlesPagination` nav element is present. Default page size is **10 cards**. No changes needed to the JS; the DOM class names drive it.
 
 ---
 

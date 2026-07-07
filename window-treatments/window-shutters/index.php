@@ -1,8 +1,8 @@
 <?php
 require_once dirname(__DIR__, 2) . '/includes/config.php';
 
-$page_title = 'Custom Window Shutters';
-$meta_description = 'Browse 7 premium shutter collections by Norman Window Fashions. Composite, wood, and specialty shape shutters for Aurora, IL homes. Free consultation.';
+$page_title = 'Custom Wood Shutters in Aurora & Naperville, IL';
+$meta_description = 'Shop custom wood & composite interior shutters in Aurora, IL. Real wood, composite & motorized styles by Norman Window Fashions. Free consultation.';
 
 $shutters_json = file_get_contents(ROOT_PATH . '/data/shutters.json');
 $shutters_products = json_decode($shutters_json, true);
@@ -11,16 +11,41 @@ if (json_last_error() !== JSON_ERROR_NONE || !is_array($shutters_products)) {
     $shutters_products = [];
 }
 
-$page_schema_json = json_encode([
-    '@context'    => 'https://schema.org',
-    '@type'       => 'Service',
-    'serviceType' => 'Custom Window Shutters',
-    'name'        => 'Custom Window Shutters in Aurora, IL',
-    'provider'    => ['@id' => SITE_URL . '/#business'],
-    'areaServed'  => array_map(fn($c) => ['@type' => 'City', 'name' => $c . ', IL'], SERVICE_AREAS),
-    'description' => $meta_description,
+$crumbs = [
+    ['name' => 'Home', 'path' => '/'],
+    ['name' => 'Window Treatments', 'path' => '/window-treatments/'],
+    ['name' => 'Custom Shutters'],
+];
+
+$faqs = [
+    ['q' => 'What is the difference between custom wood shutters and composite shutters?',
+     'a' => 'Custom wood shutters (our Brightwood and Normandy collections) are milled from real hardwood for a premium look and are best in low-humidity rooms such as living rooms, bedrooms and studies. Composite shutters (Woodlore and Woodlore Plus) use a moisture-resistant polymer that will not warp or crack, which makes them ideal for kitchens, bathrooms and laundry rooms.'],
+    ['q' => 'What louver sizes are available for custom shutters?',
+     'a' => 'We offer 2.5-inch, 3.5-inch and 4.5-inch louvers. The 3.5-inch louver is the most popular all-round size, while the 4.5-inch louver gives the clearest view and most light when open. We bring samples so you can compare sizes on your own windows during the consultation.'],
+    ['q' => 'Are custom shutters available with motorized control?',
+     'a' => 'Yes. The patented PerfectTilt system adds hidden motorized louver control with no visible tilt rod, and works across the shutter collections. It pairs with the Norman Hub app, SmartDial remote and Amazon Alexa or Google Home. Our installer configures and tests the motorization at the installation appointment.'],
+    ['q' => 'Do you install custom shutters in Naperville and surrounding areas?',
+     'a' => 'Yes. We install shutters across our full service area: Aurora, Naperville, Oswego, Yorkville, Batavia, Geneva, St. Charles and Plainfield. Every job includes a free in-home measure and professional mounting, with no hidden labour charges.'],
+    ['q' => 'How do shutters differ from window blinds?',
+     'a' => 'Shutters are a solid, framed panel with tilting louvers that is fixed to the window, giving an architectural, built-in look that can add resale value. Blinds are slats that raise and lower on a cord or wand, offer a wider opacity range and a lower entry cost, and are quicker to install. Many homeowners use shutters in key rooms and blinds elsewhere.'],
+    ['q' => 'How much do custom interior shutters cost in Aurora, IL?',
+     'a' => 'Pricing depends on whether you choose composite or real wood, the collection, louver size, any specialty shapes and whether you add motorization. The most accurate figure comes from your free in-home consultation, where we measure each window and provide an itemised written quote with no obligation.'],
+];
+
+// ItemList of the shutter collections (data-driven from the loaded catalog).
+$itemlist_items = array_map(fn($p) => [
+    'name'        => $p['name'],
+    'description' => $p['description'] ?? '',
     'url'         => SITE_URL . '/window-treatments/window-shutters/',
-], JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE);
+], $shutters_products);
+
+require_once ROOT_PATH . '/includes/spoke-schema.php';
+$page_schema_json = spoke_schema_graph([
+    cbd_service_schema('Custom Shutter Installation', 'Custom Window Shutters in Aurora, IL', $meta_description, SITE_URL . '/window-treatments/window-shutters/'),
+    cbd_itemlist_schema($itemlist_items),
+    cbd_faq_schema($faqs),
+    cbd_breadcrumb_schema($crumbs),
+]);
 
 $lcp_image        = BASE_URL . '/assets/products/shutters/Woodlore/01-Woodlore.jpg';
 $lcp_image_mobile = BASE_URL . '/assets/products/shutters/Woodlore/01-Woodlore_m.webp';
@@ -52,12 +77,26 @@ function thumbPath($path) {
 <section class="page-header page-header-bg"
     style="color: white; padding: 60px 20px; text-align: center;">
     <div class="container">
-        <h1 style="color: white; margin-bottom: 15px;">Custom Window Shutters in Aurora, IL</h1>
-        <p style="font-size: 1.2rem; color: rgba(255,255,255,0.95); max-width: 700px; margin: 0 auto;">Premium shutter collections by Norman Window Fashions. Composite, wood, and specialty shapes for every window in your home.</p>
+        <h1 style="color: white; margin-bottom: 15px;">Custom Wood & Interior Shutters in Aurora, Naperville & the Fox Valley</h1>
+        <p style="font-size: 1.2rem; color: rgba(255,255,255,0.95); max-width: 760px; margin: 0 auto;">Shop custom wood shutters and interior shutters from seven Norman Window Fashions collections, professionally measured and installed across Aurora, Naperville and the Fox Valley. Every order includes a free in-home consultation, exact-fit fabrication and professional installation backed by 23 years of experience through Creative Floors Inc.</p>
     </div>
 </section>
 
+<?php require ROOT_PATH . '/includes/breadcrumbs.php'; ?>
+
 <?php include ROOT_PATH . '/includes/compact-form.php'; ?>
+
+<!-- Trust Bar -->
+<section style="padding: 40px 20px 0;">
+    <div class="container">
+        <div class="trust-bar">
+            <div class="trust-chip">7 Shutter Collections</div>
+            <div class="trust-chip">Real Wood &amp; Composite</div>
+            <div class="trust-chip">Motorized Smart-Home</div>
+            <div class="trust-chip">Installation Included</div>
+        </div>
+    </div>
+</section>
 
 <!-- Products Section -->
 <section style="padding: 60px 20px;">
@@ -135,6 +174,66 @@ function thumbPath($path) {
 
     </div>
 </section>
+
+<!-- Wood vs Composite -->
+<section style="padding: 20px 20px 60px; background-color: var(--warm-cream);">
+    <div class="container">
+        <div class="section-header">
+            <h2>Custom Wood Shutters vs Composite: Which Is Right for You?</h2>
+            <p>Compare our real-wood and composite collections before your consultation.</p>
+        </div>
+        <div class="compare-table-wrap" style="margin-top: 30px;">
+            <table class="compare-table">
+                <thead>
+                    <tr><th>Property</th><th>Custom Wood (Brightwood &amp; Normandy)</th><th>Composite (Woodlore &amp; Woodlore Plus)</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>Material</td><td>Real North American hardwood</td><td>Moisture-resistant composite polymer</td></tr>
+                    <tr><td>Best rooms</td><td>Living rooms, bedrooms, studies (low humidity)</td><td>Kitchens, baths, laundry (high humidity)</td></tr>
+                    <tr><td>Louver sizes</td><td>2.5&quot;, 3.5&quot;, 4.5&quot;</td><td>2.5&quot;, 3.5&quot;, 4.5&quot;</td></tr>
+                    <tr><td>Custom finishes</td><td>2,000+ paint colors &amp; 10 stains</td><td>Up to 8 colors</td></tr>
+                    <tr><td>Motorization</td><td>PerfectTilt upgrade</td><td>PerfectTilt, SmartDial &amp; Norman Hub</td></tr>
+                    <tr><td>Moisture resistance</td><td>Not recommended for wet rooms</td><td>Will not warp in humidity</td></tr>
+                    <tr><td>Typical lead time</td><td>4-6 weeks</td><td>3-5 weeks</td></tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</section>
+
+<!-- Cross-sell -->
+<section style="padding: 60px 20px;">
+    <div class="container">
+        <div class="section-header">
+            <h2>Explore the Full Custom Window Treatment Range</h2>
+            <p>Every category includes free consultation, custom fabrication and professional installation.</p>
+        </div>
+        <div class="grid-4" style="margin-top: 40px;">
+            <div style="text-align: center;">
+                <h3 style="margin-bottom: 10px;">Blinds</h3>
+                <p style="color: var(--text-gray); margin-bottom: 15px;">Faux wood, real wood, aluminum &amp; vertical blinds.</p>
+                <a href="<?php echo url('/window-treatments/window-blinds/'); ?>" class="btn btn-primary">Browse custom blinds</a>
+            </div>
+            <div style="text-align: center;">
+                <h3 style="margin-bottom: 10px;">Shades</h3>
+                <p style="color: var(--text-gray); margin-bottom: 15px;">Honeycomb, roller, roman &amp; sheer shades. Cordless &amp; motorized.</p>
+                <a href="<?php echo url('/window-treatments/shades/'); ?>" class="btn btn-primary">Browse custom shades</a>
+            </div>
+            <div style="text-align: center;">
+                <h3 style="margin-bottom: 10px;">Drapes &amp; Curtains</h3>
+                <p style="color: var(--text-gray); margin-bottom: 15px;">70+ drapery fabrics and 54 sheers, made to measure.</p>
+                <a href="<?php echo url('/window-treatments/curtains-and-drapes/'); ?>" class="btn btn-primary">Browse drapes &amp; curtains</a>
+            </div>
+            <div style="text-align: center;">
+                <h3 style="margin-bottom: 10px;">All Window Treatments</h3>
+                <p style="color: var(--text-gray); margin-bottom: 15px;">Hub page: blinds, shades, shutters, drapes and motorized options.</p>
+                <a href="<?php echo url('/window-treatments/'); ?>" class="btn btn-primary">Browse all treatments</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<?php require ROOT_PATH . '/includes/faq-section.php'; ?>
 
 <!-- CTA Section -->
 <section class="cta-section">

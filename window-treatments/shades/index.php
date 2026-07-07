@@ -1,8 +1,8 @@
 <?php
 require_once dirname(__DIR__, 2) . '/includes/config.php';
 
-$page_title = 'Custom Window Shades';
-$meta_description = 'Browse honeycomb, roller, roman, and sheer shades by Norman Window Fashions. Energy-efficient window shades for Aurora, IL homes. Free consultation.';
+$page_title = 'Roman, Roller & Honeycomb Shades in Aurora, IL';
+$meta_description = 'Shop roman, roller, honeycomb & sheer shades in Aurora, IL. Cordless, motorized & inside-mount options by Norman Window Fashions. Free consultation.';
 
 $shades_json = file_get_contents(ROOT_PATH . '/data/shades.json');
 $shades_products = json_decode($shades_json, true);
@@ -24,16 +24,49 @@ foreach ($shades_products as $p) {
     }
 }
 
-$page_schema_json = json_encode([
-    '@context'    => 'https://schema.org',
-    '@type'       => 'Service',
-    'serviceType' => 'Custom Window Shades',
-    'name'        => 'Custom Window Shades in Aurora, IL',
-    'provider'    => ['@id' => SITE_URL . '/#business'],
-    'areaServed'  => array_map(fn($c) => ['@type' => 'City', 'name' => $c . ', IL'], SERVICE_AREAS),
-    'description' => $meta_description,
+// Learn-more links to the dedicated spoke landing pages (two-way hub<->spoke linking).
+$spokeLinks = [
+    'honeycomb' => ['url' => '/window-treatments/shades/honeycomb-shades/', 'label' => 'honeycomb (cellular) shades'],
+    'roller'    => ['url' => '/window-treatments/shades/roller-shades/',    'label' => 'roller shades'],
+    'roman'     => ['url' => '/window-treatments/shades/roman-shades/',     'label' => 'roman shades'],
+    'sheer'     => ['url' => '/window-treatments/shades/sheer-shades/',      'label' => 'sheer shades'],
+];
+
+$crumbs = [
+    ['name' => 'Home', 'path' => '/'],
+    ['name' => 'Window Treatments', 'path' => '/window-treatments/'],
+    ['name' => 'Custom Window Shades'],
+];
+
+$faqs = [
+    ['q' => 'What is the difference between roman shades and roller shades?',
+     'a' => 'Roman shades fold into soft horizontal pleats when raised, creating a fabric stack at the top of the window, and come in flat, hobbled and relaxed fold styles that suit traditional and transitional rooms. Roller shades roll onto a concealed tube for a clean, contemporary profile with no visible folds and cover a wider opacity range from sheer solar fabric to full blackout. Both are available cordless and can be upgraded to motorized operation.'],
+    ['q' => 'What are honeycomb shades and why are they energy-efficient?',
+     'a' => 'Honeycomb shades are named for the air pockets formed by their cellular fabric. Each pocket traps a layer of air between the glass and the room, insulating against heat in summer and cold in winter. Double-cell shades trap two layers and are ideal for bedrooms and main living areas, while triple-cell models give the maximum insulation. The Portrait Honeycomb collection from Norman Window Fashions offers single, double and triple cell with over 500 fabric choices across light-filtering, room-darkening and blackout opacities.'],
+    ['q' => 'Can roman shades be installed inside the window frame?',
+     'a' => 'Yes. Inside mount is available on all Centerpiece Roman Shade configurations provided the window recess is deep enough for the mounting hardware. Our installer checks inside-mount depth during the pre-installation measurement visit. If the recess is too shallow, we recommend an outside mount that covers the frame for a clean finish. The written quote at your free in-home consultation specifies the mount type.'],
+    ['q' => 'What are smart roman shades and motorized roller shades for large windows?',
+     'a' => 'Smart shades use the Norman ShadeAuto motorization system to raise and lower by app, remote, schedule or voice command. The same system powers motorized roller shades and honeycomb shades. For large windows, the ShadeAuto motor handles spans that are hard to operate by hand, and the Norman Hub app controls every shade in a room from one schedule. Amazon Alexa and Google Home are both compatible, and our installer pairs and configures everything at the appointment.'],
+    ['q' => 'Do you install honeycomb shades in Naperville, Oswego and Yorkville?',
+     'a' => 'Yes. Honeycomb shades, and every other shade type, are installed across our full service area: Aurora, Naperville, Oswego, Yorkville, Batavia, Geneva, St. Charles and Plainfield. Every installation includes the free pre-installation measurement visit and professional mounting.'],
+    ['q' => 'How much do custom roman shades cost in Aurora, IL?',
+     'a' => 'Pricing depends on your fabric choice, window width and drop, and whether you choose cordless or motorized operation. The most accurate figure comes from your free in-home consultation, where we measure every window and provide an itemised written quote with no obligation.'],
+];
+
+// ItemList of the shade collections (data-driven from the loaded catalog).
+$itemlist_items = array_map(fn($p) => [
+    'name'        => $p['name'],
+    'description' => $p['description'] ?? '',
     'url'         => SITE_URL . '/window-treatments/shades/',
-], JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE);
+], $shades_products);
+
+require_once ROOT_PATH . '/includes/spoke-schema.php';
+$page_schema_json = spoke_schema_graph([
+    cbd_service_schema('Custom Window Shade Installation', 'Custom Window Shades in Aurora, IL', $meta_description, SITE_URL . '/window-treatments/shades/'),
+    cbd_itemlist_schema($itemlist_items),
+    cbd_faq_schema($faqs),
+    cbd_breadcrumb_schema($crumbs),
+]);
 
 $lcp_image        = BASE_URL . '/assets/products/honeycomb/Portrait Honeycomb/01-Honeycomb.jpg';
 $lcp_image_mobile = BASE_URL . '/assets/products/honeycomb/Portrait Honeycomb/01-Honeycomb_m.webp';
@@ -69,12 +102,26 @@ if (!function_exists('thumbPath')) {
 <section class="page-header page-header-bg"
     style="color: white; padding: 60px 20px; text-align: center;">
     <div class="container">
-        <h1 style="color: white; margin-bottom: 15px;">Custom Window Shades in Aurora, IL</h1>
-        <p style="font-size: 1.2rem; color: rgba(255,255,255,0.95); max-width: 700px; margin: 0 auto;">Energy-efficient honeycomb, sleek roller, elegant roman, and modern sheer shades by Norman Window Fashions  for every window in your home.</p>
+        <h1 style="color: white; margin-bottom: 15px;">Custom Roman, Roller & Honeycomb Shades in Aurora, Naperville & the Fox Valley</h1>
+        <p style="font-size: 1.2rem; color: rgba(255,255,255,0.95); max-width: 760px; margin: 0 auto;">Shop roman shades, roller shades, honeycomb shades and sheer shades from Norman Window Fashions, professionally measured and installed across Aurora, Naperville and the Fox Valley. Every order includes a free in-home consultation, exact-fit fabrication and shade installation backed by 23 years of experience through Creative Floors Inc.</p>
     </div>
 </section>
 
+<?php require ROOT_PATH . '/includes/breadcrumbs.php'; ?>
+
 <?php include ROOT_PATH . '/includes/compact-form.php'; ?>
+
+<!-- Trust Bar -->
+<section style="padding: 40px 20px 0;">
+    <div class="container">
+        <div class="trust-bar">
+            <div class="trust-chip">6 Shade Collections</div>
+            <div class="trust-chip">Cordless &amp; Motorized</div>
+            <div class="trust-chip">Inside Mount Available</div>
+            <div class="trust-chip">Installation Included</div>
+        </div>
+    </div>
+</section>
 
 <!-- Products Section -->
 <section style="padding: 60px 20px;">
@@ -109,6 +156,11 @@ if (!function_exists('thumbPath')) {
             <div class="tab-content <?php echo $tabIndex === 0 ? 'active' : ''; ?>"
                 id="<?php echo $key; ?>-content"
                 style="display: <?php echo $tabIndex === 0 ? 'block' : 'none'; ?>;">
+                <?php if (!empty($spokeLinks[$key])): ?>
+                    <p style="margin-bottom: 24px; font-size: 1rem;">
+                        <a href="<?php echo url($spokeLinks[$key]['url']); ?>" style="color: var(--primary-teal); font-weight: 600;">Learn more about <?php echo htmlspecialchars($spokeLinks[$key]['label']); ?> &rarr;</a>
+                    </p>
+                <?php endif; ?>
                 <div class="products-grid"
                     style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 30px;">
                     <?php foreach ($tab['products'] as $product): ?>
@@ -169,6 +221,67 @@ if (!function_exists('thumbPath')) {
 
     </div>
 </section>
+
+<!-- Quick-Select Guide -->
+<section style="padding: 20px 20px 60px; background-color: var(--warm-cream);">
+    <div class="container">
+        <div class="section-header">
+            <h2>Choose the Right Shade: Quick-Select Guide</h2>
+            <p>Match your room need to the right shade type before your consultation.</p>
+        </div>
+        <div class="compare-table-wrap" style="margin-top: 30px;">
+            <table class="compare-table">
+                <thead>
+                    <tr><th>Room / Need</th><th>Best Shade Type</th><th>Key Feature</th><th>Lift Options</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>Bedroom: full blackout</td><td>Centerpiece Roman or Soluna Roller</td><td>Blackout opacity blocks all light</td><td>Cordless or motorized</td></tr>
+                    <tr><td>Living room: soft light</td><td>PerfectSheer or Centerpiece Roman</td><td>Diffused natural light with privacy</td><td>Cordless or motorized</td></tr>
+                    <tr><td>Kitchen: moisture-resistant</td><td>Portrait Honeycomb single cell</td><td>Moisture-tolerant cellular fabric</td><td>SmartRise cordless</td></tr>
+                    <tr><td>Nursery: child safety</td><td>San Clemente Cordless Honeycomb</td><td>No cords, SmartRise operation</td><td>Cordless only</td></tr>
+                    <tr><td>Large window or patio door</td><td>Vertical Honeycomb or Soluna Roller</td><td>Wide coverage, stacks to the side</td><td>Wand or motorized</td></tr>
+                    <tr><td>Home office: glare control</td><td>Soluna Roller (solar fabric)</td><td>Solar weave reduces glare, keeps view</td><td>Cordless or motorized</td></tr>
+                    <tr><td>Energy saving: all rooms</td><td>Portrait Honeycomb double or triple cell</td><td>Air-pocket insulation cuts heating bills</td><td>SmartRise or ShadeAuto motorized</td></tr>
+                    <tr><td>Smart-home integration</td><td>Soluna Roller or Portrait Honeycomb</td><td>ShadeAuto + Alexa / Google Home</td><td>Motorized with Norman Hub</td></tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</section>
+
+<!-- Cross-sell -->
+<section style="padding: 60px 20px;">
+    <div class="container">
+        <div class="section-header">
+            <h2>Explore the Full Custom Window Treatment Range</h2>
+            <p>Shades layer beautifully with shutters and drapes. Every category includes free consultation, custom fabrication and professional installation.</p>
+        </div>
+        <div class="grid-4" style="margin-top: 40px;">
+            <div style="text-align: center;">
+                <h3 style="margin-bottom: 10px;">Shutters</h3>
+                <p style="color: var(--text-gray); margin-bottom: 15px;">7 collections: wood, composite &amp; motorized interior shutters.</p>
+                <a href="<?php echo url('/window-treatments/window-shutters/'); ?>" class="btn btn-primary">Browse custom shutters</a>
+            </div>
+            <div style="text-align: center;">
+                <h3 style="margin-bottom: 10px;">Blinds</h3>
+                <p style="color: var(--text-gray); margin-bottom: 15px;">Faux wood, real wood, aluminum &amp; vertical blinds. Cordless &amp; motorized.</p>
+                <a href="<?php echo url('/window-treatments/window-blinds/'); ?>" class="btn btn-primary">Browse custom blinds</a>
+            </div>
+            <div style="text-align: center;">
+                <h3 style="margin-bottom: 10px;">Drapes &amp; Curtains</h3>
+                <p style="color: var(--text-gray); margin-bottom: 15px;">70+ drapery fabrics, 54 sheers. Layer with sheer shades for a designer finish.</p>
+                <a href="<?php echo url('/window-treatments/curtains-and-drapes/'); ?>" class="btn btn-primary">Browse drapes &amp; curtains</a>
+            </div>
+            <div style="text-align: center;">
+                <h3 style="margin-bottom: 10px;">All Window Treatments</h3>
+                <p style="color: var(--text-gray); margin-bottom: 15px;">Hub page: blinds, shades, shutters, drapes and motorized options.</p>
+                <a href="<?php echo url('/window-treatments/'); ?>" class="btn btn-primary">Browse all treatments</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<?php require ROOT_PATH . '/includes/faq-section.php'; ?>
 
 <!-- CTA Section -->
 <section class="cta-section">

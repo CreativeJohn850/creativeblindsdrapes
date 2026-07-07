@@ -2,7 +2,7 @@
   "info": {
     "_postman_id": "lead-tracking-web-forms-api",
     "name": "Lead Tracking System - Web Forms API",
-    "description": "Web Forms API collection for the Lead Tracking System. Includes public form submission endpoints and authenticated endpoints for viewing submissions.\n\n## Setup\n1. Import this collection\n2. Set base_url if not using the default (http://localhost:8000/api/v1)\n3. Run the Login request first — it sets an HttpOnly cookie used by the authenticated endpoints\n4. Public form submission endpoints do not require authentication",
+    "description": "Web Forms API collection for the Lead Tracking System. Includes public form submission endpoints and authenticated endpoints for viewing submissions.\n\n## Setup\n1. Import this collection\n2. Set base_url if not using the default (http://localhost:8000/api/v1)\n3. Run the Login request first - it sets an HttpOnly cookie used by the authenticated endpoints\n4. Public form submission endpoints do not require authentication",
     "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
   },
   "variable": [

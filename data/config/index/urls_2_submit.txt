@@ -19,3 +19,19 @@
 #https://creativeblindsdrapes.com/curtain-hardware.php
 #https://creativeblindsdrapes.com/about-us/
 #https://creativeblindsdrapes.com/contact/
+
+# --- Phase 2 product/service spoke pages (new 2026-07-03) ---
+https://creativeblindsdrapes.com/window-treatments/shades/honeycomb-shades/
+https://creativeblindsdrapes.com/window-treatments/shades/roller-shades/
+https://creativeblindsdrapes.com/window-treatments/shades/roman-shades/
+https://creativeblindsdrapes.com/window-treatments/shades/sheer-shades/
+https://creativeblindsdrapes.com/window-treatments/window-blinds/horizontal-blinds/
+https://creativeblindsdrapes.com/window-treatments/window-blinds/vertical-blinds/
+https://creativeblindsdrapes.com/window-treatments/curtains-and-drapes/draperies/
+https://creativeblindsdrapes.com/window-treatments/curtains-and-drapes/sheers/
+https://creativeblindsdrapes.com/window-treatments/window-treatment-installer/
+https://creativeblindsdrapes.com/window-treatments/window-treatment-installer/blind-installer/
+https://creativeblindsdrapes.com/window-treatments/window-treatment-installer/shades-installation/
+https://creativeblindsdrapes.com/window-treatments/window-treatment-installer/shutter-installer/
+https://creativeblindsdrapes.com/window-treatments/window-treatment-installer/drapery-installation/
+https://creativeblindsdrapes.com/window-treatments/motorized-window-treatment/

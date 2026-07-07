@@ -24,7 +24,7 @@ RewriteRule ^ /assets/products/%1 [L,R=301]
 RewriteCond %{HTTP_HOST} ^www\.creativeblindsdrapes\.com [NC]
 RewriteRule ^ https://creativeblindsdrapes.com%{REQUEST_URI} [L,R=301]
 
-# Redirect HTTP → HTTPS (live domain only — skips localhost)
+# Redirect HTTP to HTTPS (live domain only - skips localhost)
 RewriteCond %{HTTP_HOST} ^(www\.)?creativeblindsdrapes\.com [NC]
 RewriteCond %{HTTPS} off
 RewriteRule ^ https://creativeblindsdrapes.com%{REQUEST_URI} [L,R=301]

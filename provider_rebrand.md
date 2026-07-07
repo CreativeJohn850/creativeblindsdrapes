@@ -1,5 +1,5 @@
 # Provider Branding Recommendations
-## Adeko & Norman — Creative Blinds & Drapes
+## Adeko & Norman: Creative Blinds & Drapes
 
 ---
 
@@ -7,13 +7,13 @@
 
 Adeko is unknown to US consumers. Describing *qualities* (Turkish craftsmanship, premium fabric, European manufacturing) converts better than the brand name alone. One mention per page in body text is sufficient to establish provenance. Reserve heading/card positions for your own trust signals: 23-year parent company (Creative Floors Inc.), local service, free consultation.
 
-If Norman products are added: Norman is a recognized US brand. It can be featured more prominently — a co-branding section with their logo would be appropriate.
+If Norman products are added: Norman is a recognized US brand. It can be featured more prominently, with a co-branding section including their logo.
 
 ---
 
 ## Priority Fixes
 
-### 1. Remove the outbound link to adekodesign.com — HIGHEST PRIORITY
+### 1. Remove the outbound link to adekodesign.com (HIGHEST PRIORITY)
 **File:** `about.php:36`  
 **Problem:** Dofollow link sends users to the manufacturer's website where they may find other US dealers.  
 **Fix:** Remove the `<a href="...">` wrapper entirely, or add `rel="nofollow noopener"` if the link must stay.
@@ -45,8 +45,8 @@ Adeko
 
 ---
 
-### 3. Update meta descriptions — 4 pages
-**Problem:** Meta descriptions lead with "Adeko" — a brand unknown to US consumers — wasting the snippet space that drives click-through rate.
+### 3. Update meta descriptions (4 pages)
+**Problem:** Meta descriptions lead with "Adeko", a brand unknown to US consumers, wasting the snippet space that drives click-through rate.
 
 | File | Current | Suggested revision |
 |------|---------|-------------------|
@@ -58,16 +58,16 @@ Adeko
 ---
 
 ### 4. Block PDF indexing
-**Problem:** Adeko-branded spec PDFs (127+ files across fonluk and tuller) can appear in Google search independently, bypassing your product pages and showing only Adeko branding — sending potential customers to the manufacturer.
+**Problem:** Adeko-branded spec PDFs (127+ files across fonluk and tuller) can appear in Google search independently, bypassing your product pages and showing only Adeko branding, sending potential customers to the manufacturer.
 
-**Option A — robots.txt (recommended):**
+**Option A, robots.txt (recommended):**
 ```
 User-agent: *
 Disallow: /assets/products/fonluk/pdfs/
 Disallow: /assets/products/tuller/pdfs/
 ```
 
-**Option B — .htaccess (if granular control is needed):**
+**Option B, .htaccess (if granular control is needed):**
 ```apache
 <FilesMatch "\.pdf$">
     Header set X-Robots-Tag "noindex, nofollow"
@@ -84,7 +84,7 @@ The `download` attribute already on PDF links (good) prompts a save rather than 
 |----------|------|--------|
 | JSON-LD brand fields | `drapes-curtains.php:24`, `sheer-curtains.php:24` | Correct structured data; helps Google categorize products for rich results |
 | JSON-LD ItemList names | `drapes-curtains.php:32`, `sheer-curtains.php:32` | Structured data accuracy |
-| Page header subtitles | `drapes-curtains.php:62`, `sheer-curtains.php:62` | On product pages, users expect to know what they're browsing — appropriate context |
+| Page header subtitles | `drapes-curtains.php:62`, `sheer-curtains.php:62` | On product pages, users expect to know what they're browsing, appropriate context |
 | Body text mention | `index.php:41`, `about.php:36` (text only, no link) | Single contextual mention is appropriate and honest |
 
 ---
@@ -99,17 +99,17 @@ The `download` attribute already on PDF links (good) prompts a save rather than 
 | 4 | `index.php:70` | Yes (h3 heading) | Negative | Supplier gets credit instead of your business |
 | 5 | `index.php:71` | Yes (body) | Negative | Redundant within same card |
 | 6 | `about.php:4` | Meta snippet | Negative | Same issue as #1 |
-| 7 | `about.php:36` | Yes (hyperlink) | Negative | Sends users to manufacturer — highest risk |
+| 7 | `about.php:36` | Yes (hyperlink) | Negative | Sends users to manufacturer, highest risk |
 | 8 | `about.php:70` | Yes (h3 heading) | Negative | Exact duplicate of index.php:70 |
 | 9 | `about.php:71` | Yes (body) | Negative | Exact duplicate of index.php:71 |
 | 10 | `drapes-curtains.php:5` | Meta snippet | Negative | Replace with product count + origin |
 | 11 | `drapes-curtains.php:24` | No (JSON-LD) | Positive | Correct brand schema markup |
 | 12 | `drapes-curtains.php:32` | No (JSON-LD) | Positive | Structured data accuracy |
-| 13 | `drapes-curtains.php:62` | Yes (page header) | Neutral | Product page context — appropriate |
+| 13 | `drapes-curtains.php:62` | Yes (page header) | Neutral | Product page context, appropriate |
 | 14 | `sheer-curtains.php:5` | Meta snippet | Negative | Replace with product count + origin |
 | 15 | `sheer-curtains.php:24` | No (JSON-LD) | Positive | Correct brand schema markup |
 | 16 | `sheer-curtains.php:32` | No (JSON-LD) | Positive | Structured data accuracy |
-| 17 | `sheer-curtains.php:62` | Yes (page header) | Neutral | Product page context — appropriate |
+| 17 | `sheer-curtains.php:62` | Yes (page header) | Neutral | Product page context, appropriate |
 
 **Summary:** 4 positive, 4 neutral, 9 negative/suboptimal
 
@@ -118,7 +118,7 @@ The `download` attribute already on PDF links (good) prompts a save rather than 
 ## Norman (Future Supplier)
 
 Norman is a recognized US brand in the window treatment market (comparable tier to Hunter Douglas). When Norman products are added:
-- Feature the brand name prominently — US homeowners recognize it
+- Feature the brand name prominently; US homeowners recognize it
 - A co-branding section with Norman's logo on the relevant product page is appropriate
 - Meta descriptions and headings can lead with "Norman" without the same risk as Adeko
 - Follow Norman's dealer co-branding guidelines if they provide them

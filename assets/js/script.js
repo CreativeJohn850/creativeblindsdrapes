@@ -47,6 +47,19 @@ document.addEventListener('DOMContentLoaded', function() {
             toggleMenu();
         }
     });
+
+    // Mobile submenu (dropdown) accordion - caret toggles without navigating.
+    // On desktop the caret is pointer-events:none, so this only fires on mobile.
+    document.querySelectorAll('.submenu-toggle').forEach(function (btn) {
+        btn.addEventListener('click', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+            var li = btn.closest('.has-dropdown');
+            if (!li) return;
+            var isOpen = li.classList.toggle('open');
+            btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+        });
+    });
 });
 
 // Compact Quote Form (embedded below the hero on every page)
@@ -59,13 +72,13 @@ document.addEventListener('DOMContentLoaded', function () {
 
     const RECAPTCHA_SITE_KEY = '6LdOMk0sAAAAAMnWfjTV2JtpuimpVL5N8Qql_qc4';
 
-    // Live ZIP hint — mirrors the server-side range check in process-contact.php
+    // Live ZIP hint - mirrors the server-side range check in process-contact.php
     var zipInput = document.getElementById('cqZip');
     var zipHint  = document.getElementById('cqZipHint');
 
     function parseZip(raw) {
         var val = raw.trim();
-        // Handle ZIP+4 (e.g. 60504-1234) — extract the 5-digit base
+        // Handle ZIP+4 (e.g. 60504-1234) - extract the 5-digit base
         if (/^\d{5}-\d{4}$/.test(val)) val = val.slice(0, 5);
         return val;
     }
@@ -87,7 +100,7 @@ document.addEventListener('DOMContentLoaded', function () {
             zipHint.textContent = 'Please enter a valid 5-digit ZIP code.';
             zipHint.className = 'cq-zip-hint cq-zip-hint--error';
         } else if (result === 'outofrange') {
-            zipHint.textContent = 'We serve the Aurora area (60001–60900). Call us for availability.';
+            zipHint.textContent = 'We serve the Aurora area (60001-60900). Call us for availability.';
             zipHint.className = 'cq-zip-hint cq-zip-hint--warn';
         } else {
             zipHint.textContent = '';
@@ -98,10 +111,10 @@ document.addEventListener('DOMContentLoaded', function () {
     form.addEventListener('submit', async function (e) {
         e.preventDefault();
 
-        // Honeypot — silent fake success if bot filled the hidden field
+        // Honeypot - silent fake success if bot filled the hidden field
         if (document.getElementById('cqHoneypot').value) {
             window.location.href = (window.SITE_BASE || '') + '/thank-you/';
-            return; // no params — bots don't deserve a personalized page
+            return; // no params - bots don't deserve a personalized page
         }
 
         // Client-side ZIP validation before hitting the server
@@ -112,7 +125,7 @@ document.addEventListener('DOMContentLoaded', function () {
             return;
         }
         if (zipResult === 'outofrange') {
-            showMsg('error', 'We serve the Aurora area (60001–60900). Please call us for availability.');
+            showMsg('error', 'We serve the Aurora area (60001-60900). Please call us for availability.');
             zipInput.focus();
             return;
         }

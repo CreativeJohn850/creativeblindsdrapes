@@ -25,10 +25,10 @@ define('DEFAULT_DESCRIPTION', 'Professional window treatment solutions in Aurora
 /*
  * Path framework
  * --------------
- * ROOT_PATH — filesystem root of the app, for server-side require/read. Depth-independent.
- * BASE_URL  — URL path prefix so root-relative URLs work both in production (site at the
+ * ROOT_PATH - filesystem root of the app, for server-side require/read. Depth-independent.
+ * BASE_URL  - URL path prefix so root-relative URLs work both in production (site at the
  *             domain root → '') and locally (site under /creativeblindsdrapes → that prefix).
- *             Derived by diffing the app root against DOCUMENT_ROOT — no hardcoded folder name.
+ *             Derived by diffing the app root against DOCUMENT_ROOT - no hardcoded folder name.
  */
 define('ROOT_PATH', dirname(__DIR__));
 
@@ -49,7 +49,7 @@ function url($path = '/') {
 }
 
 /*
- * Primary navigation — single source of truth for header nav + footer product links.
+ * Primary navigation - single source of truth for header nav + footer product links.
  * Keys are root-relative URLs (run through url()); values are labels.
  */
 define('PRIMARY_NAV', [
@@ -58,5 +58,28 @@ define('PRIMARY_NAV', [
     '/window-treatments/shades/'              => 'Shades',
     '/window-treatments/curtains-and-drapes/' => 'Curtains',
     '/contact/'                               => 'Contact',
+]);
+
+/*
+ * Header navigation - nested structure driving the top menu (and its dropdown).
+ * A leaf item has 'label' + 'path'. A parent item adds 'children' (root-relative
+ * URL => label). Kept separate from PRIMARY_NAV so the footer Products column is
+ * unaffected. All URLs run through url().
+ */
+define('MAIN_NAV', [
+    [
+        'label' => 'Window Treatments',
+        'path'  => '/window-treatments/',
+        'children' => [
+            '/window-treatments/window-shutters/'            => 'Shutters',
+            '/window-treatments/window-blinds/'              => 'Blinds',
+            '/window-treatments/shades/'                     => 'Shades',
+            '/window-treatments/curtains-and-drapes/'        => 'Curtains',
+            '/window-treatments/window-treatment-installer/' => 'Installation',
+            '/window-treatments/motorized-window-treatment/' => 'Motorized',
+        ],
+    ],
+    ['label' => 'About',   'path' => '/about-us/'],
+    ['label' => 'Contact', 'path' => '/contact/'],
 ]);
 ?>

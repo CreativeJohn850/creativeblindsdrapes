@@ -13,7 +13,7 @@ require_once dirname(__DIR__) . '/includes/header.php';
     <div class="container">
         <h1 style="color: white; margin-bottom: 15px;">About Creative Blinds &amp; Drapes in Aurora, IL</h1>
         <p style="font-size: 1.2rem; color: rgba(255,255,255,0.95); max-width: 700px; margin: 0 auto;">
-            Your trusted window treatment experts — a sister company of Creative Floors with 23+ years serving Aurora and surrounding communities.
+            Your trusted window treatment experts, a sister company of Creative Floors with 23+ years serving Aurora and surrounding communities.
         </p>
     </div>
 </section>

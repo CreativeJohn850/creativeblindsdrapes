@@ -33,7 +33,7 @@
                     </select>
                 </div>
             </div>
-            <!-- Honeypot — invisible to humans, bots fill it -->
+            <!-- Honeypot - invisible to humans, bots fill it -->
             <input type="text" name="middleName" id="cqHoneypot"
                    style="display:none" tabindex="-1" autocomplete="off">
             <input type="hidden" name="recaptcha_token" id="cqRecaptchaToken">

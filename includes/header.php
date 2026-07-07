@@ -175,10 +175,31 @@ $local_business_schema = [
                         </button>
 
                         <ul class="nav-menu">
-                            <?php $cur = rtrim($request_path, '/'); foreach (PRIMARY_NAV as $nav_path => $nav_label): ?>
-                                <li><a href="<?php echo url($nav_path); ?>"
-                                       class="<?php echo $cur === rtrim($nav_path, '/') ? 'active' : ''; ?>"><?php echo htmlspecialchars($nav_label); ?></a></li>
-                            <?php endforeach; ?>
+                            <?php
+                            $cur = rtrim($request_path, '/');
+                            foreach (MAIN_NAV as $item):
+                                $item_path = rtrim($item['path'], '/');
+                                if (!empty($item['children'])):
+                                    // Parent active on any page within its section.
+                                    $parent_active = ($item_path !== '' && strpos($cur, $item_path) === 0);
+                            ?>
+                                <li class="has-dropdown">
+                                    <a href="<?php echo url($item['path']); ?>"
+                                       class="<?php echo $parent_active ? 'active' : ''; ?>"
+                                       aria-haspopup="true"><?php echo htmlspecialchars($item['label']); ?></a>
+                                    <button class="submenu-toggle" type="button" aria-expanded="false"
+                                            aria-label="Toggle <?php echo htmlspecialchars($item['label']); ?> menu"></button>
+                                    <ul class="dropdown">
+                                        <?php foreach ($item['children'] as $child_path => $child_label): ?>
+                                            <li><a href="<?php echo url($child_path); ?>"
+                                                   class="<?php echo $cur === rtrim($child_path, '/') ? 'active' : ''; ?>"><?php echo htmlspecialchars($child_label); ?></a></li>
+                                        <?php endforeach; ?>
+                                    </ul>
+                                </li>
+                            <?php else: ?>
+                                <li><a href="<?php echo url($item['path']); ?>"
+                                       class="<?php echo $cur === $item_path ? 'active' : ''; ?>"><?php echo htmlspecialchars($item['label']); ?></a></li>
+                            <?php endif; endforeach; ?>
                         </ul>
                     </nav>
                 </div>
