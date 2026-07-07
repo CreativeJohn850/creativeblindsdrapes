@@ -10,14 +10,20 @@
  */
 
 if (!function_exists('cbd_service_schema')) {
-    /** Service node - provider references the header's LocalBusiness @id. */
-    function cbd_service_schema($serviceType, $name, $description, $url) {
+    /**
+     * Service node - provider references the header's LocalBusiness @id.
+     * $areaServed is an optional array of city names; when null the full
+     * SERVICE_AREAS list is used. City pages pass a single-city list so their
+     * Service schema is scoped to that town.
+     */
+    function cbd_service_schema($serviceType, $name, $description, $url, $areaServed = null) {
+        $areas = $areaServed ?? SERVICE_AREAS;
         return [
             '@type'       => 'Service',
             'serviceType' => $serviceType,
             'name'        => $name,
             'provider'    => ['@id' => SITE_URL . '/#business'],
-            'areaServed'  => array_map(fn($c) => ['@type' => 'City', 'name' => $c . ', IL'], SERVICE_AREAS),
+            'areaServed'  => array_map(fn($c) => ['@type' => 'City', 'name' => $c . ', IL'], $areas),
             'description' => $description,
             'url'         => $url,
         ];

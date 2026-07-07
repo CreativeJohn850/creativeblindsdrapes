@@ -51,7 +51,7 @@ $faqs = [
     ['q' => 'What is the layered shades-and-curtains look and how do you install it?',
      'a' => 'The layered look pairs a shade (such as a cellular or roller shade) for precise light control with a drapery panel for softness and style. We install both in a single appointment, mounting the shade inside or close to the window and the drapery hardware above and wider so the panels frame the window.'],
     ['q' => 'What does professional drapery installation include?',
-     'a' => 'Our drapery installation covers precise measuring, mounting the rod or track level and securely, hanging the panels, and steaming and dressing the pleats so they hang evenly. For motorized drapery we pair and test the track, and every job includes a 30-day follow-up adjustment.'],
+     'a' => 'Our drapery installation covers precise measuring, mounting the rod or track level and securely, hanging the panels, and steaming and dressing the pleats so they hang evenly. For motorized drapery we pair and test the track.'],
     ['q' => 'Can you install curtains in Naperville, Oswego or Yorkville?',
      'a' => 'Yes. We make and install custom curtains and drapes across our full service area: Aurora, Naperville, Oswego, Yorkville, Batavia, Geneva, St. Charles and Plainfield, with no travel charges and a free in-home measure and written quote.'],
     ['q' => 'How much do custom curtains and drapes cost in Aurora, IL?',
@@ -223,7 +223,7 @@ function getPatternArrow($direction)
     <div class="container">
         <div class="section-header">
             <h2>Fonluk Drapery Fabric Specifications</h2>
-            <p>Our Fonluk drapery and sheer collections are woven by the Turkish manufacturer Adeko for commercial-grade quality.</p>
+            <p>Our Fonluk drapery and sheer collections are woven by a premium Turkish textile manufacturer for commercial-grade quality.</p>
         </div>
         <div class="compare-table-wrap" style="margin-top: 30px;">
             <table class="compare-table">

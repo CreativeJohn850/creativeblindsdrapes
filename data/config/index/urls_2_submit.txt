@@ -35,3 +35,14 @@ https://creativeblindsdrapes.com/window-treatments/window-treatment-installer/sh
 https://creativeblindsdrapes.com/window-treatments/window-treatment-installer/shutter-installer/
 https://creativeblindsdrapes.com/window-treatments/window-treatment-installer/drapery-installation/
 https://creativeblindsdrapes.com/window-treatments/motorized-window-treatment/
+
+# --- Phase 3 service-area pages (new 2026-07-07) ---
+https://creativeblindsdrapes.com/service-areas/
+https://creativeblindsdrapes.com/service-areas/aurora-il/
+https://creativeblindsdrapes.com/service-areas/naperville-il/
+https://creativeblindsdrapes.com/service-areas/oswego-il/
+https://creativeblindsdrapes.com/service-areas/yorkville-il/
+https://creativeblindsdrapes.com/service-areas/batavia-il/
+https://creativeblindsdrapes.com/service-areas/geneva-il/
+https://creativeblindsdrapes.com/service-areas/st-charles-il/
+https://creativeblindsdrapes.com/service-areas/plainfield-il/

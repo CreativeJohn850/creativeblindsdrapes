@@ -53,7 +53,7 @@ $related_links = [
 
 $faqs = [
     ['q' => 'What are Fonluk fabrics?',
-     'a' => 'Fonluk is our premium drapery collection, woven by the Turkish manufacturer Adeko, with more than 70 textiles in a wide range of colors, weaves and patterns. We carry it exclusively in the Aurora area, so you get designer looks that are not available at typical big-box retailers.'],
+     'a' => 'Fonluk is our premium drapery collection, woven by a premium Turkish textile manufacturer, with more than 70 textiles in a wide range of colors, weaves and patterns. We carry it exclusively in the Aurora area, so you get designer looks that are not available at typical big-box retailers.'],
     ['q' => 'Can custom draperies help with light and insulation?',
      'a' => 'Yes. Adding a blackout or privacy lining lets custom draperies block light and add a layer of insulation at the window, which helps with both energy efficiency and sound. You keep your chosen face fabric while gaining these benefits from the lining.'],
     ['q' => 'What heading style should I choose?',

@@ -80,11 +80,7 @@ DEPLOYED_PATHS = [
     "/window-treatments/window-treatment-installer/drapery-installation/",
     # Phase 2: motorized
     "/window-treatments/motorized-window-treatment/",
-]
-
-# Phase 3-6. Not built yet: expected to 404 until deployed. Reported, not failed.
-PLANNED_PATHS = [
-    # Phase 3: service areas (hub + 8 cities)
+    # Phase 3: service-area hub + 8 city pages
     "/service-areas/",
     "/service-areas/aurora-il/",
     "/service-areas/naperville-il/",
@@ -94,6 +90,11 @@ PLANNED_PATHS = [
     "/service-areas/geneva-il/",
     "/service-areas/st-charles-il/",
     "/service-areas/plainfield-il/",
+]
+
+# Phase 4-6. Not built yet: expected to 404 until deployed. Reported, not failed.
+# (Phase 3 service-area pages shipped and moved into DEPLOYED_PATHS above.)
+PLANNED_PATHS = [
     # Phase 4: content and trust pages
     "/gallery/",
     "/guidelines/",
@@ -252,23 +253,35 @@ def check_status_pages(driver, base_url, paths, timeout, expect_200):
     return rows
 
 
+# Statuses that count as a redirect hop. 301/308 are the server-side permanent
+# redirects we want; 307 (and 302) also appear as Chrome HSTS "internal
+# redirect" upgrades of http -> https once the site's Strict-Transport-Security
+# header has been seen. An HSTS 307 is a correct, more secure outcome, so it
+# counts: the requirement is that each non-canonical variant redirects and ends
+# on the canonical https non-www URL, not that a specific 301 shows up.
+REDIRECT_CODES = {301, 302, 307, 308}
+
+
 def check_redirects(driver, base_url, timeout):
     canonical = base_url.rstrip("/") + "/"
     rows = []
     for src in REDIRECT_SOURCES:
         res = fetch(driver, src, timeout)
         landed = (res["final_url"] or "").rstrip("/") + "/"
-        had_301 = 301 in res["chain"]
-        ok = landed == canonical and (had_301 or res["chain"] == [200]) and res["error"] is None
-        # A direct 200 with no redirect (e.g. already-canonical https non-www)
-        # is only acceptable for the canonical source itself.
-        if landed == canonical and not had_301 and src != canonical:
-            ok = False
+        redirected = any(c in REDIRECT_CODES for c in res["chain"])
+        lands_canonical = landed == canonical and (res["final_url"] or "").startswith("https://")
+        # The canonical source itself may serve 200 directly; every other
+        # variant must redirect (server 301/308, or a browser HSTS 307) and end
+        # on the canonical URL.
+        if src == canonical:
+            ok = lands_canonical and res["error"] is None
+        else:
+            ok = lands_canonical and redirected and res["error"] is None
         rows.append({
             "source": src,
             "landed": res["final_url"],
             "chain": res["chain"],
-            "had_301": had_301,
+            "redirected": redirected,
             "error": res["error"],
             "ok": ok,
         })

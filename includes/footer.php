@@ -30,6 +30,18 @@
                     </ul>
                 </div>
 
+                <!-- Service Areas -->
+                <div class="footer-col">
+                    <h4>Service Areas</h4>
+                    <ul class="footer-links">
+                        <li><a href="<?php echo url('/service-areas/'); ?>">All Service Areas</a></li>
+                        <?php foreach (SERVICE_AREAS as $sa_city): ?>
+                            <?php $sa_slug = str_replace([' ', '.'], ['-', ''], strtolower($sa_city)); ?>
+                            <li><a href="<?php echo url('/service-areas/' . $sa_slug . '-il/'); ?>"><?php echo htmlspecialchars($sa_city); ?></a></li>
+                        <?php endforeach; ?>
+                    </ul>
+                </div>
+
                 <!-- Contact Info -->
                 <div class="footer-col">
                     <h4>Contact Us</h4>

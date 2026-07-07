@@ -79,6 +79,20 @@ define('MAIN_NAV', [
             '/window-treatments/motorized-window-treatment/' => 'Motorized',
         ],
     ],
+    [
+        'label' => 'Service Areas',
+        'path'  => '/service-areas/',
+        'children' => [
+            '/service-areas/aurora-il/'     => 'Aurora',
+            '/service-areas/naperville-il/' => 'Naperville',
+            '/service-areas/oswego-il/'     => 'Oswego',
+            '/service-areas/yorkville-il/'  => 'Yorkville',
+            '/service-areas/batavia-il/'    => 'Batavia',
+            '/service-areas/geneva-il/'     => 'Geneva',
+            '/service-areas/st-charles-il/' => 'St. Charles',
+            '/service-areas/plainfield-il/' => 'Plainfield',
+        ],
+    ],
     ['label' => 'About',   'path' => '/about-us/'],
     ['label' => 'Contact', 'path' => '/contact/'],
 ]);

@@ -1,0 +1,124 @@
+Prod smoke test against https://creativeblindsdrapes.com
+Deployed pages: 33 | planned pages: 4
+
+DevTools listening on ws://127.0.0.1:65050/devtools/browser/f11a0cc7-011f-4571-bd18-425f6e045d07
+[66772:63508:0707/090620.737:ERROR:ui\gl\direct_composition_support.cc:247] GetGpuDriverOverlayInfo: Failed to retrieve video device
+
+== Deployed pages (expect 200) ==
+  [PASS]  200  /
+  [PASS]  200  /about-us/
+  [PASS]  200  /contact/
+  [PASS]  200  /thank-you/
+  [PASS]  200  /curtain-hardware.php
+  [PASS]  200  /window-treatments/
+  [PASS]  200  /window-treatments/window-shutters/
+  [PASS]  200  /window-treatments/window-blinds/
+  [PASS]  200  /window-treatments/shades/
+  [PASS]  200  /window-treatments/curtains-and-drapes/
+  [PASS]  200  /window-treatments/shades/honeycomb-shades/
+  [PASS]  200  /window-treatments/shades/roller-shades/
+  [PASS]  200  /window-treatments/shades/roman-shades/
+  [PASS]  200  /window-treatments/shades/sheer-shades/
+  [PASS]  200  /window-treatments/window-blinds/horizontal-blinds/
+  [PASS]  200  /window-treatments/window-blinds/vertical-blinds/
+  [PASS]  200  /window-treatments/curtains-and-drapes/draperies/
+  [PASS]  200  /window-treatments/curtains-and-drapes/sheers/
+  [PASS]  200  /window-treatments/window-treatment-installer/
+  [PASS]  200  /window-treatments/window-treatment-installer/blind-installer/
+  [PASS]  200  /window-treatments/window-treatment-installer/shades-installation/
+  [PASS]  200  /window-treatments/window-treatment-installer/shutter-installer/
+  [PASS]  200  /window-treatments/window-treatment-installer/drapery-installation/
+  [PASS]  200  /window-treatments/motorized-window-treatment/
+  [PASS]  200  /service-areas/
+  [PASS]  200  /service-areas/aurora-il/
+  [PASS]  200  /service-areas/naperville-il/
+  [PASS]  200  /service-areas/oswego-il/
+  [PASS]  200  /service-areas/yorkville-il/
+  [PASS]  200  /service-areas/batavia-il/
+  [PASS]  200  /service-areas/geneva-il/
+  [PASS]  200  /service-areas/st-charles-il/
+  [PASS]  200  /service-areas/plainfield-il/
+
+== Redirect canonicalization ==
+  [FAIL] http://creativeblindsdrapes.com/  chain: 307 -> 200 -> 200  landed: https://creativeblindsdrapes.com/
+  [PASS] http://www.creativeblindsdrapes.com/  chain: 307 -> 301 -> 200 -> 200  landed: https://creativeblindsdrapes.com/
+  [PASS] https://www.creativeblindsdrapes.com/  chain: 301 -> 200 -> 200  landed: https://creativeblindsdrapes.com/
+
+== Per-page SEO asserts ==
+  [PASS] /  ok
+  [PASS] /about-us/  ok
+  [PASS] /contact/  ok
+  [PASS] /curtain-hardware.php  ok
+  [PASS] /window-treatments/  ok
+  [PASS] /window-treatments/window-shutters/  ok
+  [PASS] /window-treatments/window-blinds/  ok
+  [PASS] /window-treatments/shades/  ok
+  [PASS] /window-treatments/curtains-and-drapes/  ok
+  [PASS] /window-treatments/shades/honeycomb-shades/  ok
+  [PASS] /window-treatments/shades/roller-shades/  ok
+  [PASS] /window-treatments/shades/roman-shades/  ok
+  [PASS] /window-treatments/shades/sheer-shades/  ok
+  [PASS] /window-treatments/window-blinds/horizontal-blinds/  ok
+  [PASS] /window-treatments/window-blinds/vertical-blinds/  ok
+  [PASS] /window-treatments/curtains-and-drapes/draperies/  ok
+  [PASS] /window-treatments/curtains-and-drapes/sheers/  ok
+  [PASS] /window-treatments/window-treatment-installer/  ok
+  [PASS] /window-treatments/window-treatment-installer/blind-installer/  ok
+  [PASS] /window-treatments/window-treatment-installer/shades-installation/  ok
+  [PASS] /window-treatments/window-treatment-installer/shutter-installer/  ok
+  [PASS] /window-treatments/window-treatment-installer/drapery-installation/  ok
+  [PASS] /window-treatments/motorized-window-treatment/  ok
+  [PASS] /service-areas/  ok
+  [PASS] /service-areas/aurora-il/  ok
+  [PASS] /service-areas/naperville-il/  ok
+  [PASS] /service-areas/oswego-il/  ok
+  [PASS] /service-areas/yorkville-il/  ok
+  [PASS] /service-areas/batavia-il/  ok
+  [PASS] /service-areas/geneva-il/  ok
+  [PASS] /service-areas/st-charles-il/  ok
+  [PASS] /service-areas/plainfield-il/  ok
+
+== Infrastructure ==
+  [PASS] /robots.txt  status=200 want=200
+  [PASS] /sitemap.xml  status=200 want=200
+  [PASS] /does-not-exist-fdea86ca0d61/  status=404 want=404
+[74832:66384:0707/090725.002:ERROR:google_apis\gcm\engine\registration_request.cc:291] Registration response error message: DEPRECATED_ENDPOINT
+[74832:66384:0707/090725.017:ERROR:google_apis\gcm\engine\registration_request.cc:291] Registration response error message: PHONE_REGISTRATION_ERROR
+
+== Internal links ==
+  [PASS] https://creativeblindsdrapes.com/  status=200
+  [PASS] https://creativeblindsdrapes.com/about-us/  status=200
+  [PASS] https://creativeblindsdrapes.com/contact/  status=200
+  [PASS] https://creativeblindsdrapes.com/curtain-hardware.php  status=200
+  [PASS] https://creativeblindsdrapes.com/service-areas/  status=200
+  [PASS] https://creativeblindsdrapes.com/service-areas/aurora-il/  status=200
+  [PASS] https://creativeblindsdrapes.com/service-areas/batavia-il/  status=200
+  [PASS] https://creativeblindsdrapes.com/service-areas/geneva-il/  status=200
+  [PASS] https://creativeblindsdrapes.com/service-areas/naperville-il/  status=200
+  [PASS] https://creativeblindsdrapes.com/service-areas/oswego-il/  status=200
+  [PASS] https://creativeblindsdrapes.com/service-areas/plainfield-il/  status=200
+  [PASS] https://creativeblindsdrapes.com/service-areas/st-charles-il/  status=200
+  [PASS] https://creativeblindsdrapes.com/service-areas/yorkville-il/  status=200
+  [PASS] https://creativeblindsdrapes.com/window-treatments/  status=200
+  [PASS] https://creativeblindsdrapes.com/window-treatments/curtains-and-drapes/  status=200
+  [PASS] https://creativeblindsdrapes.com/window-treatments/curtains-and-drapes/draperies/  status=200
+  [PASS] https://creativeblindsdrapes.com/window-treatments/curtains-and-drapes/sheers/  status=200
+  [PASS] https://creativeblindsdrapes.com/window-treatments/motorized-window-treatment/  status=200
+  [PASS] https://creativeblindsdrapes.com/window-treatments/shades/  status=200
+  [PASS] https://creativeblindsdrapes.com/window-treatments/shades/honeycomb-shades/  status=200
+  [PASS] https://creativeblindsdrapes.com/window-treatments/shades/roller-shades/  status=200
+  [PASS] https://creativeblindsdrapes.com/window-treatments/shades/roman-shades/  status=200
+  [PASS] https://creativeblindsdrapes.com/window-treatments/shades/sheer-shades/  status=200
+  [PASS] https://creativeblindsdrapes.com/window-treatments/window-blinds/  status=200
+  [PASS] https://creativeblindsdrapes.com/window-treatments/window-blinds/horizontal-blinds/  status=200
+  [PASS] https://creativeblindsdrapes.com/window-treatments/window-blinds/vertical-blinds/  status=200
+  [PASS] https://creativeblindsdrapes.com/window-treatments/window-shutters/  status=200
+  [PASS] https://creativeblindsdrapes.com/window-treatments/window-treatment-installer/  status=200
+  [PASS] https://creativeblindsdrapes.com/window-treatments/window-treatment-installer/blind-installer/  status=200
+  [PASS] https://creativeblindsdrapes.com/window-treatments/window-treatment-installer/drapery-installation/  status=200
+  [PASS] https://creativeblindsdrapes.com/window-treatments/window-treatment-installer/shades-installation/  status=200
+  [PASS] https://creativeblindsdrapes.com/window-treatments/window-treatment-installer/shutter-installer/  status=200
+
+============================================================
+Hard failures: 1  |  elapsed: 69.1s
+RESULT: FAIL

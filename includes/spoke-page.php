@@ -23,6 +23,8 @@
  * Optional:
  *   $spoke_hero_image_mobile         relative _m.webp for mobile hero/preload
  *   $related_links                   [['url' => root-relative, 'label' => ], ...]
+ *   $spoke_area_served               array of city names for the Service schema
+ *                                    areaServed (defaults to all SERVICE_AREAS)
  */
 
 require_once ROOT_PATH . '/includes/spoke-schema.php';
@@ -34,7 +36,7 @@ if (!function_exists('encodeImagePath')) {
 }
 
 $spoke_schema_nodes = [
-    cbd_service_schema($spoke_service_type, $spoke_h1, $meta_description, SITE_URL . $spoke_path),
+    cbd_service_schema($spoke_service_type, $spoke_h1, $meta_description, SITE_URL . $spoke_path, $spoke_area_served ?? null),
     cbd_faq_schema($faqs),
     cbd_breadcrumb_schema($crumbs),
 ];
