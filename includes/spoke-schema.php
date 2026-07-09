@@ -114,6 +114,24 @@ if (!function_exists('cbd_howto_schema')) {
     }
 }
 
+if (!function_exists('cbd_article_schema')) {
+    /**
+     * Article node for guide/blog pages. author and publisher reference the
+     * header's LocalBusiness @id; mainEntityOfPage and url are the page URL.
+     */
+    function cbd_article_schema($headline, $description, $url) {
+        return [
+            '@type'            => 'Article',
+            'headline'         => $headline,
+            'description'      => $description,
+            'author'           => ['@id' => SITE_URL . '/#business'],
+            'publisher'        => ['@id' => SITE_URL . '/#business'],
+            'mainEntityOfPage' => $url,
+            'url'              => $url,
+        ];
+    }
+}
+
 if (!function_exists('spoke_schema_graph')) {
     /** Wrap the supplied schema nodes in a single @graph JSON string. */
     function spoke_schema_graph(array $nodes) {

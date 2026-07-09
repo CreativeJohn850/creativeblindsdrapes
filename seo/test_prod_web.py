@@ -95,9 +95,17 @@ DEPLOYED_PATHS = [
 # Phase 4-6. Not built yet: expected to 404 until deployed. Reported, not failed.
 # (Phase 3 service-area pages shipped and moved into DEPLOYED_PATHS above.)
 PLANNED_PATHS = [
-    # Phase 4: content and trust pages
-    "/gallery/",
+    # Phase 4a: guidelines (built; move to DEPLOYED_PATHS once deployed)
     "/guidelines/",
+    "/guidelines/climate-light-control/",
+    "/guidelines/precision-measurement/",
+    "/guidelines/inside-vs-outside-mounts/",
+    "/guidelines/preparing-your-space/",
+    "/guidelines/professional-installation/",
+    "/guidelines/care-and-maintenance/",
+    "/guidelines/our-promise/",
+    # Phase 4b: content and trust pages
+    "/gallery/",
     "/blog/",
     # Phase 5: brand / authority page (URL still tentative)
     "/adeko-fabrics/",

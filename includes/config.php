@@ -93,6 +93,19 @@ define('MAIN_NAV', [
             '/service-areas/plainfield-il/' => 'Plainfield',
         ],
     ],
+    [
+        'label' => 'Guidelines',
+        'path'  => '/guidelines/',
+        'children' => [
+            '/guidelines/climate-light-control/'     => 'Climate & Light Control',
+            '/guidelines/precision-measurement/'     => 'Precision Measurement',
+            '/guidelines/inside-vs-outside-mounts/'   => 'Inside vs. Outside Mounts',
+            '/guidelines/preparing-your-space/'       => 'Preparing Your Space',
+            '/guidelines/professional-installation/'  => 'Professional Installation',
+            '/guidelines/care-and-maintenance/'       => 'Care & Maintenance',
+            '/guidelines/our-promise/'                => 'Our Promise',
+        ],
+    ],
     ['label' => 'About',   'path' => '/about-us/'],
     ['label' => 'Contact', 'path' => '/contact/'],
 ]);

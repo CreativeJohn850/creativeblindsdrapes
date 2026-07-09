@@ -83,6 +83,7 @@ $related_links = [
     ['url' => '/window-treatments/window-treatment-installer/shades-installation/', 'label' => 'Shade installation service'],
     ['url' => '/window-treatments/window-treatment-installer/shutter-installer/', 'label' => 'Shutter installation service'],
     ['url' => '/window-treatments/window-treatment-installer/drapery-installation/', 'label' => 'Drapery installation service'],
+    ['url' => '/guidelines/professional-installation/', 'label' => 'Guide: the benefits of professional installation'],
 ];
 
 $faqs = [

@@ -27,6 +27,7 @@
                         <li><a href="<?php echo url('/curtain-hardware.php'); ?>">Curtain Hardware</a></li>
                         <li><a href="<?php echo url('/window-treatments/window-treatment-installer/'); ?>">Installation</a></li>
                         <li><a href="<?php echo url('/window-treatments/motorized-window-treatment/'); ?>">Motorized</a></li>
+                        <li><a href="<?php echo url('/guidelines/'); ?>">Guides</a></li>
                     </ul>
                 </div>
 
@@ -72,7 +73,7 @@
     <div class="footer-bottom">
         <div class="container">
             <p>&copy; <?php echo date('Y'); ?> <?php echo SITE_NAME; ?>. All rights reserved. | Serving Aurora,
-                Naperville, and surrounding IL communities.</p>
+                Naperville, and Chicagoland areas.</p>
         </div>
     </div>
 </footer>

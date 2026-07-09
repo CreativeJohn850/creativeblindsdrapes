@@ -1,8 +1,8 @@
 Prod smoke test against https://creativeblindsdrapes.com
 Deployed pages: 33 | planned pages: 4
 
-DevTools listening on ws://127.0.0.1:65050/devtools/browser/f11a0cc7-011f-4571-bd18-425f6e045d07
-[66772:63508:0707/090620.737:ERROR:ui\gl\direct_composition_support.cc:247] GetGpuDriverOverlayInfo: Failed to retrieve video device
+DevTools listening on ws://127.0.0.1:53507/devtools/browser/642b1a13-7cbd-441a-9e23-1f93be1fed0b
+[22956:49408:0707/100750.371:ERROR:ui\gl\direct_composition_support.cc:247] GetGpuDriverOverlayInfo: Failed to retrieve video device
 
 == Deployed pages (expect 200) ==
   [PASS]  200  /
@@ -40,7 +40,7 @@ DevTools listening on ws://127.0.0.1:65050/devtools/browser/f11a0cc7-011f-4571-b
   [PASS]  200  /service-areas/plainfield-il/
 
 == Redirect canonicalization ==
-  [FAIL] http://creativeblindsdrapes.com/  chain: 307 -> 200 -> 200  landed: https://creativeblindsdrapes.com/
+  [PASS] http://creativeblindsdrapes.com/  chain: 307 -> 200 -> 200  landed: https://creativeblindsdrapes.com/
   [PASS] http://www.creativeblindsdrapes.com/  chain: 307 -> 301 -> 200 -> 200  landed: https://creativeblindsdrapes.com/
   [PASS] https://www.creativeblindsdrapes.com/  chain: 301 -> 200 -> 200  landed: https://creativeblindsdrapes.com/
 
@@ -81,9 +81,7 @@ DevTools listening on ws://127.0.0.1:65050/devtools/browser/f11a0cc7-011f-4571-b
 == Infrastructure ==
   [PASS] /robots.txt  status=200 want=200
   [PASS] /sitemap.xml  status=200 want=200
-  [PASS] /does-not-exist-fdea86ca0d61/  status=404 want=404
-[74832:66384:0707/090725.002:ERROR:google_apis\gcm\engine\registration_request.cc:291] Registration response error message: DEPRECATED_ENDPOINT
-[74832:66384:0707/090725.017:ERROR:google_apis\gcm\engine\registration_request.cc:291] Registration response error message: PHONE_REGISTRATION_ERROR
+  [PASS] /does-not-exist-f39c60d8f54b/  status=404 want=404
 
 == Internal links ==
   [PASS] https://creativeblindsdrapes.com/  status=200
@@ -120,5 +118,5 @@ DevTools listening on ws://127.0.0.1:65050/devtools/browser/f11a0cc7-011f-4571-b
   [PASS] https://creativeblindsdrapes.com/window-treatments/window-treatment-installer/shutter-installer/  status=200
 
 ============================================================
-Hard failures: 1  |  elapsed: 69.1s
-RESULT: FAIL
+Hard failures: 0  |  elapsed: 57.6s
+RESULT: PASS

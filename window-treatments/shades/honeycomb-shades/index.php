@@ -49,6 +49,7 @@ $related_links = [
     ['url' => '/window-treatments/shades/sheer-shades/', 'label' => 'Sheer shades'],
     ['url' => '/window-treatments/motorized-window-treatment/', 'label' => 'Motorized window treatments'],
     ['url' => '/service-areas/aurora-il/', 'label' => 'Window treatments in Aurora, IL'],
+    ['url' => '/guidelines/climate-light-control/', 'label' => 'Guide: climate & light control for Illinois homes'],
 ];
 
 $faqs = [

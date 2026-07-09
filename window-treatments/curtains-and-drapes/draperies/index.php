@@ -49,6 +49,7 @@ $related_links = [
     ['url' => '/curtain-hardware.php', 'label' => 'Curtain rods, tracks & hardware'],
     ['url' => '/window-treatments/window-treatment-installer/drapery-installation/', 'label' => 'Drapery installation service'],
     ['url' => '/service-areas/aurora-il/', 'label' => 'Window treatments in Aurora, IL'],
+    ['url' => '/guidelines/care-and-maintenance/', 'label' => 'Guide: caring for drapes and window treatments'],
 ];
 
 $faqs = [

@@ -213,21 +213,50 @@ Folder: `service-areas/`. **Highest-ROI per strategy §6** (Local Pack). One hub
 
 ---
 
-## Phase 4: Content & Trust Pages (3 pages + content engine)
+## Phase 4a: Guidelines (buyer-guide library, 1 hub + 7 guides = 8 pages)
+
+Evergreen educational guides that build topical authority and E-E-A-T and give the service and
+service-area pages high-quality internal links to point at. **Source content is already drafted
+in `seo/guidelines/*.docx`** (1,200-1,650 words each): extract and convert, do not rewrite.
+
+| URL | File | H1 (guide title) | Source doc |
+|---|---|---|---|
+| `/guidelines/` | `guidelines/index.php` | Window Treatment Guides for Aurora Homeowners | (hub) |
+| `/guidelines/climate-light-control/` | `guidelines/climate-light-control/index.php` | Local Climate & Light Control | guide1 |
+| `/guidelines/precision-measurement/` | `guidelines/precision-measurement/index.php` | The Precision Measurement Difference | guide2 |
+| `/guidelines/inside-vs-outside-mounts/` | `guidelines/inside-vs-outside-mounts/index.php` | Inside vs. Outside Mounts | guide3 |
+| `/guidelines/preparing-your-space/` | `guidelines/preparing-your-space/index.php` | Preparing Your Space | guide4 |
+| `/guidelines/professional-installation/` | `guidelines/professional-installation/index.php` | The Benefits of Professional Installation | guide5 |
+| `/guidelines/care-and-maintenance/` | `guidelines/care-and-maintenance/index.php` | Long-Term Care & Maintenance | guide6 |
+| `/guidelines/our-promise/` | `guidelines/our-promise/index.php` | The Creative Blinds & Drapes Promise | guide7 |
+
+- **Each guide page:** `Article` + `BreadcrumbList` schema, one H1, H2 sections transcribed from
+  the doc, CTA to the relevant service/hub, internal links to >=2 service pages. Reuse a shared
+  guide renderer modelled on `includes/spoke-page.php` / `includes/service-area-page.php`.
+- **Hub:** intro + linked cards to all 7 guides; `CollectionPage`/`ItemList` + `BreadcrumbList`.
+- **Wiring:** add `/guidelines/` to footer (and nav if desired); add all 8 URLs to `sitemap.xml`
+  + IndexNow; two-way link guides from their related service pages.
+
+**Phase 4a validation gate:**
+- [ ] 7 guides + hub live; each guide one H1, `Article` schema valid in GSC, >=2 internal links.
+- [ ] Hub links to all 7; guides linked from footer and >=1 related service page (two-way).
+- [ ] All 8 URLs in sitemap + IndexNow; no em/en dashes; `php -l` clean.
+
+## Phase 4b: Gallery + Blog (2 hubs + ongoing article engine)
 
 | URL | File | Purpose | Notes |
 |---|---|---|---|
-| `/gallery/` | `gallery/index.php` | Portfolio / social proof | See `docs/gallery-system-spec.md` for the gallery system. Image-heavy → strict lazy-load + WebP. `ImageGallery` schema. |
-| `/guidelines/` | `guidelines/index.php` | Buyer-guide hub (= strategy's `/guides/`) | Hub linking to all educational articles; may double as measuring/measure-windows guidance. |
-| `/blog/` | `blog/index.php` | Content hub index | Lists guide articles; each article = its own page under `/blog/{slug}/`. |
+| `/gallery/` | `gallery/index.php` | Portfolio / social proof | See `docs/gallery-system-spec.md`. Image-heavy: strict lazy-load + WebP. `ImageGallery` schema. |
+| `/blog/` | `blog/index.php` | Content hub index | Lists SEO articles; each article at `/blog/{slug}/`. |
 
-**Blog/guide articles (ongoing, 2/month per strategy §8 calendar).** Not one-time; tracked separately. First 12 priority articles (keyword → target hub it links to):
+**Blog article engine (ongoing, ~2/month per strategy §8).** First 12 priority topics
+(keyword → target hub it links to):
 1. Custom drapes vs ready-made → curtains hub
 2. How much do custom window treatments cost in Illinois (2026) → curtains hub
 3. Sheer vs blackout curtains by room → sheers
 4. Faux wood vs real wood blinds (Illinois homes) → blinds hub
 5. Roman vs roller shades → shades hub
-6. What are Turkish (Adeko) fabrics → (Adeko page, see Phase 5)
+6. What are premium Turkish drapery fabrics (Fonluk) → curtains hub
 7. Honeycomb vs roller shades: energy efficiency → shades hub
 8. What happens during a free in-home consultation → home/about
 9. How to measure windows for custom curtains → curtains hub
@@ -235,12 +264,13 @@ Folder: `service-areas/`. **Highest-ROI per strategy §6** (Local Pack). One hub
 11. Curtain hardware guide: rods, rings & tracks → curtain-hardware
 12. Window treatments for open-plan homes in Aurora → aurora city page
 
-**Article spec:** 1,000-1,400 words, one H1 w/ keyword, H2s with secondary/LSI, `Article` (or `BlogPosting`) schema, ends with CTA to the relevant service page, internal links to ≥2 service pages.
+**Article spec:** 1,000-1,400 words, one H1 w/ keyword, H2s with secondary/LSI, `Article` (or
+`BlogPosting`) schema, ends with CTA to the relevant service page, internal links to >=2 service pages.
 
-**Phase 4 validation gate:**
-- [ ] Gallery: all images WebP + lazy + descriptive alt; passes Lighthouse mobile ≥80 despite image volume.
+**Phase 4b validation gate:**
+- [ ] Gallery: all images WebP + lazy + descriptive alt; passes Lighthouse mobile >=80 despite image volume.
 - [ ] Blog index + each article: Article schema valid, H1 unique, CTA + internal links present.
-- [ ] `/guidelines/` and `/blog/` linked from footer; articles linked from their target hubs (two-way).
+- [ ] `/gallery/` and `/blog/` linked from footer; articles linked from their target hubs (two-way).
 
 ---
 
@@ -264,13 +294,14 @@ Only if a city page ranks and a specific service term needs its own page (strate
 
 | Phase | Group | New pages |
 |---|---|---|
-| 1 | Technical remediation | 0 (fixes only) |
-| 2 | Product/service sub-pages (blinds 2, shades 4, curtains 2, installer 5, motorized 1) | **14** |
-| 3 | Service areas (1 hub + 8 cities) | **9** |
-| 4 | Gallery + Guidelines + Blog index | **3** |
-| **Core total (matches site-structure PDF)** | | **26** |
-| 5 | Adeko brand page (recommended add-on) | +1 |
-| 4* | Blog articles (ongoing 2/mo, 12 prioritized) | +12 and counting |
+| 1 | Technical remediation | 0 (fixes only). DONE |
+| 2 | Product/service sub-pages (blinds 2, shades 4, curtains 2, installer 5, motorized 1) | **14**. DONE |
+| 3 | Service areas (1 hub + 8 cities) | **9**. DONE |
+| 4a | Guidelines (1 hub + 7 buyer guides) | **8**. NEXT |
+| 4b | Gallery + Blog index | **2** |
+| **Total through Phase 4** | | **33** |
+| 5 | Brand/authority page (recommended add-on; reframe away from Adeko) | +1 |
+| 4b* | Blog articles (ongoing 2/mo, 12 prioritized) | +12 and counting |
 | 6 | Service×city matrix | deferred |
 
 **Core build to satisfy the target structure: 26 pages**, sequenced Phase 1 to 4, each phase gated by validation. Add the Adeko page (+1) and the ongoing blog engine for full strategy alignment.
