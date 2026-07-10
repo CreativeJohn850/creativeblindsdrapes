@@ -1,6 +1,6 @@
 [
   {
-    "name": "Brightwood",
+    "name": "Brightwood Shutter",
     "slug": "brightwood",
     "description": "Brightwood shutters combine the timeless beauty of real wood with exceptional craftsmanship. Available in a wide range of custom paint and stain options, these shutters bring natural warmth and elegance to any room.",
     "images": [
@@ -36,7 +36,7 @@
     "manufacturer_url": "https://normanusa.com/product/bypass-shutters/"
   },
   {
-    "name": "Normandy",
+    "name": "Normandy Shutter",
     "slug": "normandy",
     "description": "Normandy shutters represent the pinnacle of Norman's wood shutter line. Crafted from the finest North American hardwood, they offer unmatched quality and a virtually unlimited palette of custom finishes.",
     "images": [
@@ -58,7 +58,7 @@
     "manufacturer_url": "https://normanusa.com/product/normandy-shutters/"
   },
   {
-    "name": "PerfectTilt",
+    "name": "PerfectTilt Shutter",
     "slug": "perfecttilt",
     "description": "PerfectTilt is Norman's patented hidden-tilt technology. Louvers are controlled by a concealed mechanism no visible tilt rod delivering a clean, modern look with optional smart-home control via the Norman Hub.",
     "images": [
@@ -98,7 +98,7 @@
     "manufacturer_url": "https://normanusa.com/product/specialty-shape-shutters/"
   },
   {
-    "name": "Woodlore",
+    "name": "Woodlore Shutter",
     "slug": "woodlore",
     "description": "Norman's best-selling composite shutter, Woodlore offers the look of real wood with superior durability. Its moisture-resistant material makes it ideal for kitchens, bathrooms, and high-humidity environments.",
     "images": [
@@ -122,7 +122,7 @@
     "manufacturer_url": "https://normanusa.com/product/woodlore-shutters/"
   },
   {
-    "name": "Woodlore Plus",
+    "name": "Woodlore Plus Shutter",
     "slug": "woodlore-plus",
     "description": "Woodlore Plus elevates the classic Woodlore with a wider color palette, additional frame styles, and expanded configuration options. The durability of composite with more design flexibility for discerning homeowners.",
     "images": [

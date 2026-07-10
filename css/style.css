@@ -592,6 +592,87 @@ section.bg-light {
     gap: 8px;
 }
 
+/* === TREATMENT CARDS (image + title, whole card links) === */
+.treatment-card {
+    position: relative;
+    display: block;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 15px rgba(0,0,0,0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.treatment-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
+
+.treatment-card img {
+    display: block;
+    width: 100%;
+    height: 320px;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.treatment-card:hover img {
+    transform: scale(1.06);
+}
+
+.treatment-card-caption {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 45px 22px 20px;
+    background: linear-gradient(to top, rgba(0,0,0,0.75) 0%, rgba(0,0,0,0.35) 55%, rgba(0,0,0,0) 100%);
+}
+
+.treatment-card-caption h3 {
+    color: var(--white);
+    font-size: 1.4rem;
+    margin: 0;
+}
+
+.treatment-card-caption span {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    margin-top: 6px;
+    color: var(--white);
+    font-size: 0.9rem;
+    font-weight: 600;
+    opacity: 0.9;
+}
+
+/* === SHOWROOM BAND === */
+.showroom-band {
+    align-items: center;
+    margin-top: 10px;
+}
+
+.showroom-media {
+    position: relative;
+}
+
+.showroom-media-main {
+    width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.12);
+    display: block;
+}
+
+.showroom-media-inset {
+    position: absolute;
+    right: -18px;
+    bottom: -18px;
+    width: 38%;
+    border-radius: 8px;
+    border: 4px solid var(--white);
+    box-shadow: 0 6px 18px rgba(0,0,0,0.2);
+    display: block;
+}
+
 /* === FEATURES / BENEFITS === */
 .features-grid {
     display: grid;
@@ -1025,6 +1106,17 @@ section.bg-light {
     .grid-4 {
         grid-template-columns: 1fr;
         gap: 25px;
+    }
+
+    /* Showroom band: give the inset room to sit inside the layout */
+    .showroom-media {
+        margin-bottom: 30px;
+    }
+
+    .showroom-media-inset {
+        right: 0;
+        bottom: -22px;
+        width: 42%;
     }
     
     /* Section headers */
