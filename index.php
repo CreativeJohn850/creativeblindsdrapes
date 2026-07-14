@@ -153,35 +153,35 @@ require_once __DIR__ . '/includes/header.php';
         
         <div class="grid-4">
             <div style="text-align: center;">
-                <h4>Aurora</h4>
+                <h3>Aurora</h3>
                 <p style="margin: 0;">Our home base</p>
             </div>
             <div style="text-align: center;">
-                <h4>Naperville</h4>
+                <h3>Naperville</h3>
                 <p style="margin: 0;">Full service area</p>
             </div>
             <div style="text-align: center;">
-                <h4>Oswego</h4>
+                <h3>Oswego</h3>
                 <p style="margin: 0;">We're nearby</p>
             </div>
             <div style="text-align: center;">
-                <h4>Yorkville</h4>
+                <h3>Yorkville</h3>
                 <p style="margin: 0;">Expert service</p>
             </div>
             <div style="text-align: center;">
-                <h4>Batavia</h4>
+                <h3>Batavia</h3>
                 <p style="margin: 0;">Local trusted partner</p>
             </div>
             <div style="text-align: center;">
-                <h4>Geneva</h4>
+                <h3>Geneva</h3>
                 <p style="margin: 0;">Professional solutions</p>
             </div>
             <div style="text-align: center;">
-                <h4>St. Charles</h4>
+                <h3>St. Charles</h3>
                 <p style="margin: 0;">Quality installations</p>
             </div>
             <div style="text-align: center;">
-                <h4>Plainfield</h4>
+                <h3>Plainfield</h3>
                 <p style="margin: 0;">& more nearby areas</p>
             </div>
         </div>
