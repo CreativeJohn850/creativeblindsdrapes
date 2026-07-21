@@ -58,6 +58,7 @@ $local_business_schema = [
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="<?php echo htmlspecialchars($meta_description); ?>">
+    <meta name="p:domain_verify" content="9faeb91c5fdad69303c4e2e3e534f172"/>
     <?php if (!empty($noindex)): ?>
         <meta name="robots" content="noindex, nofollow">
     <?php endif; ?>
