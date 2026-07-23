@@ -90,12 +90,7 @@ DEPLOYED_PATHS = [
     "/service-areas/geneva-il/",
     "/service-areas/st-charles-il/",
     "/service-areas/plainfield-il/",
-]
-
-# Phase 4-6. Not built yet: expected to 404 until deployed. Reported, not failed.
-# (Phase 3 service-area pages shipped and moved into DEPLOYED_PATHS above.)
-PLANNED_PATHS = [
-    # Phase 4a: guidelines (built; move to DEPLOYED_PATHS once deployed)
+    # Phase 4a: guidelines hub + 7 spokes
     "/guidelines/",
     "/guidelines/climate-light-control/",
     "/guidelines/precision-measurement/",
@@ -104,6 +99,11 @@ PLANNED_PATHS = [
     "/guidelines/professional-installation/",
     "/guidelines/care-and-maintenance/",
     "/guidelines/our-promise/",
+]
+
+# Phase 4b-6. Not built yet: expected to 404 until deployed. Reported, not failed.
+# (Phase 3 service-area and Phase 4a guidelines pages shipped and moved above.)
+PLANNED_PATHS = [
     # Phase 4b: content and trust pages
     "/gallery/",
     "/blog/",

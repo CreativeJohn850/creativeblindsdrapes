@@ -49,6 +49,17 @@ function url($path = '/') {
 }
 
 /*
+ * Session bootstrap. Called only by pages that need cross-request state (the contact form
+ * handoff to the thank-you page). Deliberately not called on every page view, so ordinary
+ * visitors are never issued a session cookie.
+ */
+function cbd_session_start() {
+    if (session_status() === PHP_SESSION_NONE) {
+        session_start();
+    }
+}
+
+/*
  * Primary navigation - single source of truth for header nav + footer product links.
  * Keys are root-relative URLs (run through url()); values are labels.
  */

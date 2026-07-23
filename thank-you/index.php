@@ -4,8 +4,17 @@ $page_title = 'Thank You - Request Received';
 $noindex = true;
 $meta_description = 'Thank you for contacting Creative Blinds & Drapes. We\'ll be in touch within 24 hours to schedule your free consultation.';
 
-$visitor_name  = htmlspecialchars(trim($_GET['name']  ?? ''), ENT_QUOTES, 'UTF-8');
-$visitor_email = htmlspecialchars(trim($_GET['email'] ?? ''), ENT_QUOTES, 'UTF-8');
+// The lead arrives via a one-shot session value set by process-contact.php, never via the
+// URL: this page is tracked by GTM, so query parameters would send PII to Analytics.
+require_once dirname(__DIR__) . '/includes/config.php';
+cbd_session_start();
+header('Cache-Control: no-store, private');
+
+$cbd_lead = $_SESSION['cbd_lead'] ?? [];
+unset($_SESSION['cbd_lead']); // one-shot: a refresh shows the generic page
+
+$visitor_name  = htmlspecialchars(trim($cbd_lead['name']  ?? ''), ENT_QUOTES, 'UTF-8');
+$visitor_email = htmlspecialchars(trim($cbd_lead['email'] ?? ''), ENT_QUOTES, 'UTF-8');
 
 // Include header
 require_once dirname(__DIR__) . '/includes/header.php';

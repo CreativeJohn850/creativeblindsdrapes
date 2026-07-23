@@ -1290,7 +1290,6 @@ section.bg-light {
 }
 
 .cq-zip-hint--error { color: #c0392b; }
-.cq-zip-hint--warn  { color: #b07d00; }
 
 @media (max-width: 768px) {
     .cq-inline-inner {

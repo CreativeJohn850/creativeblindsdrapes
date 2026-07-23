@@ -98,6 +98,10 @@ require_once dirname(__DIR__) . '/includes/header.php';
                         </label>
                     </div>
 
+                    <!-- Honeypot - invisible to humans, bots fill it -->
+                    <input type="text" name="middleName" id="ctHoneypot"
+                        style="display:none" tabindex="-1" autocomplete="off">
+
                     <!-- reCAPTCHA v3 (invisible) -->
                     <input type="hidden" id="recaptchaToken" name="recaptcha_token">
 
@@ -223,6 +227,12 @@ require_once dirname(__DIR__) . '/includes/header.php';
         const formMessage = document.getElementById('formMessage');
         const form = e.target;
 
+        // Honeypot - silent fake success if a bot filled the hidden field
+        if (document.getElementById('ctHoneypot').value) {
+            window.location.href = '<?php echo BASE_URL; ?>/thank-you/';
+            return; // no session flash, so the page stays generic
+        }
+
         // Disable submit button
         submitBtn.disabled = true;
         submitBtn.textContent = 'Sending...';
@@ -252,12 +262,9 @@ require_once dirname(__DIR__) . '/includes/header.php';
             const result = await response.json();
 
             if (result.success) {
-                // Fire GTM conversion event
-                window.dataLayer = window.dataLayer || [];
-                // Redirect to thank you page with name and email for personalization
-                const name  = encodeURIComponent(document.getElementById('name').value.trim());
-                const email = encodeURIComponent(document.getElementById('email').value.trim());
-                window.location.href = '<?php echo BASE_URL; ?>/thank-you/?name=' + name + '&email=' + email;
+                // No name/email in the URL - GTM tracks this page, and the URL would carry
+                // PII into Analytics. The server hands them over via the session instead.
+                window.location.href = '<?php echo BASE_URL; ?>/thank-you/';
             } else {
                 // Show error message
                 formMessage.style.display = 'block';

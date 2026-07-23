@@ -72,7 +72,12 @@ document.addEventListener('DOMContentLoaded', function () {
 
     const RECAPTCHA_SITE_KEY = '6LdOMk0sAAAAAMnWfjTV2JtpuimpVL5N8Qql_qc4';
 
-    // Live ZIP hint - mirrors the server-side range check in process-contact.php
+    /*
+     * ZIP format check only. The service area range is deliberately NOT checked or hinted
+     * at here: naming the accepted range told anyone probing the form exactly which ZIP
+     * would get through. Out-of-area submissions post normally and are soft-rejected by
+     * process-contact.php, which logs zip_out_of_range and sends no mail.
+     */
     var zipInput = document.getElementById('cqZip');
     var zipHint  = document.getElementById('cqZipHint');
 
@@ -84,27 +89,16 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     function validateZip(raw) {
-        var zip = parseZip(raw);
-        if (!/^\d{5}$/.test(zip)) return 'invalid';
-        var n = parseInt(zip, 10);
-        if (n < 60001 || n > 60900) return 'outofrange';
-        return 'ok';
+        return /^\d{5}$/.test(parseZip(raw)) ? 'ok' : 'invalid';
     }
 
     if (zipInput) zipInput.addEventListener('blur', function () {
-        var result = validateZip(zipInput.value);
-        if (zipInput.value === '') {
+        if (zipInput.value === '' || validateZip(zipInput.value) === 'ok') {
             zipHint.textContent = '';
             zipHint.className = 'cq-zip-hint';
-        } else if (result === 'invalid') {
+        } else {
             zipHint.textContent = 'Please enter a valid 5-digit ZIP code.';
             zipHint.className = 'cq-zip-hint cq-zip-hint--error';
-        } else if (result === 'outofrange') {
-            zipHint.textContent = 'We serve the Aurora area (60001-60900). Call us for availability.';
-            zipHint.className = 'cq-zip-hint cq-zip-hint--warn';
-        } else {
-            zipHint.textContent = '';
-            zipHint.className = 'cq-zip-hint';
         }
     });
 
@@ -117,15 +111,10 @@ document.addEventListener('DOMContentLoaded', function () {
             return; // no params - bots don't deserve a personalized page
         }
 
-        // Client-side ZIP validation before hitting the server
-        var zipResult = validateZip(zipInput.value);
-        if (zipResult === 'invalid') {
+        // Format only. Out-of-area ZIPs are allowed through to the server on purpose,
+        // so the response a refused sender sees is identical to a successful one.
+        if (validateZip(zipInput.value) === 'invalid') {
             showMsg('error', 'Please enter a valid 5-digit ZIP code.');
-            zipInput.focus();
-            return;
-        }
-        if (zipResult === 'outofrange') {
-            showMsg('error', 'We serve the Aurora area (60001-60900). Please call us for availability.');
             zipInput.focus();
             return;
         }
@@ -151,9 +140,9 @@ document.addEventListener('DOMContentLoaded', function () {
             const data = await res.json();
 
             if (data.success) {
-                const name  = encodeURIComponent(document.getElementById('cqName').value.trim());
-                const email = encodeURIComponent(document.getElementById('cqEmail').value.trim());
-                window.location.href = (window.SITE_BASE || '') + '/thank-you/?name=' + name + '&email=' + email;
+                // No name/email in the URL - GTM tracks this page, and the URL would carry
+                // PII into Analytics. The server hands them over via the session instead.
+                window.location.href = (window.SITE_BASE || '') + '/thank-you/';
             } else {
                 showMsg('error', data.message || 'Something went wrong. Please try again.');
                 submitBtn.disabled = false;
