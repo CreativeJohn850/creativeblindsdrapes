@@ -10,8 +10,9 @@ cbd_session_start();
 define('RECAPTCHA_SECRET_KEY', '6LdOMk0sAAAAADiT0k7Y2oZWXg9-2Ot0F_020qA2');
 
 // Minimum v3 score to accept. Google returns 1.0 for anything that looks like a real
-// browser session, so this catches scripted senders, not hand-typed spam.
-define('RECAPTCHA_MIN_SCORE', 0.5);
+// browser session, so this catches scripted senders, not hand-typed spam. The score is
+// logged on every path (accepted and rejected), so this can be retuned from real traffic.
+define('RECAPTCHA_MIN_SCORE', 0.7);
 
 // Hosts a token may legitimately have been issued on. localhost entries are for WAMP dev.
 define('RECAPTCHA_ALLOWED_HOSTS', [

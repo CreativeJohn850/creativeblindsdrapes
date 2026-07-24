@@ -1,0 +1,30 @@
+# ---------------------------------------------------------------------------
+# Creative Blinds & Drapes - .gitignore
+# WAMP64 PHP site, no build step. Ignore local runtime output and dev cruft,
+# keep the security .htaccess files inside the log directories tracked.
+# ---------------------------------------------------------------------------
+
+# Form/submission logs (runtime data, contains visitor PII). Keep the
+# access-denial .htaccess so the protection stays in version control.
+data/config/logs/*
+!data/config/logs/.htaccess
+data/logs/*
+!data/logs/.htaccess
+
+# Python artifacts (seo/ test scripts, scraper/)
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+
+# Jupyter (form-test/ notebooks)
+.ipynb_checkpoints/
+
+# OS / editor cruft
+.DS_Store
+Thumbs.db
+desktop.ini
+*.bak
+*.tmp
+*~
