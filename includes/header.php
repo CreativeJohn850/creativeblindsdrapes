@@ -148,8 +148,16 @@ $local_business_schema = [
                     </a>
                     <span class="separator">|</span>
                     <span class="hours">
+                        <span class="icon">🕒</span>
                         <?php echo BUSINESS_HOURS; ?>
                     </span>
+                    <span class="separator">|</span>
+                    <a href="https://maps.app.goo.gl/E2B9YkeiqMfka7Y66" target="_blank" rel="noopener"
+                        onclick="dataLayer.push({'event': 'directions_click'});" class="header-location"
+                        title="Open in Google Maps (new tab)">
+                        <span class="icon">📍</span>
+                        850 S Frontenac St, Aurora, IL 60504
+                    </a>
                 </div>
             </div>
         </div>

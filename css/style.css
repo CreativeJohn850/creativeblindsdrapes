@@ -150,14 +150,17 @@ p {
 
 .header-top-content {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
 }
 
 .contact-info {
     display: flex;
     align-items: center;
-    gap: 15px;
+    justify-content: center;
+    flex-wrap: wrap;
+    /* row gap, column gap: wider spacing between phone / hours / location */
+    gap: 8px 26px;
     font-size: 0.9rem;
     color: var(--text-gray);
 }
@@ -168,10 +171,35 @@ p {
     display: flex;
     align-items: center;
     gap: 5px;
+    border-bottom: 1px solid transparent;
 }
 
-.header-phone:hover {
+.header-phone:hover,
+.header-phone:focus-visible {
     color: var(--primary-teal-dark);
+    border-bottom-color: var(--primary-teal-dark);
+}
+
+.hours {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+/* Address link to Google Maps */
+.header-location {
+    color: var(--text-gray);
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    cursor: pointer;
+    border-bottom: 1px solid transparent;
+}
+
+.header-location:hover,
+.header-location:focus-visible {
+    color: var(--primary-teal-dark);
+    border-bottom-color: var(--primary-teal-dark);
 }
 
 .separator {
@@ -941,28 +969,47 @@ section.bg-light {
     }
 }
 
-/* Mobile */
-@media (max-width: 768px) {
-    :root {
-        --section-padding: var(--section-padding-mobile);
+/* Between 663px and 899px the three items wrap onto two centered lines,
+   so the pipes are dropped and the spacing alone separates them. */
+@media (max-width: 899px) and (min-width: 663px) {
+    .contact-info {
+        gap: 6px 18px;
     }
-    
-    /* Header adjustments */
+
+    .separator {
+        display: none;
+    }
+}
+
+/* Top bar stacks only below 663px, above that it stays one centered row */
+@media (max-width: 662px) {
     .header-top-content {
         flex-direction: column;
         text-align: center;
         gap: 8px;
     }
-    
+
     .contact-info {
         flex-direction: column;
         gap: 8px;
     }
-    
+
     .separator {
         display: none;
     }
-    
+
+    /* Clock icon is desktop only, the stacked hours line reads fine without it */
+    .hours .icon {
+        display: none;
+    }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+    :root {
+        --section-padding: var(--section-padding-mobile);
+    }
+
     .logo h1 {
         font-size: 1.5rem;
     }
