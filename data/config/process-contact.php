@@ -51,20 +51,30 @@ function log_submission($event, $data) {
  * One-shot handoff to the thank-you page. Keeps the visitor's name and email out of the
  * redirect URL, which is tracked by GTM and would otherwise send PII to Analytics.
  * thank-you/index.php reads this and immediately clears it.
+ *
+ * $status is 'qualified' (mail actually dispatched to BUSINESS_EMAIL) or 'out_of_area'.
+ * The email is stored only for 'qualified': the thank-you page renders it as the GTM
+ * qualified-lead signal, so it has to mean mail was sent and nothing weaker. Gating it
+ * here rather than in the template means a future call site cannot leak it by mistake.
+ * Pass raw, unsanitized values; thank-you/index.php does the escaping.
  */
-function store_lead_flash($name, $email) {
-    $_SESSION['cbd_lead'] = ['name' => $name, 'email' => $email];
+function store_lead_flash($status, $name, $email = null) {
+    $_SESSION['cbd_lead'] = [
+        'status' => $status,
+        'name'   => $name,
+        'email'  => $status === 'qualified' ? $email : '',
+    ];
 }
 
 /*
  * Soft rejection. The sender gets the exact response a real lead gets, so a bot has no
  * signal to tune against, but no mail is ever sent. Only the log knows the difference.
- * Pass $name/$email to personalize the thank-you page; omit them for suspected bots.
+ * Pass $status/$name to personalize the thank-you page; omit them for suspected bots.
  */
-function soft_reject($event, $data, $name = null, $email = null) {
+function soft_reject($event, $data, $status = null, $name = null) {
     log_submission($event, $data);
-    if ($name !== null) {
-        store_lead_flash($name, $email);
+    if ($status !== null) {
+        store_lead_flash($status, $name);
     }
     echo json_encode([
         'success' => true,
@@ -235,27 +245,37 @@ if ($honeypot !== '') {
     ]);
 }
 
-// ZIP validation handle ZIP+4 (e.g. 60540-6398 becomes 60540)
+// ZIP validation handle ZIP+4 (e.g. 60540-6398 becomes 60540). Normalize to the 5-digit base
+// regardless of range, so an out-of-area ZIP+4 is judged by the range check below instead of
+// falling through to zip_invalid as if it were malformed.
 if (strpos($zip, '-') !== false) {
     foreach (explode('-', $zip) as $part) {
         if (preg_match('/^\d{5}$/', $part)) {
-            $partInt = (int) $part;
-            if ($partInt >= 60001 && $partInt <= 60900) {
-                $zip = $part;
-                break;
-            }
+            $zip = $part;
+            break;
         }
     }
 }
 
+// Not a ZIP at all. Both forms enforce the format before the POST and both submit via a JS
+// fetch, so a browser cannot land here: reaching it means the client was bypassed. Treated
+// like the honeypot, no flash and a fully generic thank-you page.
 if (empty($zip) || !preg_match('/^\d{5}$/', $zip)) {
-    soft_reject('zip_invalid', ['zip' => $zip, 'name' => $name, 'email' => $email], $name, $email);
+    soft_reject('zip_invalid', ['zip' => $zip, 'name' => $name, 'email' => $email]);
 }
 
+// A real person, simply outside the service area. They keep the name greeting on the
+// thank-you page, but no email: no mail was sent, so this is not a qualified lead.
 $zipInt = (int) $zip;
 if ($zipInt < 60001 || $zipInt > 60900) {
-    soft_reject('zip_out_of_range', ['zip' => $zip, 'name' => $name, 'email' => $email], $name, $email);
+    soft_reject('zip_out_of_range', ['zip' => $zip, 'name' => $name, 'email' => $email], 'out_of_area', $name);
 }
+
+// Kept before htmlspecialchars() because the thank-you page escapes on output. Storing the
+// already-escaped values would render the email as mangled entity text, and that element is
+// the GTM qualified-lead signal.
+$rawName  = $name;
+$rawEmail = $email;
 
 // Sanitize inputs
 $name = htmlspecialchars($name);
@@ -363,7 +383,7 @@ $logPayload = [
 
 if (mail($to, $subject, $emailBody, $headers)) {
     log_submission('mail_sent', $logPayload);
-    store_lead_flash($name, $email);
+    store_lead_flash('qualified', $rawName, $rawEmail);
     $response['success'] = true;
     $response['message'] = 'Thank you! Your request has been sent successfully.';
 } else {

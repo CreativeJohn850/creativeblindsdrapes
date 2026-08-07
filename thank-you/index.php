@@ -13,14 +13,24 @@ header('Cache-Control: no-store, private');
 $cbd_lead = $_SESSION['cbd_lead'] ?? [];
 unset($_SESSION['cbd_lead']); // one-shot: a refresh shows the generic page
 
-$visitor_name  = htmlspecialchars(trim($cbd_lead['name']  ?? ''), ENT_QUOTES, 'UTF-8');
-$visitor_email = htmlspecialchars(trim($cbd_lead['email'] ?? ''), ENT_QUOTES, 'UTF-8');
+$lead_status   = $cbd_lead['status'] ?? '';
+$visitor_name  = htmlspecialchars(trim($cbd_lead['name'] ?? ''), ENT_QUOTES, 'UTF-8');
+
+// Rendered only for a lead that reached the mail_sent path. GTM reads the presence of
+// #leadEmail as the qualified-lead signal, so this must not soften into a fallback: an
+// out-of-area visitor keeps the name greeting but gets no email element at all.
+$visitor_email = $lead_status === 'qualified'
+    ? htmlspecialchars(trim($cbd_lead['email'] ?? ''), ENT_QUOTES, 'UTF-8')
+    : '';
 
 // Include header
 require_once dirname(__DIR__) . '/includes/header.php';
 ?>
 
-<section style="padding: 100px 20px; text-align: center; min-height: 60vh; display: flex; align-items: center; justify-content: center;">
+<!-- data-lead-status is 'qualified' or 'out_of_area', never PII, so unlike the email it is
+     safe for GTM to read into the dataLayer for out-of-area demand reporting. Absent
+     entirely on a generic render (bot path, refresh, back-navigation, direct visit). -->
+<section<?php if ($lead_status !== ''): ?> data-lead-status="<?php echo htmlspecialchars($lead_status, ENT_QUOTES, 'UTF-8'); ?>"<?php endif; ?> style="padding: 100px 20px; text-align: center; min-height: 60vh; display: flex; align-items: center; justify-content: center;">
     <div class="container" style="max-width: 700px;">
         <div style="width: 100px; height: 100px; margin: 0 auto 30px; background: var(--warm-cream); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 4rem;">
             ✓
@@ -38,7 +48,7 @@ require_once dirname(__DIR__) . '/includes/header.php';
             <div style="text-align: left; max-width: 500px; margin: 0 auto;">
                 <div style="display: flex; gap: 15px; margin-bottom: 15px;">
                     <span style="color: var(--primary-teal); font-size: 1.5rem; font-weight: bold;">1</span>
-                    <p style="margin: 0;">We'll call or email you<?php if ($visitor_email !== ''): ?> (at <strong><?php echo $visitor_email; ?></strong>)<?php endif; ?> within 24 hours to confirm your request</p>
+                    <p style="margin: 0;">We'll call or email you<?php if ($visitor_email !== ''): ?> (at <strong id="leadEmail"><?php echo $visitor_email; ?></strong>)<?php endif; ?> within 24 hours to confirm your request</p>
                 </div>
                 <div style="display: flex; gap: 15px; margin-bottom: 15px;">
                     <span style="color: var(--primary-teal); font-size: 1.5rem; font-weight: bold;">2</span>
