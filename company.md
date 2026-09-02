@@ -14,7 +14,7 @@ We specialize in premium custom window treatments (draperies, sheer curtains, bl
 |---|---|
 | **Address** | 850 S Frontenac St, Aurora, IL 60504 |
 | **Phone** | (630) 946-1406 |
-| **Email** | creativeblindsdrapes@gmail.com |
+| **Email** | design@creativeblindsdrapes.com |
 | **Website** | https://creativeblindsdrapes.com |
 
 **Showroom Hours**

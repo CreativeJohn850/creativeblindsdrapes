@@ -96,7 +96,7 @@ bad.
     bypassed, so it is treated as a bot. A value outside `60001-60900` (the service area) is a
     **soft reject** (`zip_out_of_range`) by a real person.
 14. **Sanitize** every field with `htmlspecialchars()`.
-15. **Build and send the email.** HTML body, `To: BUSINESS_EMAIL` (`creativeblindsdrapes@gmail.com`),
+15. **Build and send the email.** HTML body, `To: BUSINESS_EMAIL` (`design@creativeblindsdrapes.com`),
     `From: noreply@creativeblindsdrapes.com`, `Reply-To:` the visitor's address, subject
     `New Quote Request from {name}`. Optional blocks for address, rooms, and message appear only
     when populated, which is how a full contact form submission reads differently from a compact one.
