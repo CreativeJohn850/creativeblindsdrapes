@@ -3,7 +3,7 @@
 define('SITE_URL', 'https://creativeblindsdrapes.com');
 define('SITE_NAME', 'Creative Blinds & Drapes');
 define('BUSINESS_PHONE', '(630) 946-1406');
-define('BUSINESS_EMAIL', 'creativeblindsdrapes@gmail.com');
+define('BUSINESS_EMAIL', 'design@creativeblindsdrapes.com');
 define('BUSINESS_ADDRESS', '850 S Frontenac St, Aurora, IL 60504');
 define('BUSINESS_HOURS', 'Mon-Fri: 9am - 6pm, Sat: 10am - 1pm, Sun: Closed');
 define('BUSINESS_HOURS_ML', 'Mon-Fri: 9am - 6pm<br>Sat: 10am - 1pm<br>Sun: Closed');
