@@ -117,6 +117,7 @@ define('MAIN_NAV', [
             '/guidelines/our-promise/'                => 'Our Promise',
         ],
     ],
+    ['label' => 'Blog',    'path' => '/blog/'],
     ['label' => 'About',   'path' => '/about-us/'],
     ['label' => 'Contact', 'path' => '/contact/'],
 ]);

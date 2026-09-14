@@ -7,6 +7,15 @@ if (!isset($page_title)) {
 if (!isset($meta_description)) {
     $meta_description = DEFAULT_DESCRIPTION;
 }
+/*
+ * Full title used by <title>, og:title and twitter:title. Defaults to the page title
+ * plus the brand. A page may set $page_title_full itself when its title is already
+ * written as a complete title tag (the blog posts carry their own brand/location
+ * suffix from the SEO source, so appending the brand again would double it).
+ */
+if (!isset($page_title_full)) {
+    $page_title_full = $page_title . ' | ' . SITE_NAME;
+}
 // Request path (BASE_URL stripped, query removed) drives canonical + nav active state.
 $request_path = strtok($_SERVER['REQUEST_URI'] ?? '/', '?');
 if (BASE_URL !== '' && strpos($request_path, BASE_URL) === 0) {
@@ -62,7 +71,7 @@ $local_business_schema = [
     <?php if (!empty($noindex)): ?>
         <meta name="robots" content="noindex, nofollow">
     <?php endif; ?>
-    <title><?php echo htmlspecialchars($page_title); ?> | <?php echo SITE_NAME; ?></title>
+    <title><?php echo htmlspecialchars($page_title_full); ?></title>
 
     <!-- Canonical -->
     <link rel="canonical" href="<?php echo htmlspecialchars($canonical_url); ?>">
@@ -70,7 +79,7 @@ $local_business_schema = [
     <!-- Open Graph -->
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="<?php echo htmlspecialchars(SITE_NAME); ?>">
-    <meta property="og:title" content="<?php echo htmlspecialchars($page_title . ' | ' . SITE_NAME); ?>">
+    <meta property="og:title" content="<?php echo htmlspecialchars($page_title_full); ?>">
     <meta property="og:description" content="<?php echo htmlspecialchars($meta_description); ?>">
     <meta property="og:url" content="<?php echo htmlspecialchars($canonical_url); ?>">
     <meta property="og:image" content="<?php echo $og_image; ?>">
@@ -78,7 +87,7 @@ $local_business_schema = [
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="<?php echo htmlspecialchars($page_title . ' | ' . SITE_NAME); ?>">
+    <meta name="twitter:title" content="<?php echo htmlspecialchars($page_title_full); ?>">
     <meta name="twitter:description" content="<?php echo htmlspecialchars($meta_description); ?>">
     <meta name="twitter:image" content="<?php echo $og_image; ?>">
 

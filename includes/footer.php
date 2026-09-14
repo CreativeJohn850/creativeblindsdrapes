@@ -28,6 +28,7 @@
                         <li><a href="<?php echo url('/window-treatments/window-treatment-installer/'); ?>">Installation</a></li>
                         <li><a href="<?php echo url('/window-treatments/motorized-window-treatment/'); ?>">Motorized</a></li>
                         <li><a href="<?php echo url('/guidelines/'); ?>">Guides</a></li>
+                        <li><a href="<?php echo url('/blog/'); ?>">Blog</a></li>
                     </ul>
                 </div>
 
