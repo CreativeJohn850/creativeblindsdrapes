@@ -278,7 +278,7 @@ require_once __DIR__ . '/includes/header.php';
     <div class="container">
         <div class="section-header">
             <h2>Homeowner Resources</h2>
-            <p>Before a consultation, the <a href="<?php echo url('/guidelines/'); ?>" style="color: var(--primary-teal); font-weight: 600;">Guidelines hub</a> answers common questions that affect a good installation.</p>
+            <p>Before a consultation, the <a href="<?php echo url('/guidelines/'); ?>" class="prose-link">Guidelines hub</a> answers common questions that affect a good installation.</p>
         </div>
 
         <div class="grid-4 resource-grid">

@@ -168,7 +168,7 @@ require_once ROOT_PATH . '/includes/header.php';
     <div class="container">
         <div class="section-header">
             <h2>Serving Aurora, Naperville & the Fox Valley Region</h2>
-            <p>Local installation across our 20-mile service area, with no travel charges.</p>
+            <p>Local installation across <a href="<?php echo url('/service-areas/'); ?>" class="prose-link">our 20-mile service area</a>, with no travel charges.</p>
         </div>
         <div class="compare-table-wrap" style="margin-top: 30px;">
             <table class="compare-table">

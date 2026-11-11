@@ -21,7 +21,8 @@
     --white: #ffffff;
     --light-gray: #f5f5f5;
     --border-color: #d4d4d4;
-    
+    --link-green: #1F7A32; /* brand green darkened to 5.4:1 for link text (AA) */
+
     /* Fonts */
     --font-primary: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
     --font-headings: 'Playfair Display', Georgia, serif;
@@ -57,6 +58,40 @@ a {
     text-decoration: none;
     color: inherit;
     transition: all 0.3s ease;
+}
+
+/*
+ * In-prose links. The reset above (`a { text-decoration: none; color: inherit; }`)
+ * makes a link inside a sentence indistinguishable from the text around it.
+ *
+ * Use `.prose` on a container whose links sit inside running text (every link in it
+ * is styled), or `.prose-link` on a single link outside such a container. Do not use
+ * either on buttons, cards, nav, footer or breadcrumbs: their layout already says
+ * "clickable".
+ *
+ * At rest a link is --link-green (5.4:1 against the page, AA for body text) in the
+ * surrounding text weight, so touch users see it without hovering. On hover it gains
+ * an underline. The lighter --primary-teal is only 2.3:1 and is not usable for
+ * running text.
+ */
+.prose a,
+.prose-link {
+    color: var(--link-green);
+    text-decoration: none;
+    text-decoration-thickness: 1.5px;
+    text-underline-offset: 2px;
+}
+
+.prose a:hover,
+.prose-link:hover {
+    text-decoration: underline;
+}
+
+.prose a:focus-visible,
+.prose-link:focus-visible {
+    outline: 2px solid var(--primary-teal-dark);
+    outline-offset: 2px;
+    border-radius: 2px;
 }
 
 /* === TYPOGRAPHY === */

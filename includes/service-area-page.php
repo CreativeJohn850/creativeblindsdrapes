@@ -141,7 +141,7 @@ require_once ROOT_PATH . '/includes/header.php';
                         <li><?php echo htmlspecialchars($feat); ?></li>
                     <?php endforeach; ?>
                 </ul>
-                <p><a href="<?php echo url($p['browse_url']); ?>"><?php echo htmlspecialchars($p['browse_label']); ?></a></p>
+                <p><a href="<?php echo url($p['browse_url']); ?>" class="prose-link"><?php echo htmlspecialchars($p['browse_label']); ?></a></p>
             </div>
         <?php endforeach; ?>
 

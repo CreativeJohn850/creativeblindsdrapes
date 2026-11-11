@@ -63,34 +63,7 @@ require_once ROOT_PATH . '/includes/header.php';
 .bp-article h2 { margin: 40px 0 14px; font-size: clamp(1.35rem, 2.6vw, 1.75rem); line-height: 1.3; }
 .bp-list { line-height: 1.85; margin: 0 0 20px; padding-left: 22px; }
 .bp-list li { margin-bottom: 10px; }
-/*
- * In-prose links. The global reset in style.css is `a { text-decoration: none;
- * color: inherit; }`, which makes a link inside a paragraph indistinguishable from
- * the text around it, so it is overridden here for article prose only.
- *
- * Three cues at once, so a link is obvious while skimming and does not depend on
- * colour alone (WCAG 1.4.1): a persistent underline, semibold weight, and the brand
- * green darkened to #1F7A32, which holds 5.4:1 against the page (AA for body text).
- * The lighter --primary-teal is only 2.3:1 and is not usable for running text.
- */
-.bp-article p a, .bp-article li a, .bp-faq .faq-answer a, .bp-about-inner a {
-    color: #1F7A32;
-    font-weight: 600;
-    text-decoration: underline;
-    text-decoration-thickness: 1.5px;
-    text-underline-offset: 2px;
-}
-.bp-article p a:hover, .bp-article li a:hover,
-.bp-faq .faq-answer a:hover, .bp-about-inner a:hover {
-    color: var(--primary-teal-dark, #289C3F);
-    text-decoration-thickness: 2.5px;
-}
-.bp-article p a:focus-visible, .bp-article li a:focus-visible,
-.bp-faq .faq-answer a:focus-visible, .bp-about-inner a:focus-visible {
-    outline: 2px solid var(--primary-teal-dark, #289C3F);
-    outline-offset: 2px;
-    border-radius: 2px;
-}
+/* In-prose link styling comes from the shared `.prose` rule in css/style.css. */
 /*
  * Article pictures vary a lot in size (some are 1600px wide, some barely 520px).
  * max-width rather than width lets the big ones fill the column while the small ones
@@ -132,7 +105,7 @@ require_once ROOT_PATH . '/includes/header.php';
 
 <?php include ROOT_PATH . '/includes/compact-form.php'; ?>
 
-<article class="bp-article">
+<article class="bp-article prose">
     <div class="container">
         <?php echo $post_body_html; ?>
     </div>
@@ -149,7 +122,7 @@ require_once ROOT_PATH . '/includes/header.php';
             <?php foreach ($post_faqs as $f): ?>
                 <details class="faq-item">
                     <summary><?php echo htmlspecialchars($f['q']); ?></summary>
-                    <div class="faq-answer"><?php echo str_replace('%BASE%', BASE_URL, $f['a']); ?></div>
+                    <div class="faq-answer prose"><?php echo str_replace('%BASE%', BASE_URL, $f['a']); ?></div>
                 </details>
             <?php endforeach; ?>
         </div>
@@ -160,7 +133,7 @@ require_once ROOT_PATH . '/includes/header.php';
 <?php if (!empty($post_about_html)): ?>
 <section class="bp-about">
     <div class="container">
-        <div class="bp-about-inner">
+        <div class="bp-about-inner prose">
             <h2><?php echo htmlspecialchars($post_about_heading ?: 'About Creative Blinds & Drapes'); ?></h2>
             <?php echo $post_about_html; ?>
         </div>
