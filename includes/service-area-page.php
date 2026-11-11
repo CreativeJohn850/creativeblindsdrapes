@@ -23,6 +23,7 @@
  *   $sa_trust                              [chip, chip, chip, chip]
  *   $sa_process_heading, $sa_process_intro
  *   $sa_process                            [['step','what','detail'], ...]
+ *                                          optional 'url' per step links the step name
  *   $related_links                         [['url','label'], ...]
  *   $faqs                                  [['q','a'], ...]
  *   $sa_cta_heading, $sa_cta_text
@@ -181,7 +182,13 @@ require_once ROOT_PATH . '/includes/header.php';
                 <tbody>
                     <?php foreach ($sa_process as $s): ?>
                         <tr>
-                            <td><strong><?php echo htmlspecialchars($s['step']); ?></strong></td>
+                            <td><strong>
+                                <?php if (!empty($s['url'])): ?>
+                                    <a href="<?php echo url($s['url']); ?>" class="prose-link"><?php echo htmlspecialchars($s['step']); ?></a>
+                                <?php else: ?>
+                                    <?php echo htmlspecialchars($s['step']); ?>
+                                <?php endif; ?>
+                            </strong></td>
                             <td><?php echo htmlspecialchars($s['what']); ?></td>
                             <td><?php echo htmlspecialchars($s['detail']); ?></td>
                         </tr>

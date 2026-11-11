@@ -97,8 +97,8 @@ require_once ROOT_PATH . '/includes/header.php';
                 <a href="<?php echo url('/window-treatments/window-blinds/'); ?>" class="btn btn-primary">Explore blinds</a>
             </div>
             <div style="text-align: center;">
-                <h3 style="margin-bottom: 10px;">Custom Shades</h3>
-                <p style="color: var(--text-gray); margin-bottom: 15px;">Honeycomb, roller, roman and sheer shades with triple-cell insulation, blackout and motorized options.</p>
+                <h3 style="margin-bottom: 10px;">Custom Shades</h3> 
+                <p style="color: var(--text-gray); margin-bottom: 15px;">Honeycomb, roller, roman and sheer shades with <a href="<?php echo url('/guidelines/climate-light-control/'); ?>" class="prose-link">triple-cell insulation</a>, blackout and motorized options.</p>
                 <a href="<?php echo url('/window-treatments/shades/'); ?>" class="btn btn-primary">Explore shades</a>
             </div>
             <div style="text-align: center;">
@@ -176,14 +176,14 @@ require_once ROOT_PATH . '/includes/header.php';
                     <tr><th>City</th><th>Coverage</th></tr>
                 </thead>
                 <tbody>
-                    <tr><td>Aurora</td><td>Home base, full service area</td></tr>
-                    <tr><td>Naperville</td><td>Full service area</td></tr>
-                    <tr><td>Oswego</td><td>Full service area</td></tr>
-                    <tr><td>Yorkville</td><td>Full service area</td></tr>
-                    <tr><td>Batavia</td><td>Full service area</td></tr>
-                    <tr><td>Geneva</td><td>Full service area</td></tr>
-                    <tr><td>St. Charles</td><td>Full service area</td></tr>
-                    <tr><td>Plainfield</td><td>Full service area</td></tr>
+                    <tr><td><a href="<?php echo url('/service-areas/aurora-il/'); ?>" class="prose-link">Aurora</a></td><td>Home base, full service area</td></tr>
+                    <tr><td><a href="<?php echo url('/service-areas/naperville-il/'); ?>" class="prose-link">Naperville</a></td><td>Full service area</td></tr>
+                    <tr><td><a href="<?php echo url('/service-areas/oswego-il/'); ?>" class="prose-link">Oswego</a></td><td>Full service area</td></tr>
+                    <tr><td><a href="<?php echo url('/service-areas/yorkville-il/'); ?>" class="prose-link">Yorkville</a></td><td>Full service area</td></tr>
+                    <tr><td><a href="<?php echo url('/service-areas/batavia-il/'); ?>" class="prose-link">Batavia</a></td><td>Full service area</td></tr>
+                    <tr><td><a href="<?php echo url('/service-areas/geneva-il/'); ?>" class="prose-link">Geneva</a></td><td>Full service area</td></tr>
+                    <tr><td><a href="<?php echo url('/service-areas/st-charles-il/'); ?>" class="prose-link">St. Charles</a></td><td>Full service area</td></tr>
+                    <tr><td><a href="<?php echo url('/service-areas/plainfield-il/'); ?>" class="prose-link">Plainfield</a></td><td>Full service area</td></tr>
                 </tbody>
             </table>
         </div>
@@ -201,10 +201,10 @@ require_once ROOT_PATH . '/includes/header.php';
             <table class="compare-table">
                 <thead>
                     <tr><th>Feature</th><th>Creative Blinds & Drapes</th><th>National Franchises</th><th>Big-Box Retailers</th></tr>
-                </thead>
+                </thead> 
                 <tbody>
                     <tr><td>Free in-home measurement</td><td>Yes</td><td>Sometimes</td><td>Rarely</td></tr>
-                    <tr><td>Professional installation included</td><td>Yes</td><td>Extra charge</td><td>Sub-contracted</td></tr>
+                    <tr><td><a href="<?php echo url('/guidelines/professional-installation/'); ?>" class="prose-link">Professional installation included</a></td><td>Yes</td><td>Extra charge</td><td>Sub-contracted</td></tr>
                     <tr><td>Local, family-owned</td><td>Yes, 23 years</td><td>No</td><td>No</td></tr>
                     <tr><td>Norman Window Fashions line</td><td>Yes</td><td>Varies</td><td>Limited</td></tr>
                     <tr><td>Motorization setup &amp; training</td><td>Yes</td><td>Varies</td><td>No</td></tr>
