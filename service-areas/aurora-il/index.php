@@ -23,7 +23,7 @@ $sa_neighborhood_cols = ["Aurora Neighborhood / Area", "ZIP Code", "Common Windo
 $sa_neighborhoods = [
     ['area' => "Downtown Aurora & Fox River Corridor", 'zone' => "60505", 'profile' => "Historic double-hung and casement windows, older plaster walls", 'products' => "Specialty shape shutters, composite Woodlore, inside-mount honeycomb shades"],
     ['area' => "Stonebridge & Oakhurst", 'zone' => "60504", 'profile' => "Contemporary new-build frames, large open-plan windows", 'products' => "Motorized roller shades, faux wood blinds"],
-    ['area' => "Lincoln Crossing & Wheatlands", 'zone' => "60504", 'profile' => "Newer construction, consistent frame sizes, energy focus", 'products' => "Triple-cell honeycomb shades, PerfectTilt motorized shutters"],
+    ['area' => "Lincoln Crossing & Wheatlands", 'zone' => "60504", 'profile' => "Newer construction, consistent frame sizes, energy focus", 'products' => "Triple-cell honeycomb shades, PerfectTilt motorized shutters", 'links' => ["Triple-cell honeycomb shades" => "/guidelines/climate-light-control/"]],
     ['area' => "Riddle Highlands & West Side", 'zone' => "60506", 'profile' => "Mix of ranch-style and split-level, varied window sizes", 'products' => "Wood blinds, roman shades, composite shutters with outside mount"],
     ['area' => "River Valley & Orchard Road Corridor", 'zone' => "60506 / 60502", 'profile' => "Larger lots, wide windows and patio slider doors", 'products' => "Vertical blinds, motorized drapes, Synchrony vertical blinds"],
     ['area' => "North Aurora adjacent (Frontenac area)", 'zone' => "60504", 'profile' => "Our home ZIP. Showroom visits available by appointment.", 'products' => "Full Norman collection available for showroom comparison"],

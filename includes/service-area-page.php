@@ -18,6 +18,8 @@
  *   $sa_coverage_heading, $sa_coverage_intro
  *   $sa_neighborhood_cols                  [colA, colB, colC, colD] table headers
  *   $sa_neighborhoods                      [['area','zone','profile','products'], ...]
+ *                                          optional 'links' => [phrase => url] per row
+ *                                          links that phrase inside 'products'
  *   $sa_products_heading, $sa_products_intro
  *   $sa_products                           [['name','badge','intro','features'[],'browse_url','browse_label'], ...]
  *   $sa_trust                              [chip, chip, chip, chip]
@@ -38,6 +40,26 @@ require_once ROOT_PATH . '/includes/spoke-schema.php';
 if (!function_exists('encodeImagePath')) {
     function encodeImagePath($path) {
         return BASE_URL . '/' . implode('/', array_map('rawurlencode', explode('/', $path)));
+    }
+}
+
+if (!function_exists('sa_linkify')) {
+    /**
+     * Escape $text, then wrap the first occurrence of each phrase in $links
+     * ([phrase => url]) in a prose-link anchor. Phrases not found are ignored.
+     */
+    function sa_linkify($text, $links = []) {
+        $html = htmlspecialchars($text);
+        foreach ($links as $phrase => $href) {
+            $needle = htmlspecialchars($phrase);
+            $pos = strpos($html, $needle);
+            if ($pos === false) {
+                continue;
+            }
+            $anchor = '<a href="' . htmlspecialchars(url($href)) . '" class="prose-link">' . $needle . '</a>';
+            $html = substr_replace($html, $anchor, $pos, strlen($needle));
+        }
+        return $html;
     }
 }
 
@@ -122,7 +144,7 @@ require_once ROOT_PATH . '/includes/header.php';
                             <td><?php echo htmlspecialchars($n['area']); ?></td>
                             <td><?php echo htmlspecialchars($n['zone']); ?></td>
                             <td><?php echo htmlspecialchars($n['profile']); ?></td>
-                            <td><?php echo htmlspecialchars($n['products']); ?></td>
+                            <td><?php echo sa_linkify($n['products'], $n['links'] ?? []); ?></td>
                         </tr>
                     <?php endforeach; ?>
                 </tbody>
