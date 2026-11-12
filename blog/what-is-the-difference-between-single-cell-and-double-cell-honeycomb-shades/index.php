@@ -87,7 +87,7 @@ $post_schema_json = <<<'JSON'
           "name": "Is double cell always worth the extra cost?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Not always. On a small, shaded, or low-traffic window the upgrade may be hard to notice, but on a large or noisy window the extra insulation and sound dampening tend to justify the price difference."
+            "text": "Not always. On small or shaded windows, or in rooms you rarely use, most people won’t notice much difference. On large windows, older or drafty windows, or windows that get strong afternoon sun, the extra insulation is usually worth it. Double cell also helps soften outside noise in bedrooms that face a busy street."
           }
         },
         {
@@ -184,7 +184,7 @@ $post_faq_intro = '';
 
 $post_faqs = [
     ['q' => 'Is double cell always worth the extra cost?',
-     'a' => 'Not always. On a small, shaded, or low-traffic window the upgrade may be hard to notice, but on a large or noisy window the extra insulation and sound dampening tend to justify the price difference.'],
+     'a' => 'Not always. On small or shaded windows, or in rooms you rarely use, most people won’t notice much difference. On large windows, older or drafty windows, or windows that get strong afternoon sun, the extra insulation is usually worth it. Double cell also helps soften outside noise in bedrooms that face a busy street.'],
     ['q' => 'Do single cell shades look thinner when closed?',
      'a' => 'Yes, single cell fabric sits a bit flatter against the glass, while double cell fabric has slightly more visible depth once lowered.'],
     ['q' => 'Can both styles be motorized the same way?',
